@@ -73,6 +73,22 @@ Nano Banana Pro    →    Veo 3.1            →    Video Extension
                         Ingredients mode
 ```
 
+## Integration for App Development
+
+アプリ開発でVeo 3.1プロンプト生成機能を組み込む場合、`resources/reference/` フォルダをプロジェクトに取り込んで使用すると効果的。
+
+```
+your-app/
+├── src/
+└── prompts/
+    └── veo-reference/    ← resources/reference/ をコピー
+        ├── INDEX.md
+        ├── 00-system-prompt.md
+        └── ...
+```
+
+LLM APIにシステムプロンプトとして `00-system-prompt.md` を渡し、ユースケースに応じて `INDEX.md` の指示に従い必要なファイルをコンテキストに追加する。
+
 ## Key Concepts
 
 - **Nano Banana Pro**: Gemini 3 Pro による静止画生成

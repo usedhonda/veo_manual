@@ -1,6 +1,6 @@
 # Veo 3.1 Prompt Generation Manual
 
-Google Veo 3.1 動画生成のためのプロンプトマニュアル。Gemini AIがこのリファレンスを読み込んで、最適なプロンプトを生成する。
+Google Veo 3.1 動画生成のためのプロンプトマニュアル。GeminiなどのAIにこのリファレンスを読み込ませることで、最適なプロンプトを生成させることが目的。
 
 ## Purpose
 
@@ -75,7 +75,7 @@ Nano Banana Pro    →    Veo 3.1            →    Video Extension
 
 ## Key Concepts
 
-- **Nano Banana Pro**: Gemini 2.5 Flash Image による静止画生成
+- **Nano Banana Pro**: Gemini 3 Pro による静止画生成
 - **Veo 3.1**: Google の動画生成AI（4/6/8秒）
 - **Ingredients**: 参照画像を使ったキャラクター一貫性機能
 - **JSON Prompt**: 構造化されたプロンプトフォーマット

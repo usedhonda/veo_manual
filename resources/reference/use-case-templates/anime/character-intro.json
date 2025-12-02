@@ -1,0 +1,228 @@
+{
+  "_template": "anime-character-intro",
+  "_description": "Anime character introduction and reveal shots",
+  "_use_case": "Character reveals, introductions, hero moments",
+  "_workflow": "Phase 1 (Character Sheet) → Phase 2 (Ingredients mode)",
+
+  "_full_workflow": {
+    "phase1_image": {
+      "tool": "Nano Banana Pro / Gemini 2.5 Flash Image",
+      "purpose": "Generate character sheet for consistency",
+      "template": "phase1-nano-banana/templates/character-sheet.json"
+    },
+    "phase2_video": {
+      "tool": "Veo 3.1",
+      "mode": "Ingredients (Reference Images)",
+      "purpose": "Generate video with consistent character"
+    }
+  },
+
+  "reference_images": [
+    {
+      "source": "[CHARACTER_SHEET_IMAGE]",
+      "role": "asset",
+      "description": "[CHARACTER_VISUAL_DESCRIPTION]"
+    }
+  ],
+  "shot": {
+    "type": "[medium | close-up | full_body_reveal]",
+    "movement": "[dramatic_dolly | crane_up | static_dramatic]",
+    "lens": "[35mm | 50mm]",
+    "speed": "[slow_dramatic | normal]",
+    "angle": "[low_hero | eye_level | dutch_angle]"
+  },
+  "subject": {
+    "reference": "Character from reference image",
+    "appearance": {
+      "reinforce": "[KEY_VISUAL_TRAITS_FROM_REFERENCE]",
+      "consistent": "[HAIR_COLOR_STYLE, EYE_COLOR, OUTFIT]"
+    },
+    "expression": "[INTRODUCTION_MOOD: confident, mysterious, determined]",
+    "pose": "[HEROIC | CASUAL | ACTION_READY]"
+  },
+  "action": {
+    "primary": "[INTRODUCTION_ACTION: appears, turns, reveals]",
+    "secondary": "[SUPPORTING_MOTION: hair flows, cape billows]",
+    "dramatic_elements": "[wind | light_rays | particle_effects]",
+    "timing": "[DRAMATIC_TIMING_BREAKDOWN]"
+  },
+  "scene": {
+    "location": "[SETTING_FOR_CHARACTER]",
+    "time_of_day": "[ATMOSPHERIC_LIGHTING_TIME]",
+    "atmosphere": "[CHARACTER_MOOD_ENVIRONMENT]",
+    "effects": "[ANIME_ATMOSPHERIC_EFFECTS]"
+  },
+  "style": {
+    "medium": "anime",
+    "sub_style": "[ANIME_STYLE: Ghibli, shonen, shoujo, modern]",
+    "color_grade": "[ANIME_COLOR_PALETTE]",
+    "mood": "[CHARACTER_INTRODUCTION_TONE]"
+  },
+  "audio": {
+    "dialogue": "[OPTIONAL_INTRODUCTION_LINE]",
+    "sfx": "SFX: [dramatic impact, whoosh, wind]",
+    "music": "Music: [character_theme_style]"
+  },
+  "negative": {
+    "exclude": [
+      "off-model",
+      "wrong hair color",
+      "different outfit",
+      "realistic",
+      "3D render",
+      "inconsistent style",
+      "blur",
+      "morphing"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "hero_reveal": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Anime hero: spiky black hair, blue eyes, white cape, armor"
+        }
+      ],
+      "shot": {
+        "type": "full body to medium",
+        "movement": "crane up revealing character",
+        "lens": "35mm",
+        "speed": "slow dramatic",
+        "angle": "low angle hero shot"
+      },
+      "subject": {
+        "reference": "Hero from reference image",
+        "appearance": {
+          "reinforce": "Spiky black hair, bright blue eyes, white cape with gold trim, silver armor",
+          "consistent": "Hair style and color, eye color, cape design, armor details"
+        },
+        "expression": "Determined, heroic, ready for battle",
+        "pose": "Standing tall, cape billowing, hand on sword hilt"
+      },
+      "action": {
+        "primary": "revealed as camera rises",
+        "secondary": "cape billows dramatically in wind, hair moves",
+        "dramatic_elements": "wind, light rays from behind",
+        "timing": "0-3s feet to waist reveal, 3-6s full body, 6-8s face reveal with light"
+      },
+      "scene": {
+        "location": "Cliff edge overlooking battlefield",
+        "time_of_day": "golden hour, sun behind character",
+        "atmosphere": "Epic, heroic, destiny moment",
+        "effects": "lens flare, wind particles, distant smoke from battle"
+      },
+      "style": {
+        "medium": "anime",
+        "sub_style": "shonen, epic fantasy",
+        "color_grade": "Vibrant, high saturation, golden highlights",
+        "mood": "Triumphant, inspiring, heroic"
+      },
+      "audio": {
+        "sfx": "SFX: wind howling, cape snap, dramatic impact",
+        "music": "Music: orchestral anime score, strings building, triumphant brass"
+      }
+    },
+    "mysterious_appearance": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Mysterious anime girl: long silver hair, purple eyes, dark dress, enigmatic"
+        }
+      ],
+      "shot": {
+        "type": "medium close-up",
+        "movement": "slow dolly in through fog",
+        "lens": "50mm",
+        "speed": "slow, atmospheric",
+        "angle": "eye level, intimate"
+      },
+      "subject": {
+        "reference": "Mysterious girl from reference image",
+        "appearance": {
+          "reinforce": "Long flowing silver hair, deep purple eyes, elegant black dress with lace",
+          "consistent": "Hair color and length, eye color, dress design"
+        },
+        "expression": "Enigmatic, knowing, slight mysterious smile",
+        "pose": "Standing still in fog, hands clasped, head slightly tilted"
+      },
+      "action": {
+        "primary": "emerges from fog as camera approaches",
+        "secondary": "hair floats ethereally, particles drift around",
+        "dramatic_elements": "fog, floating particles, soft glow",
+        "timing": "0-4s fog clears revealing silhouette, 4-8s face becomes clear"
+      },
+      "scene": {
+        "location": "Dark forest clearing, moonlit",
+        "time_of_day": "night, full moon",
+        "atmosphere": "Mysterious, ethereal, otherworldly",
+        "effects": "volumetric fog, floating light particles, moonbeams"
+      },
+      "style": {
+        "medium": "anime",
+        "sub_style": "atmospheric, dark fantasy",
+        "color_grade": "Cool blues and silvers, purple accents, soft glow",
+        "mood": "Mysterious, captivating, otherworldly"
+      },
+      "audio": {
+        "sfx": "SFX: ethereal chimes, soft wind, magical shimmer",
+        "music": "Music: ambient, mysterious, soft piano with strings"
+      }
+    },
+    "energetic_intro": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Energetic anime girl: pink twin-tails, green eyes, idol outfit, cheerful"
+        }
+      ],
+      "shot": {
+        "type": "medium to close-up",
+        "movement": "dynamic tracking with subject",
+        "lens": "35mm",
+        "speed": "fast, energetic",
+        "angle": "slightly low, empowering"
+      },
+      "subject": {
+        "reference": "Idol girl from reference image",
+        "appearance": {
+          "reinforce": "Pink twin-tail hair with ribbons, bright green eyes, sparkly idol costume",
+          "consistent": "Hair style and color, eye color, costume design"
+        },
+        "expression": "Bright smile, excited, full of energy",
+        "pose": "Dynamic pose, arms up, jumping/spinning"
+      },
+      "action": {
+        "primary": "jumps into frame, strikes pose",
+        "secondary": "twin-tails swirl, costume sparkles catch light",
+        "dramatic_elements": "sparkles, energy effects, confetti",
+        "timing": "0-2s jump into frame, 2-5s spin, 5-8s final pose with wink"
+      },
+      "scene": {
+        "location": "Concert stage with colorful lights",
+        "time_of_day": "N/A (stage lighting)",
+        "atmosphere": "Exciting, energetic, celebratory",
+        "effects": "stage lights, sparkle particles, subtle bloom"
+      },
+      "style": {
+        "medium": "anime",
+        "sub_style": "idol anime, shoujo sparkle",
+        "color_grade": "Bright, saturated, pastel accents, sparkly",
+        "mood": "Fun, energetic, kawaii"
+      },
+      "audio": {
+        "dialogue": "She says cheerfully: 'Minna~! Let's have fun together!'",
+        "sfx": "SFX: sparkle sounds, landing impact, crowd cheer",
+        "music": "Music: upbeat J-pop, electronic, energetic idol song"
+      }
+    }
+  }
+}

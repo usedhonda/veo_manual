@@ -1,0 +1,138 @@
+{
+  "_template": "text-to-video-basic",
+  "_description": "Basic text-to-video generation template for quick prototyping",
+  "_mode": "Text-to-Video",
+  "_usage": "Fill in placeholders for your specific video needs",
+
+  "shot": {
+    "type": "[wide | medium | close-up | extreme-close-up | establishing]",
+    "movement": "[static | dolly_in | dolly_out | tracking | orbit | pan_left | pan_right | tilt_up | tilt_down]",
+    "lens": "[24mm | 35mm | 50mm | 85mm]",
+    "speed": "[slow | normal | fast]"
+  },
+  "subject": {
+    "identity": "[WHO_OR_WHAT - brief description]",
+    "appearance": "[VISUAL_DETAILS - clothing, features, colors]",
+    "expression": "[EMOTIONAL_STATE]",
+    "position": "[center | left | right | foreground | background]"
+  },
+  "action": {
+    "primary": "[MAIN_VERB - walks, runs, speaks, looks]",
+    "direction": "[toward_camera | away_from_camera | left_to_right | right_to_left]",
+    "timing": "[when action occurs - throughout | 0-4s | 4-8s]"
+  },
+  "scene": {
+    "location": "[WHERE - environment description]",
+    "time_of_day": "[dawn | morning | noon | afternoon | golden_hour | dusk | night]",
+    "weather": "[clear | cloudy | rain | fog | snow]",
+    "atmosphere": "[MOOD_KEYWORDS]"
+  },
+  "style": {
+    "medium": "[live_action | anime | 3d_animation]",
+    "color_grade": "[VISUAL_STYLE]",
+    "genre": "[cinematic | documentary | commercial | music_video]"
+  },
+  "audio": {
+    "dialogue": "[Character says: \"Line\" OR leave empty]",
+    "sfx": "[SFX: sound effects]",
+    "ambience": "[Ambience: background sounds]",
+    "music": "[Music: genre, mood OR 'NO music']"
+  },
+  "negative": {
+    "exclude": ["blur", "distortion", "low quality", "watermark", "text overlay"]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "walking_scene": {
+      "shot": {
+        "type": "medium",
+        "movement": "tracking",
+        "lens": "35mm",
+        "speed": "normal"
+      },
+      "subject": {
+        "identity": "Young woman in her 20s",
+        "appearance": "Casual clothes, jeans and white t-shirt, long brown hair",
+        "expression": "Thoughtful, slightly smiling",
+        "position": "center"
+      },
+      "action": {
+        "primary": "walks",
+        "direction": "left_to_right",
+        "timing": "throughout clip"
+      },
+      "scene": {
+        "location": "City sidewalk with shops",
+        "time_of_day": "afternoon",
+        "weather": "clear",
+        "atmosphere": "Relaxed urban vibe"
+      },
+      "style": {
+        "medium": "live_action",
+        "color_grade": "Warm, natural tones",
+        "genre": "lifestyle"
+      },
+      "audio": {
+        "sfx": "SFX: footsteps on pavement",
+        "ambience": "Ambience: city sounds, distant traffic, people talking",
+        "music": "Music: indie acoustic, upbeat, guitar"
+      },
+      "negative": {
+        "exclude": ["blur", "distortion", "low quality", "watermark"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "landscape_reveal": {
+      "shot": {
+        "type": "wide",
+        "movement": "slow pan_right",
+        "lens": "24mm",
+        "speed": "slow"
+      },
+      "subject": {
+        "identity": "Mountain landscape",
+        "appearance": "Snow-capped peaks, green valleys below",
+        "expression": "N/A",
+        "position": "filling frame"
+      },
+      "action": {
+        "primary": "reveals",
+        "direction": "left_to_right",
+        "timing": "0-8s continuous reveal"
+      },
+      "scene": {
+        "location": "Alpine mountain range",
+        "time_of_day": "golden_hour",
+        "weather": "clear with light clouds",
+        "atmosphere": "Majestic, serene"
+      },
+      "style": {
+        "medium": "live_action",
+        "color_grade": "Rich, saturated natural colors",
+        "genre": "nature documentary"
+      },
+      "audio": {
+        "sfx": "SFX: distant eagle cry",
+        "ambience": "Ambience: mountain wind, birds",
+        "music": "Music: orchestral, sweeping, triumphant"
+      },
+      "negative": {
+        "exclude": ["blur", "distortion", "people", "vehicles", "modern elements"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    }
+  }
+}

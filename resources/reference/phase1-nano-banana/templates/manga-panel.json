@@ -1,0 +1,194 @@
+{
+  "_template": "manga-panel",
+  "_description": "Generate manga-style panel artwork for Veo 3.1 animation",
+  "_usage": "Creates static manga panels optimized for subsequent Veo 3.1 animation",
+  "_workflow": "Generate panel → Use as first_frame in Veo 3.1",
+
+  "subject": {
+    "scene_description": "[PANEL_CONTENT_DESCRIPTION]",
+    "characters": "[CHARACTER_DESCRIPTIONS_WITH_POSITIONS]",
+    "action": "[CAPTURED_MOMENT_OF_ACTION]",
+    "expressions": "[CHARACTER_EXPRESSIONS]"
+  },
+  "composition": {
+    "panel_type": "[full_page | half_page | quarter | strip_panel]",
+    "framing": "[wide_establishing | medium_action | close_emotion | extreme_close]",
+    "angle": "[eye_level | low_dramatic | high_overview | dutch_tilt]",
+    "focal_point": "[WHERE_EYE_SHOULD_GO]",
+    "reading_flow": "[LEFT_TO_RIGHT_OR_RIGHT_TO_LEFT_ELEMENTS]"
+  },
+  "manga_elements": {
+    "speed_lines": "[radial | horizontal | vertical | none]",
+    "impact_effects": "[burst | crack | glow | none]",
+    "emotion_symbols": "[sweatdrop | vein | sparkle | blush_lines | none]",
+    "screentone": "[gradient | dot_pattern | crosshatch | none]",
+    "speech_bubble_space": "[TOP | BOTTOM | SIDE | none]"
+  },
+  "style": {
+    "manga_genre": "[shonen | shoujo | seinen | josei | kodomo]",
+    "linework": "[bold_thick | thin_delicate | sketchy | clean]",
+    "shading": "[screentone | hatching | solid_black | minimal]",
+    "contrast": "[high_dramatic | balanced | soft]"
+  },
+  "technical": {
+    "color_mode": "[black_and_white | limited_color | full_color]",
+    "resolution": "1080p",
+    "aspect_ratio": "[4:5_portrait | 16:9_landscape | 1:1_square]"
+  },
+  "veo_optimization": {
+    "animation_intent": "[ACTION_TO_ANIMATE]",
+    "animatable_elements": "[HAIR | CLOTH | PARTICLES | EFFECTS]",
+    "static_elements": "[BACKGROUND | SCREENTONE_PATTERNS]"
+  },
+
+  "_examples": {
+    "shonen_action": {
+      "subject": {
+        "scene_description": "Hero delivering finishing punch to villain",
+        "characters": "Protagonist (center, fist extended), Antagonist (right, recoiling)",
+        "action": "Impact moment of punch connecting",
+        "expressions": "Hero: determined fury, Villain: shocked pain"
+      },
+      "composition": {
+        "panel_type": "full_page",
+        "framing": "medium_action",
+        "angle": "low_dramatic",
+        "focal_point": "Point of impact (fist on face)",
+        "reading_flow": "Left fist to right impact"
+      },
+      "manga_elements": {
+        "speed_lines": "radial from impact point",
+        "impact_effects": "burst with crack lines",
+        "emotion_symbols": "none - pure action",
+        "screentone": "gradient for drama",
+        "speech_bubble_space": "TOP for battle cry"
+      },
+      "style": {
+        "manga_genre": "shonen",
+        "linework": "bold_thick",
+        "shading": "solid_black with white highlights",
+        "contrast": "high_dramatic"
+      },
+      "technical": {
+        "color_mode": "black_and_white",
+        "aspect_ratio": "4:5_portrait"
+      },
+      "veo_optimization": {
+        "animation_intent": "Impact ripple, debris explosion",
+        "animatable_elements": "speed lines, debris, hair, cloth",
+        "static_elements": "character poses at peak action"
+      }
+    },
+    "shoujo_emotion": {
+      "subject": {
+        "scene_description": "First love confession scene under cherry blossoms",
+        "characters": "Girl (center-left, hands clasped), Boy (center-right, extending flower)",
+        "action": "Moment of offering flower",
+        "expressions": "Girl: surprised blush, Boy: nervous determination"
+      },
+      "composition": {
+        "panel_type": "half_page",
+        "framing": "medium_action",
+        "angle": "eye_level",
+        "focal_point": "Space between their faces",
+        "reading_flow": "Her reaction to his gesture"
+      },
+      "manga_elements": {
+        "speed_lines": "none",
+        "impact_effects": "none",
+        "emotion_symbols": "sparkle around girl, blush lines both",
+        "screentone": "soft gradient, flower patterns",
+        "speech_bubble_space": "SIDE for whispered confession"
+      },
+      "style": {
+        "manga_genre": "shoujo",
+        "linework": "thin_delicate",
+        "shading": "screentone soft gradients",
+        "contrast": "soft"
+      },
+      "technical": {
+        "color_mode": "limited_color (pink cherry blossoms)",
+        "aspect_ratio": "16:9_landscape"
+      },
+      "veo_optimization": {
+        "animation_intent": "Cherry petals falling, hair swaying",
+        "animatable_elements": "petals, hair, sparkles, cloth",
+        "static_elements": "characters, background trees"
+      }
+    },
+    "seinen_noir": {
+      "subject": {
+        "scene_description": "Detective in rain-soaked alley discovering evidence",
+        "characters": "Trenchcoat detective (crouching, examining ground)",
+        "action": "Flashlight beam illuminating bloody knife",
+        "expressions": "Detective: grim realization"
+      },
+      "composition": {
+        "panel_type": "quarter",
+        "framing": "close_emotion on face and hands",
+        "angle": "high_overview",
+        "focal_point": "Knife in flashlight beam",
+        "reading_flow": "Eyes to hands to knife"
+      },
+      "manga_elements": {
+        "speed_lines": "none",
+        "impact_effects": "light beam cone",
+        "emotion_symbols": "none - realistic tone",
+        "screentone": "heavy crosshatch for noir mood",
+        "speech_bubble_space": "none - silent panel"
+      },
+      "style": {
+        "manga_genre": "seinen",
+        "linework": "sketchy realistic",
+        "shading": "heavy hatching, deep blacks",
+        "contrast": "high_dramatic"
+      },
+      "technical": {
+        "color_mode": "black_and_white",
+        "aspect_ratio": "1:1_square"
+      },
+      "veo_optimization": {
+        "animation_intent": "Rain falling, flashlight flicker",
+        "animatable_elements": "rain, light beam, steam breath",
+        "static_elements": "character pose, background alley"
+      }
+    },
+    "4koma_comedy": {
+      "subject": {
+        "scene_description": "Cat stealing owner's food while they're distracted",
+        "characters": "Owner (back turned, on phone), Cat (paw reaching for food)",
+        "action": "Sneaky paw reaching toward plate",
+        "expressions": "Cat: mischievous squint, Owner: oblivious"
+      },
+      "composition": {
+        "panel_type": "strip_panel",
+        "framing": "wide_establishing",
+        "angle": "eye_level",
+        "focal_point": "Cat's paw approaching food",
+        "reading_flow": "Owner to cat to food"
+      },
+      "manga_elements": {
+        "speed_lines": "none",
+        "impact_effects": "none",
+        "emotion_symbols": "sweatdrop on cat (nervous), sparkle on food",
+        "screentone": "simple dot pattern",
+        "speech_bubble_space": "TOP for thought bubble"
+      },
+      "style": {
+        "manga_genre": "kodomo",
+        "linework": "clean simple",
+        "shading": "minimal",
+        "contrast": "balanced"
+      },
+      "technical": {
+        "color_mode": "black_and_white",
+        "aspect_ratio": "16:9_landscape"
+      },
+      "veo_optimization": {
+        "animation_intent": "Paw slowly reaching, tail swishing",
+        "animatable_elements": "cat paw, tail, food steam",
+        "static_elements": "owner, background kitchen"
+      }
+    }
+  }
+}

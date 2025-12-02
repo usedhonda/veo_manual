@@ -1,0 +1,261 @@
+{
+  "_template": "music-video-abstract-visual",
+  "_description": "Abstract and artistic visual music video shots",
+  "_use_case": "Non-representational visuals, artistic interpretations, visual effects heavy",
+  "_workflow": "Text-to-Video or Frame Interpolation for morphing effects",
+
+  "shot": {
+    "type": "[abstract_composition | macro_texture | geometric | fluid]",
+    "movement": "[slow_morph | drift | pulse | rotate]",
+    "lens": "[macro | wide_distorted | normal]",
+    "speed": "[very_slow | tempo_synced | flowing]",
+    "focus": "[selective | deep | shifting]"
+  },
+  "subject": {
+    "type": "[colors | shapes | textures | particles | light | liquid]",
+    "description": "[ABSTRACT_VISUAL_DESCRIPTION]",
+    "behavior": "[HOW_IT_MOVES_AND_CHANGES]"
+  },
+  "action": {
+    "primary": "[MAIN_MOVEMENT: flows, morphs, pulses, expands]",
+    "secondary": "[SECONDARY_MOVEMENT]",
+    "rhythm": "[HOW_MOVEMENT_RELATES_TO_MUSIC]",
+    "timing": "[VISUAL_RHYTHM_PATTERN]"
+  },
+  "visual_elements": {
+    "colors": "[COLOR_PALETTE_DESCRIPTION]",
+    "shapes": "[GEOMETRIC_ORGANIC_MIXED]",
+    "textures": "[TEXTURE_QUALITIES]",
+    "light": "[LIGHT_BEHAVIOR]"
+  },
+  "style": {
+    "medium": "[abstract | generative | painterly | photographic_abstract]",
+    "aesthetic": "[VISUAL_ART_REFERENCE]",
+    "color_grade": "[ARTISTIC_COLOR_TREATMENT]",
+    "mood": "[EMOTIONAL_VISUAL_TRANSLATION]"
+  },
+  "audio": {
+    "sync_approach": "[beat_reactive | flowing | atmospheric | contrast]",
+    "sfx": "SFX: [abstract sounds if any]",
+    "music": "Music: [GENRE_MOOD_REFERENCE]"
+  },
+  "negative": {
+    "exclude": [
+      "blur",
+      "distortion",
+      "realistic_faces",
+      "text",
+      "watermark",
+      "static",
+      "jarring_cuts"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "color_field_flow": {
+      "shot": {
+        "type": "abstract composition",
+        "movement": "slow organic flow",
+        "lens": "normal",
+        "speed": "very slow, meditative",
+        "focus": "deep, all in focus"
+      },
+      "subject": {
+        "type": "liquid colors",
+        "description": "Flowing paint-like colors mixing and swirling",
+        "behavior": "Organic flow, colors merge and separate"
+      },
+      "action": {
+        "primary": "colors slowly merge and swirl",
+        "secondary": "new colors emerge from mixing",
+        "rhythm": "slow, matching ambient tempo",
+        "timing": "continuous flowing motion"
+      },
+      "visual_elements": {
+        "colors": "Deep blues, vibrant purples, touches of gold",
+        "shapes": "Organic, fluid, no defined edges",
+        "textures": "Silky, liquid, pearlescent shimmer",
+        "light": "Internal glow, iridescent highlights"
+      },
+      "style": {
+        "medium": "abstract",
+        "aesthetic": "Abstract expressionism, color field painting",
+        "color_grade": "Rich, saturated, jewel tones",
+        "mood": "Meditative, beautiful, immersive"
+      },
+      "audio": {
+        "sync_approach": "flowing, not beat reactive",
+        "music": "Music: ambient, atmospheric, evolving textures"
+      }
+    },
+    "geometric_pulse": {
+      "shot": {
+        "type": "geometric composition",
+        "movement": "pulsing, breathing",
+        "lens": "normal",
+        "speed": "synced to beat",
+        "focus": "sharp throughout"
+      },
+      "subject": {
+        "type": "geometric shapes",
+        "description": "3D geometric shapes arranged in patterns",
+        "behavior": "Pulse with beat, rotate, transform"
+      },
+      "action": {
+        "primary": "shapes pulse and rotate with music",
+        "secondary": "colors shift, patterns transform",
+        "rhythm": "tight sync to beat",
+        "timing": "pulse on every beat, transform on phrase"
+      },
+      "visual_elements": {
+        "colors": "Neon cyan, magenta, white, black",
+        "shapes": "Cubes, triangles, spheres, clean geometry",
+        "textures": "Glossy, metallic, clean surfaces",
+        "light": "Rim lighting, glowing edges"
+      },
+      "style": {
+        "medium": "generative",
+        "aesthetic": "Geometric abstraction, motion graphics",
+        "color_grade": "High contrast, neon on black",
+        "mood": "Electronic, precise, energetic"
+      },
+      "audio": {
+        "sync_approach": "beat reactive",
+        "sfx": "SFX: synthetic hits matching visuals",
+        "music": "Music: electronic, driving beat, synthesizers"
+      }
+    },
+    "particle_cosmos": {
+      "shot": {
+        "type": "fluid space",
+        "movement": "drifting, floating",
+        "lens": "wide",
+        "speed": "slow, floating",
+        "focus": "selective depth"
+      },
+      "subject": {
+        "type": "particles and light",
+        "description": "Thousands of light particles in void space",
+        "behavior": "Float, cluster, disperse like stars"
+      },
+      "action": {
+        "primary": "particles drift and form patterns",
+        "secondary": "occasional coalescence into shapes",
+        "rhythm": "gentle, cosmic time scale",
+        "timing": "slow evolution over clip duration"
+      },
+      "visual_elements": {
+        "colors": "Deep black, white particles, hints of blue and gold",
+        "shapes": "Points, soft glows, occasional trails",
+        "textures": "Soft particle blur, bokeh-like",
+        "light": "Self-illuminating particles, subtle glow"
+      },
+      "style": {
+        "medium": "abstract",
+        "aesthetic": "Cosmic, James Turrell light art",
+        "color_grade": "Dark with bright accents, high contrast",
+        "mood": "Transcendent, vast, contemplative"
+      },
+      "audio": {
+        "sync_approach": "atmospheric",
+        "music": "Music: ambient space, drones, ethereal"
+      }
+    },
+    "texture_macro": {
+      "shot": {
+        "type": "macro texture",
+        "movement": "slow pan across surface",
+        "lens": "macro",
+        "speed": "slow, exploratory",
+        "focus": "shallow, focus pulls"
+      },
+      "subject": {
+        "type": "textures",
+        "description": "Extreme close-up of interesting surfaces",
+        "behavior": "Camera reveals texture details slowly"
+      },
+      "action": {
+        "primary": "camera slowly explores texture",
+        "secondary": "focus shifts to reveal layers",
+        "rhythm": "slow, deliberate",
+        "timing": "continuous slow movement"
+      },
+      "visual_elements": {
+        "colors": "Rust, copper, oxidized metals",
+        "shapes": "Organic patterns, erosion marks, crystalline",
+        "textures": "Rough, pitted, layered, geological",
+        "light": "Raking side light revealing texture"
+      },
+      "style": {
+        "medium": "photographic abstract",
+        "aesthetic": "Abstract photography, industrial beauty",
+        "color_grade": "Warm metallics, desaturated, gritty",
+        "mood": "Industrial, textural, abstract beauty"
+      },
+      "audio": {
+        "sync_approach": "atmospheric, minimal",
+        "sfx": "SFX: industrial drones, metallic resonance",
+        "music": "Music: industrial ambient, textural, dark"
+      }
+    },
+    "liquid_light": {
+      "shot": {
+        "type": "fluid composition",
+        "movement": "flowing, morphing",
+        "lens": "normal to wide",
+        "speed": "medium, rhythmic",
+        "focus": "everything in soft focus"
+      },
+      "subject": {
+        "type": "light and liquid",
+        "description": "Projections on liquid surfaces, oil on water",
+        "behavior": "Colors separate and merge, iridescent"
+      },
+      "action": {
+        "primary": "colors separate and reform on liquid surface",
+        "secondary": "ripples distort patterns",
+        "rhythm": "responsive to music dynamics",
+        "timing": "swells with music"
+      },
+      "visual_elements": {
+        "colors": "Rainbow spectrum, iridescent, oil slick colors",
+        "shapes": "Organic, constantly changing",
+        "textures": "Liquid, reflective, iridescent surface",
+        "light": "Projected light on liquid, refractions"
+      },
+      "style": {
+        "medium": "abstract",
+        "aesthetic": "Light art, psychedelic visuals",
+        "color_grade": "Saturated, rainbow spectrum, vivid",
+        "mood": "Psychedelic, mesmerizing, hypnotic"
+      },
+      "audio": {
+        "sync_approach": "flowing with dynamics",
+        "music": "Music: psychedelic, electronic, evolving"
+      }
+    }
+  },
+
+  "_techniques": {
+    "loop_preparation": {
+      "note": "Abstract visuals work well as seamless loops",
+      "method": "Use same image for first and last frame in Interpolation mode"
+    },
+    "beat_sync_tips": [
+      "Describe pulse/flash on beat in prompt",
+      "Use faster movements for higher BPM",
+      "Match color intensity changes to dynamics"
+    ],
+    "color_theory": [
+      "Complementary colors for energy",
+      "Analogous colors for harmony",
+      "High saturation for electronic music",
+      "Desaturated for ambient/drone"
+    ]
+  }
+}

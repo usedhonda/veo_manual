@@ -1,0 +1,185 @@
+{
+  "_template": "manga-panel-animation",
+  "_description": "Animate a single manga panel with cinematic motion and audio",
+  "_use_case": "Bring static manga illustrations to life with subtle animation",
+  "_workflow": "Image-to-Video mode with manga panel as first_frame",
+  "_note": "Veo 3.1 works better with 'cinematic anime' style than pure cel-shading",
+
+  "first_frame": {
+    "source": "[MANGA_PANEL_IMAGE]",
+    "description": "[DESCRIBE_PANEL_CONTENT]"
+  },
+  "shot": {
+    "type": "[static_with_parallax | slow_push | subtle_pan]",
+    "movement": "[minimal | breathing_room | dramatic_reveal]",
+    "speed": "slow",
+    "angle": "maintain original panel composition"
+  },
+  "subject": {
+    "characters": "[CHARACTERS_IN_PANEL]",
+    "action": "[SUBTLE_ANIMATION: breathing, hair sway, eye blink, cloth flutter]",
+    "expression_shift": "[MICRO_EXPRESSION_CHANGE_IF_ANY]"
+  },
+  "animation_layers": {
+    "foreground": "[ELEMENTS_TO_ANIMATE_MOST]",
+    "midground": "[CHARACTER_LAYER_ANIMATION]",
+    "background": "[STATIC_OR_PARALLAX]"
+  },
+  "effects": {
+    "speed_lines": "[activate | static | none]",
+    "impact_frames": "[flash | shake | none]",
+    "particles": "[dust | sparkle | emotion_effects | none]",
+    "screen_tone": "preserve manga aesthetic"
+  },
+  "style": {
+    "medium": "cinematic anime",
+    "preserve": "original manga art style and linework",
+    "enhancement": "[subtle_shading | depth_of_field | atmospheric]",
+    "avoid": "3D look, over-smoothing, losing linework"
+  },
+  "audio": {
+    "dialogue": "[CHARACTER_SPEECH_IN_QUOTES]",
+    "sfx": "SFX: [SOUND_EFFECTS_MATCHING_ACTION]",
+    "ambience": "Ambience: [SCENE_ATMOSPHERE]",
+    "music": "Music: [MOOD_APPROPRIATE_BGM]"
+  },
+  "negative": {
+    "exclude": [
+      "3D render",
+      "smooth shading",
+      "lost linework",
+      "morphing",
+      "melting",
+      "realistic",
+      "photorealistic",
+      "over-animated"
+    ]
+  },
+  "meta": {
+    "duration": 5,
+    "resolution": "1080p",
+    "aspect_ratio": "[MATCH_PANEL_RATIO]"
+  },
+
+  "_examples": {
+    "action_panel": {
+      "first_frame": {
+        "source": "gcs_uri",
+        "description": "Manga panel: Samurai mid-slash, speed lines radiating from blade"
+      },
+      "shot": {
+        "type": "static_with_parallax",
+        "movement": "minimal - let speed lines do the work",
+        "speed": "slow",
+        "angle": "maintain dramatic low angle"
+      },
+      "subject": {
+        "characters": "Samurai warrior in traditional hakama",
+        "action": "Hair flows from motion, cloth ripples, blade gleams",
+        "expression_shift": "Eyes narrow with focus"
+      },
+      "animation_layers": {
+        "foreground": "Speed lines animate outward",
+        "midground": "Character hair and cloth subtle motion",
+        "background": "Static with slight parallax depth"
+      },
+      "effects": {
+        "speed_lines": "activate - animate radially",
+        "impact_frames": "flash at peak moment",
+        "particles": "dust particles from ground",
+        "screen_tone": "preserve"
+      },
+      "style": {
+        "medium": "cinematic anime",
+        "preserve": "bold ink lines, dramatic contrast",
+        "enhancement": "subtle depth, atmospheric haze",
+        "avoid": "3D look, smoothing linework"
+      },
+      "audio": {
+        "sfx": "SFX: sword whoosh, fabric snap, impact slice",
+        "ambience": "Ambience: tense silence, wind",
+        "music": "Music: taiko drum hit on impact"
+      }
+    },
+    "emotional_panel": {
+      "first_frame": {
+        "source": "gcs_uri",
+        "description": "Manga panel: Close-up of character with tears, screentone shadows"
+      },
+      "shot": {
+        "type": "slow_push",
+        "movement": "very subtle push toward eyes",
+        "speed": "very slow",
+        "angle": "maintain intimate close-up"
+      },
+      "subject": {
+        "characters": "Young woman, detailed eyes, tears forming",
+        "action": "Tear slowly rolls down cheek, slight lip tremble",
+        "expression_shift": "Eyes glisten, brow furrows slightly"
+      },
+      "animation_layers": {
+        "foreground": "Tear animation",
+        "midground": "Face micro-expressions",
+        "background": "Static screentone"
+      },
+      "effects": {
+        "speed_lines": "none",
+        "impact_frames": "none",
+        "particles": "subtle sparkle in tears",
+        "screen_tone": "preserve as static texture"
+      },
+      "style": {
+        "medium": "cinematic anime",
+        "preserve": "delicate linework, screentone patterns",
+        "enhancement": "soft focus edges, emotional lighting",
+        "avoid": "over-animation, losing subtlety"
+      },
+      "audio": {
+        "dialogue": "Character whispers: \"I can't forget...\"",
+        "sfx": "SFX: soft sob, tear drop",
+        "ambience": "Ambience: quiet room, distant rain",
+        "music": "Music: melancholic piano, sparse"
+      }
+    },
+    "dialogue_panel": {
+      "first_frame": {
+        "source": "gcs_uri",
+        "description": "Manga panel: Two characters facing each other, speech bubbles"
+      },
+      "shot": {
+        "type": "static_with_parallax",
+        "movement": "minimal breathing room",
+        "speed": "slow",
+        "angle": "maintain conversational framing"
+      },
+      "subject": {
+        "characters": "Character A (speaker), Character B (listener)",
+        "action": "A speaks with gestures, B reacts with expressions",
+        "expression_shift": "Natural conversation dynamics"
+      },
+      "animation_layers": {
+        "foreground": "Speech bubble fade-in optional",
+        "midground": "Character lip-sync and expressions",
+        "background": "Static with subtle parallax"
+      },
+      "effects": {
+        "speed_lines": "none",
+        "impact_frames": "none",
+        "particles": "none",
+        "screen_tone": "preserve"
+      },
+      "style": {
+        "medium": "cinematic anime",
+        "preserve": "character designs, panel composition",
+        "enhancement": "natural animation timing",
+        "avoid": "exaggerated movements, breaking character"
+      },
+      "audio": {
+        "dialogue": "Character A says: \"We need to talk about what happened.\" Character B responds: \"I know.\"",
+        "sfx": "SFX: ambient room tone",
+        "ambience": "Ambience: indoor space, clock ticking",
+        "music": "Music: subtle tension underscore"
+      }
+    }
+  }
+}

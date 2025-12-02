@@ -1,0 +1,179 @@
+{
+  "_template": "scene-background",
+  "_description": "Generate environment/background images for Veo 3.1 scenes",
+  "_usage": "Fill in placeholders for your specific scene needs",
+
+  "subject": {
+    "identity": "[SCENE_TYPE] - [BRIEF_DESCRIPTION]",
+    "appearance": {
+      "clothing": "N/A",
+      "features": "[ENVIRONMENT_ELEMENTS: architecture, nature, objects]",
+      "age": "N/A",
+      "accessories": "N/A"
+    },
+    "expression": "N/A",
+    "pose": "N/A"
+  },
+  "composition": {
+    "framing": "[wide_shot | establishing_shot | medium_environment]",
+    "angle": "[eye_level | low_angle | high_angle | bird_eye]",
+    "subject_position": "N/A",
+    "negative_space": "[WHERE_CHARACTERS_WILL_BE_PLACED]"
+  },
+  "background": {
+    "type": "environment",
+    "description": "[DETAILED_ENVIRONMENT_DESCRIPTION]",
+    "blur": "[none | slight_at_distance | depth_appropriate]"
+  },
+  "lighting": {
+    "type": "[natural | artificial | mixed | dramatic]",
+    "direction": "[LIGHT_SOURCE_DIRECTION]",
+    "quality": "[soft | hard | atmospheric]",
+    "color_temperature": "[warm | neutral | cool | mixed]",
+    "special": "[ATMOSPHERIC_EFFECTS: fog, rays, reflections]"
+  },
+  "style": {
+    "medium": "[photorealistic | stylized | anime_background]",
+    "aesthetic": "[VISUAL_STYLE_DESCRIPTION]",
+    "color_palette": "[DOMINANT_COLORS]",
+    "mood": "[EMOTIONAL_ATMOSPHERE]"
+  },
+  "technical": {
+    "resolution": "1080p",
+    "aspect_ratio": "16:9",
+    "camera_reference": "[LENS_TYPE_FOR_PERSPECTIVE]",
+    "post_processing": "[COLOR_GRADE_AND_EFFECTS]"
+  },
+  "veo_optimization": {
+    "intended_use": "first_frame",
+    "planned_motion": "[CAMERA_OR_SUBJECT_MOVEMENT_PLANNED]",
+    "consistency_anchors": ["lighting direction", "color scheme", "key landmarks"]
+  },
+
+  "_examples": {
+    "cyberpunk_street": {
+      "subject": {
+        "identity": "Urban cyberpunk alleyway - Night scene",
+        "features": "Narrow street between towering buildings, neon signs (Japanese and English text), wet pavement, steam vents, holographic advertisements, exposed pipes and cables"
+      },
+      "composition": {
+        "framing": "wide_shot",
+        "angle": "eye_level",
+        "negative_space": "Center-left clear for character walking"
+      },
+      "background": {
+        "description": "Towering megastructures fade into smog, neon signs reading 'RAMEN' and 'BAR', puddles reflecting colorful lights, steam rising from street-level vents",
+        "blur": "slight at distant buildings"
+      },
+      "lighting": {
+        "type": "neon",
+        "direction": "multiple sources from signs",
+        "quality": "atmospheric",
+        "color_temperature": "mixed - cool base with warm neon accents",
+        "special": "Volumetric fog, neon reflections on wet surfaces, light rays through steam"
+      },
+      "style": {
+        "aesthetic": "Blade Runner inspired neo-noir",
+        "color_palette": "Teal shadows, magenta and orange neon, dark blue base",
+        "mood": "Mysterious, atmospheric, technologically overwhelming"
+      },
+      "veo_optimization": {
+        "planned_motion": "Character enters from right, walks toward camera, camera follows",
+        "consistency_anchors": ["neon color scheme", "wet reflections", "steam density"]
+      }
+    },
+    "fantasy_forest": {
+      "subject": {
+        "identity": "Enchanted forest clearing - Magical twilight",
+        "features": "Ancient massive trees with glowing moss, floating particles of light, mystical flowers, crystal formations, small stream"
+      },
+      "composition": {
+        "framing": "wide_shot",
+        "angle": "slightly_low",
+        "negative_space": "Center clearing for character interaction"
+      },
+      "background": {
+        "description": "Towering ancient trees with twisted branches, bioluminescent moss on bark, firefly-like particles floating, moonlight filtering through canopy, distant mountains visible through trees",
+        "blur": "depth-appropriate atmospheric perspective"
+      },
+      "lighting": {
+        "type": "magical",
+        "direction": "moonlight from above-right",
+        "quality": "soft with point sources",
+        "color_temperature": "cool moonlight with warm bioluminescence",
+        "special": "God rays through trees, glowing particles, soft bloom on light sources"
+      },
+      "style": {
+        "aesthetic": "High fantasy, Studio Ghibli inspired",
+        "color_palette": "Deep greens, soft blues, warm amber glows, silver moonlight",
+        "mood": "Mystical, serene, ancient wonder"
+      },
+      "veo_optimization": {
+        "planned_motion": "Slow pan through forest, particles drift, character emerges",
+        "consistency_anchors": ["bioluminescent colors", "particle density", "moonlight direction"]
+      }
+    },
+    "modern_office": {
+      "subject": {
+        "identity": "Corporate office interior - Contemporary workspace",
+        "features": "Open floor plan, glass partitions, modern furniture, large windows with city view, ambient lighting"
+      },
+      "composition": {
+        "framing": "medium_environment",
+        "angle": "eye_level",
+        "negative_space": "Foreground desk area for subject placement"
+      },
+      "background": {
+        "description": "Sleek minimalist office with white and gray tones, floor-to-ceiling windows showing city skyline, potted plants, modern art on walls, ergonomic furniture",
+        "blur": "slight on distant elements"
+      },
+      "lighting": {
+        "type": "mixed",
+        "direction": "large windows on right",
+        "quality": "soft natural with accent artificial",
+        "color_temperature": "neutral daylight",
+        "special": "Window light creating soft shadows, subtle monitor glow"
+      },
+      "style": {
+        "aesthetic": "Modern corporate, tech company aesthetic",
+        "color_palette": "White, light gray, wood accents, green plants",
+        "mood": "Professional, innovative, clean"
+      },
+      "veo_optimization": {
+        "planned_motion": "Character walks to desk, sits down, begins working",
+        "consistency_anchors": ["window light direction", "furniture positions", "city skyline"]
+      }
+    },
+    "concert_stage": {
+      "subject": {
+        "identity": "Concert stage setup - Live performance venue",
+        "features": "Main stage platform, professional lighting rig, LED screens, speaker stacks, empty crowd area"
+      },
+      "composition": {
+        "framing": "wide_shot",
+        "angle": "slightly_low",
+        "negative_space": "Center stage for performer"
+      },
+      "background": {
+        "description": "Large concert stage with metal truss structure, moving head lights, LED wall displaying abstract visuals, fog machine haze, crowd barriers visible",
+        "blur": "none - full venue visible"
+      },
+      "lighting": {
+        "type": "dramatic",
+        "direction": "overhead and side spots",
+        "quality": "hard with atmospheric haze",
+        "color_temperature": "mixed theatrical colors",
+        "special": "Volumetric light beams through haze, LED screen glow, laser effects"
+      },
+      "style": {
+        "aesthetic": "Professional concert production",
+        "color_palette": "Deep purples, electric blues, hot pinks, stark whites",
+        "mood": "Energetic, anticipation, professional"
+      },
+      "veo_optimization": {
+        "planned_motion": "Performer enters, lights sweep, crowd reveals",
+        "consistency_anchors": ["lighting rig position", "LED screen content style", "haze density"]
+      }
+    }
+  }
+}

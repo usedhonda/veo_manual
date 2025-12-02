@@ -1,0 +1,223 @@
+{
+  "_template": "commercial-product-hero",
+  "_description": "Premium product hero shots for advertising",
+  "_use_case": "Product commercials, ads, brand videos",
+  "_workflow": "Phase 1 (Nano Banana) → Phase 2 (Veo 3.1)",
+
+  "_full_workflow": {
+    "phase1_image": {
+      "tool": "Nano Banana Pro / Gemini 2.5 Flash Image",
+      "purpose": "Generate product hero image as first frame",
+      "template": "phase1-nano-banana/templates/product-shot.json"
+    },
+    "phase2_video": {
+      "tool": "Veo 3.1",
+      "mode": "Image-to-Video",
+      "purpose": "Animate product image into commercial video"
+    }
+  },
+
+  "shot": {
+    "type": "close-up hero",
+    "movement": "slow orbit",
+    "lens": "macro to 50mm",
+    "speed": "slow",
+    "focus": "shallow with product sharp"
+  },
+  "subject": {
+    "identity": "[PRODUCT_NAME] - [PRODUCT_TYPE]",
+    "appearance": {
+      "material": "[PRODUCT_MATERIALS: metal, glass, plastic, leather]",
+      "finish": "[SURFACE_FINISH: matte, glossy, brushed, textured]",
+      "colors": "[BRAND_COLORS]",
+      "details": "[KEY_FEATURES_TO_HIGHLIGHT]"
+    },
+    "position": "center frame, hero placement"
+  },
+  "action": {
+    "primary": "[rotates | reveals | light_sweep]",
+    "secondary": "[SUPPORTING_MOTION: lid opens, LED illuminates]",
+    "direction": "[ROTATION_DIRECTION]",
+    "timing": "[MOTION_BREAKDOWN]"
+  },
+  "scene": {
+    "background": "[studio | gradient | contextual_lifestyle]",
+    "surface": "[reflective | matte | textured]",
+    "atmosphere": "Premium, aspirational"
+  },
+  "lighting": {
+    "type": "studio",
+    "setup": "[rim | three-point | dramatic_side]",
+    "quality": "[hard_for_tech | soft_for_beauty]",
+    "special": "[light_sweep | reflections | caustics]"
+  },
+  "style": {
+    "medium": "photorealistic",
+    "aesthetic": "[premium | luxury | tech | lifestyle]",
+    "color_grade": "[BRAND_APPROPRIATE_GRADE]",
+    "mood": "[sophisticated | exciting | trustworthy | innovative]"
+  },
+  "audio": {
+    "sfx": "SFX: [product_appropriate_sounds]",
+    "music": "Music: [brand_appropriate_soundtrack]"
+  },
+  "negative": {
+    "exclude": [
+      "blur",
+      "distortion",
+      "fingerprints",
+      "dust",
+      "scratches",
+      "logo",
+      "text",
+      "cheap looking",
+      "plastic looking"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "tech_headphones": {
+      "shot": {
+        "type": "close-up hero",
+        "movement": "slow 180-degree orbit",
+        "lens": "50mm",
+        "speed": "slow",
+        "focus": "shallow, product razor sharp"
+      },
+      "subject": {
+        "identity": "ProSound X1 Premium Wireless Headphones",
+        "appearance": {
+          "material": "Aluminum frame, leather cushions, matte plastic accents",
+          "finish": "Brushed aluminum, soft-touch leather",
+          "colors": "Midnight black with rose gold accents",
+          "details": "LED indicator, touch-sensitive earcup, premium stitching"
+        },
+        "position": "center, slightly elevated"
+      },
+      "action": {
+        "primary": "slow orbit revealing all angles",
+        "secondary": "light sweeps across aluminum highlighting contours",
+        "direction": "clockwise orbit",
+        "timing": "continuous smooth rotation over 8 seconds"
+      },
+      "scene": {
+        "background": "gradient from charcoal to deep black",
+        "surface": "reflective black glass",
+        "atmosphere": "Premium tech showroom"
+      },
+      "lighting": {
+        "type": "studio",
+        "setup": "rim lighting with accent",
+        "quality": "hard edges, crisp highlights",
+        "special": "moving light sweep following rotation"
+      },
+      "style": {
+        "medium": "photorealistic",
+        "aesthetic": "premium tech minimalism",
+        "color_grade": "high contrast, deep blacks, crisp highlights",
+        "mood": "sophisticated, cutting-edge, desirable"
+      },
+      "audio": {
+        "sfx": "SFX: subtle whoosh, satisfying material sounds",
+        "music": "Music: modern electronic, minimal pulse, premium feel"
+      }
+    },
+    "luxury_watch": {
+      "shot": {
+        "type": "extreme close-up",
+        "movement": "static with subtle light animation",
+        "lens": "macro",
+        "speed": "very slow",
+        "focus": "deep focus on dial"
+      },
+      "subject": {
+        "identity": "Heritage Chronograph - Luxury Timepiece",
+        "appearance": {
+          "material": "Stainless steel, sapphire crystal, leather strap",
+          "finish": "Polished steel, brushed bezel",
+          "colors": "Silver, navy dial, brown leather",
+          "details": "Chronograph subdials, date window, exhibition caseback"
+        },
+        "position": "filling frame, dial prominent"
+      },
+      "action": {
+        "primary": "second hand moves smoothly",
+        "secondary": "light subtly shifts across dial face",
+        "direction": "clockwise (second hand)",
+        "timing": "continuous subtle animation"
+      },
+      "scene": {
+        "background": "dark velvet or leather",
+        "surface": "polished wood or leather",
+        "atmosphere": "Heritage, craftsmanship"
+      },
+      "lighting": {
+        "type": "dramatic",
+        "setup": "single key light from side",
+        "quality": "hard, creating defined shadows",
+        "special": "light crawl across dial revealing details"
+      },
+      "style": {
+        "medium": "photorealistic",
+        "aesthetic": "luxury timepiece advertising",
+        "color_grade": "rich, warm highlights, deep shadows",
+        "mood": "prestigious, timeless, crafted"
+      },
+      "audio": {
+        "sfx": "SFX: precise mechanical ticking, movement sounds",
+        "music": "Music: minimal orchestral, single cello held note"
+      }
+    },
+    "beauty_serum": {
+      "shot": {
+        "type": "medium product",
+        "movement": "slow dolly in to close-up",
+        "lens": "85mm",
+        "speed": "slow",
+        "focus": "shallow, beautiful bokeh"
+      },
+      "subject": {
+        "identity": "Luxe Renewal Serum - Premium Skincare",
+        "appearance": {
+          "material": "Frosted glass, gold accents",
+          "finish": "Frosted semi-transparent, metallic cap",
+          "colors": "Amber liquid, gold cap, clear-to-frosted glass",
+          "details": "Dropper mechanism, embossed logo, amber serum visible"
+        },
+        "position": "center, natural setting"
+      },
+      "action": {
+        "primary": "camera approaches slowly",
+        "secondary": "dropper lifts, single drop glistens",
+        "direction": "toward product",
+        "timing": "0-4s approach, 4-6s dropper lifts, 6-8s drop forms"
+      },
+      "scene": {
+        "background": "soft marble with dried botanicals",
+        "surface": "marble with gold accents",
+        "atmosphere": "Luxurious spa, natural luxury"
+      },
+      "lighting": {
+        "type": "natural soft",
+        "setup": "window light from side",
+        "quality": "soft, golden",
+        "special": "light passing through amber liquid"
+      },
+      "style": {
+        "medium": "photorealistic",
+        "aesthetic": "luxury beauty editorial",
+        "color_grade": "warm, soft, golden highlights",
+        "mood": "luxurious, natural, indulgent"
+      },
+      "audio": {
+        "sfx": "SFX: glass cap lifting, liquid drop forming",
+        "music": "Music: soft piano, spa-like, ethereal"
+      }
+    }
+  }
+}

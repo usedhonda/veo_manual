@@ -1,0 +1,217 @@
+{
+  "_template": "music-video-narrative",
+  "_description": "Story-driven music video scenes",
+  "_use_case": "Music videos with narrative elements, story scenes",
+  "_workflow": "Text-to-Video or Ingredients mode for character consistency",
+
+  "shot": {
+    "type": "[establishing | medium_scene | close-up_emotion | wide_context]",
+    "movement": "[cinematic_tracking | dolly | crane | handheld_intimate]",
+    "lens": "[24mm | 35mm | 50mm | anamorphic]",
+    "speed": "[slow_emotional | normal | fast_montage]",
+    "focus": "[FOCUS_STRATEGY]"
+  },
+  "subject": {
+    "character": "[STORY_CHARACTER_DESCRIPTION]",
+    "appearance": "[CHARACTER_STYLING]",
+    "expression": "[EMOTIONAL_STATE]",
+    "role": "[protagonist | love_interest | memory | symbol]"
+  },
+  "action": {
+    "primary": "[STORY_ACTION]",
+    "secondary": "[SUPPORTING_STORY_BEAT]",
+    "emotion_arc": "[EMOTIONAL_JOURNEY_IN_CLIP]",
+    "timing": "[NARRATIVE_TIMING]"
+  },
+  "scene": {
+    "location": "[STORY_SETTING]",
+    "time_of_day": "[MOOD_LIGHTING]",
+    "narrative_context": "[WHERE_IN_STORY]",
+    "atmosphere": "[EMOTIONAL_ENVIRONMENT]"
+  },
+  "style": {
+    "medium": "[live_action | stylized | mixed]",
+    "aesthetic": "[VISUAL_NARRATIVE_STYLE]",
+    "color_grade": "[STORY_MOOD_COLORS]",
+    "mood": "[NARRATIVE_EMOTIONAL_TONE]"
+  },
+  "audio": {
+    "dialogue": "[SONG_LYRICS_MATCHING_SCENE OR internal_moment]",
+    "sfx": "SFX: [story-appropriate sounds]",
+    "ambience": "Ambience: [location atmosphere]",
+    "music": "Music: [SONG_SECTION_MOOD]"
+  },
+  "negative": {
+    "exclude": [
+      "blur",
+      "distortion",
+      "morphing",
+      "breaking narrative",
+      "wrong mood",
+      "inconsistent character"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "heartbreak_memory": {
+      "shot": {
+        "type": "medium to close-up",
+        "movement": "slow handheld drift",
+        "lens": "50mm",
+        "speed": "slow, emotional",
+        "focus": "shallow, soft edges"
+      },
+      "subject": {
+        "character": "Young woman reliving memory",
+        "appearance": "Simple dress, natural look, slightly disheveled",
+        "expression": "Sad smile, nostalgic pain, tears forming",
+        "role": "protagonist remembering"
+      },
+      "action": {
+        "primary": "looking at photograph, memory taking over",
+        "secondary": "touches photo, looks away, tear falls",
+        "emotion_arc": "Nostalgia → sadness → acceptance",
+        "timing": "0-3s looking at photo, 3-6s memory wash, 6-8s tear"
+      },
+      "scene": {
+        "location": "Empty apartment, boxes packed, moving out",
+        "time_of_day": "blue hour, window light",
+        "narrative_context": "End of relationship, leaving shared space",
+        "atmosphere": "Melancholic, transitional, bittersweet"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "indie music video, intimate",
+        "color_grade": "desaturated, cool blues, warm memory flashes",
+        "mood": "Heartbreaking, beautiful sadness"
+      },
+      "audio": {
+        "dialogue": "Lyrics: 'We were golden once, now you're just a photograph...'",
+        "sfx": "SFX: distant traffic, photo paper sound",
+        "ambience": "Ambience: empty room echo, outside city",
+        "music": "Music: acoustic ballad, melancholic, building"
+      }
+    },
+    "reunion_moment": {
+      "shot": {
+        "type": "wide to close-up",
+        "movement": "dolly in as they recognize each other",
+        "lens": "35mm",
+        "speed": "slow motion on reunion",
+        "focus": "rack focus between characters"
+      },
+      "subject": {
+        "character": "Two people reuniting after long time",
+        "appearance": "Aged slightly from flashbacks, different styles now",
+        "expression": "Shock → recognition → joy",
+        "role": "reunited lovers/friends"
+      },
+      "action": {
+        "primary": "spotting each other across crowded space",
+        "secondary": "moving toward each other, embrace",
+        "emotion_arc": "Surprise → disbelief → overwhelming joy",
+        "timing": "0-3s spot each other, 3-6s approach, 6-8s embrace"
+      },
+      "scene": {
+        "location": "Train station, golden light streaming in",
+        "time_of_day": "golden hour, dramatic light",
+        "narrative_context": "Climax of separation storyline",
+        "atmosphere": "Hopeful, emotional, triumphant"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "cinematic romance",
+        "color_grade": "warm, golden, dreamy highlights",
+        "mood": "Uplifting, emotional, romantic"
+      },
+      "audio": {
+        "sfx": "SFX: train station ambience fades, focus on footsteps",
+        "ambience": "Ambience: crowds fade to silence",
+        "music": "Music: building strings, triumphant, emotional peak"
+      }
+    },
+    "escape_sequence": {
+      "shot": {
+        "type": "tracking wide",
+        "movement": "fast tracking alongside",
+        "lens": "24mm",
+        "speed": "fast, urgent",
+        "focus": "deep, environment important"
+      },
+      "subject": {
+        "character": "Person running from past/situation",
+        "appearance": "Disheveled, determined, mid-escape",
+        "expression": "Determined, scared but resolved",
+        "role": "protagonist breaking free"
+      },
+      "action": {
+        "primary": "running through environment",
+        "secondary": "looking back, pushing forward",
+        "emotion_arc": "Fear → determination → liberation",
+        "timing": "continuous running with emotional beats"
+      },
+      "scene": {
+        "location": "Urban environment, night",
+        "time_of_day": "night, streetlights",
+        "narrative_context": "Breaking point, leaving situation behind",
+        "atmosphere": "Urgent, liberating, chaotic"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "gritty music video, handheld energy",
+        "color_grade": "high contrast, neon accents, dark shadows",
+        "mood": "Intense, liberating, powerful"
+      },
+      "audio": {
+        "dialogue": "Lyrics: 'I won't let them hold me down, I'm breaking free tonight!'",
+        "sfx": "SFX: running footsteps, breath, city sounds",
+        "ambience": "Ambience: urban night, sirens distant",
+        "music": "Music: building electronic, intense, driving beat"
+      }
+    },
+    "love_story_beginning": {
+      "shot": {
+        "type": "medium two-shot",
+        "movement": "slow orbit around couple",
+        "lens": "50mm",
+        "speed": "slow, romantic",
+        "focus": "shallow, couple sharp, background bokeh"
+      },
+      "subject": {
+        "character": "Young couple meeting/first date",
+        "appearance": "Stylish but natural, first impression outfits",
+        "expression": "Nervous smiles, attraction, curiosity",
+        "role": "love interests meeting"
+      },
+      "action": {
+        "primary": "conversation, getting to know each other",
+        "secondary": "nervous gestures, shy laughs, eye contact",
+        "emotion_arc": "Nervous → comfortable → connection",
+        "timing": "natural conversation flow"
+      },
+      "scene": {
+        "location": "Cozy cafe, window seats",
+        "time_of_day": "afternoon, soft window light",
+        "narrative_context": "Beginning of love story",
+        "atmosphere": "Warm, hopeful, romantic potential"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "indie romance aesthetic",
+        "color_grade": "warm, soft, slightly vintage",
+        "mood": "Sweet, hopeful, innocent"
+      },
+      "audio": {
+        "dialogue": "Lyrics: 'The moment I saw you, I knew everything would change...'",
+        "sfx": "SFX: cafe ambience, coffee cups, soft laughter",
+        "ambience": "Ambience: cafe atmosphere, quiet chatter",
+        "music": "Music: gentle indie, acoustic, romantic"
+      }
+    }
+  }
+}

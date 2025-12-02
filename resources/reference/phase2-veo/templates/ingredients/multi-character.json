@@ -1,0 +1,358 @@
+{
+  "_template": "ingredients-multi-character",
+  "_description": "Generate video with multiple consistent characters using reference images",
+  "_mode": "Ingredients (Reference Images)",
+  "_usage": "Use up to 3 reference images to maintain multiple character consistency",
+
+  "_api_structure": {
+    "instances": [{
+      "prompt": "GENERATED_PROMPT_HERE",
+      "referenceImages": [
+        {
+          "image": { "gcsUri": "gs://bucket/character1.png", "mimeType": "image/png" },
+          "referenceType": "asset"
+        },
+        {
+          "image": { "gcsUri": "gs://bucket/character2.png", "mimeType": "image/png" },
+          "referenceType": "asset"
+        },
+        {
+          "image": { "gcsUri": "gs://bucket/character3.png", "mimeType": "image/png" },
+          "referenceType": "asset"
+        }
+      ]
+    }],
+    "parameters": {
+      "aspectRatio": "16:9",
+      "durationSeconds": 8
+    }
+  },
+
+  "_constraints": {
+    "max_reference_images": 3,
+    "reference_type": "asset",
+    "important": "Each reference image should show ONE distinct character/object for best results"
+  },
+
+  "reference_images": [
+    {
+      "source": "[base64 | gcs_uri]",
+      "role": "asset",
+      "label": "Character A",
+      "description": "[CHARACTER_A_VISUAL_DESCRIPTION]"
+    },
+    {
+      "source": "[base64 | gcs_uri]",
+      "role": "asset",
+      "label": "Character B",
+      "description": "[CHARACTER_B_VISUAL_DESCRIPTION]"
+    },
+    {
+      "source": "[base64 | gcs_uri]",
+      "role": "asset",
+      "label": "Character C (optional)",
+      "description": "[CHARACTER_C_VISUAL_DESCRIPTION]"
+    }
+  ],
+  "shot": {
+    "type": "[wide | medium - to fit multiple characters]",
+    "movement": "[static | tracking | slow pan]",
+    "lens": "[24mm | 35mm - wider for multiple subjects]",
+    "speed": "[slow | normal]"
+  },
+  "subjects": {
+    "character_a": {
+      "reference": "Character A from reference image 1",
+      "appearance": "[KEY_VISUAL_TRAITS]",
+      "position": "[left | center-left]",
+      "action": "[WHAT_CHARACTER_A_DOES]"
+    },
+    "character_b": {
+      "reference": "Character B from reference image 2",
+      "appearance": "[KEY_VISUAL_TRAITS]",
+      "position": "[right | center-right]",
+      "action": "[WHAT_CHARACTER_B_DOES]"
+    },
+    "character_c": {
+      "reference": "Character C from reference image 3 (if used)",
+      "appearance": "[KEY_VISUAL_TRAITS]",
+      "position": "[background | center]",
+      "action": "[WHAT_CHARACTER_C_DOES]"
+    }
+  },
+  "interaction": {
+    "type": "[dialogue | action | reaction | parallel_activity]",
+    "description": "[HOW_CHARACTERS_INTERACT]",
+    "timing": "[INTERACTION_TIMING]"
+  },
+  "scene": {
+    "location": "[SHARED_ENVIRONMENT]",
+    "time_of_day": "[LIGHTING_TIME]",
+    "atmosphere": "[MOOD]"
+  },
+  "style": {
+    "medium": "[MUST_MATCH_ALL_CHARACTERS]",
+    "consistency": "All characters must match their reference images",
+    "color_grade": "[UNIFIED_COLOR_PALETTE]"
+  },
+  "audio": {
+    "dialogue_a": "[Character A says: \"Line\"]",
+    "dialogue_b": "[Character B says: \"Line\"]",
+    "sfx": "[SFX: sounds]",
+    "ambience": "[Ambience: environment]",
+    "music": "[Music: OR 'NO music']"
+  },
+  "negative": {
+    "exclude": [
+      "off-model",
+      "character confusion",
+      "mixed features",
+      "wrong clothing",
+      "morphing",
+      "blur",
+      "distortion"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "anime_duo_conversation": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "label": "Protagonist",
+          "description": "Anime boy: spiky black hair, blue jacket, determined expression"
+        },
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "label": "Rival",
+          "description": "Anime boy: silver hair, red coat, smirking expression"
+        }
+      ],
+      "shot": {
+        "type": "medium two-shot",
+        "movement": "static with subtle drift",
+        "lens": "35mm",
+        "speed": "normal"
+      },
+      "subjects": {
+        "character_a": {
+          "reference": "Protagonist from reference image 1",
+          "appearance": "Spiky black hair, blue jacket",
+          "position": "left side of frame",
+          "action": "Speaking intensely, fists clenched"
+        },
+        "character_b": {
+          "reference": "Rival from reference image 2",
+          "appearance": "Silver hair, red coat",
+          "position": "right side of frame",
+          "action": "Smirking, arms crossed, listening"
+        }
+      },
+      "interaction": {
+        "type": "confrontational dialogue",
+        "description": "Protagonist challenges rival, rival responds dismissively",
+        "timing": "0-4s protagonist speaks, 4-8s rival responds"
+      },
+      "scene": {
+        "location": "School rooftop at sunset",
+        "time_of_day": "golden_hour",
+        "atmosphere": "Tense, dramatic rivalry"
+      },
+      "style": {
+        "medium": "anime",
+        "consistency": "Both characters must match their reference designs exactly",
+        "color_grade": "Vibrant anime colors, dramatic sunset backlighting"
+      },
+      "audio": {
+        "dialogue_a": "Protagonist shouts: \"I won't let you get away with this!\"",
+        "dialogue_b": "Rival says coolly: \"You really think you can stop me?\"",
+        "sfx": "SFX: wind blowing, dramatic whoosh",
+        "ambience": "Ambience: rooftop wind, distant city",
+        "music": "Music: tense anime score, building strings"
+      },
+      "negative": {
+        "exclude": ["off-model", "wrong hair colors", "swapped clothing", "realistic", "morphing"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "commercial_trio": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "label": "Professional Woman",
+          "description": "Business woman: blonde hair in bun, navy blazer, pearl necklace"
+        },
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "label": "Tech Guy",
+          "description": "Young man: glasses, casual hoodie, beard, laptop"
+        },
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "label": "Creative Director",
+          "description": "Older man: gray hair, turtleneck, holding tablet"
+        }
+      ],
+      "shot": {
+        "type": "medium wide group shot",
+        "movement": "slow dolly_in",
+        "lens": "35mm",
+        "speed": "slow"
+      },
+      "subjects": {
+        "character_a": {
+          "reference": "Professional Woman from reference image 1",
+          "appearance": "Blonde bun, navy blazer, pearls",
+          "position": "center, slightly forward",
+          "action": "Presenting, gesturing to screen"
+        },
+        "character_b": {
+          "reference": "Tech Guy from reference image 2",
+          "appearance": "Glasses, hoodie, beard",
+          "position": "left, seated at laptop",
+          "action": "Typing, nodding in agreement"
+        },
+        "character_c": {
+          "reference": "Creative Director from reference image 3",
+          "appearance": "Gray hair, turtleneck, tablet",
+          "position": "right, standing",
+          "action": "Watching presentation, taking notes on tablet"
+        }
+      },
+      "interaction": {
+        "type": "collaborative meeting",
+        "description": "Team reviewing project together, positive energy",
+        "timing": "continuous collaborative activity"
+      },
+      "scene": {
+        "location": "Modern glass-walled meeting room",
+        "time_of_day": "afternoon",
+        "atmosphere": "Professional, innovative, collaborative"
+      },
+      "style": {
+        "medium": "live_action",
+        "consistency": "All three must match their references exactly",
+        "color_grade": "Clean corporate look, bright and modern"
+      },
+      "audio": {
+        "dialogue_a": "Woman says: \"With this approach, we can launch by Q2.\"",
+        "sfx": "SFX: keyboard typing, tablet tap",
+        "ambience": "Ambience: modern office, quiet air conditioning",
+        "music": "Music: corporate upbeat, inspiring, light"
+      },
+      "negative": {
+        "exclude": ["off-model", "wrong clothing", "character mix-up", "morphing", "blur"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "character_and_vehicle": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "label": "Driver",
+          "description": "Man in leather jacket, sunglasses, stubble"
+        },
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "label": "Car",
+          "description": "Red vintage sports car, chrome details"
+        }
+      ],
+      "shot": {
+        "type": "wide tracking",
+        "movement": "tracking alongside",
+        "lens": "24mm",
+        "speed": "fast"
+      },
+      "subjects": {
+        "character_a": {
+          "reference": "Driver from reference image 1",
+          "appearance": "Leather jacket, sunglasses, stubble",
+          "position": "inside car, driver seat",
+          "action": "Driving confidently, slight smile"
+        },
+        "character_b": {
+          "reference": "Car from reference image 2",
+          "appearance": "Red vintage sports car, chrome details",
+          "position": "center frame, moving left to right",
+          "action": "Speeding along coastal highway"
+        }
+      },
+      "interaction": {
+        "type": "man and machine unity",
+        "description": "Driver in complete control of powerful vehicle",
+        "timing": "continuous driving action"
+      },
+      "scene": {
+        "location": "Coastal highway, ocean on one side, cliffs on other",
+        "time_of_day": "golden_hour",
+        "atmosphere": "Freedom, power, adventure"
+      },
+      "style": {
+        "medium": "live_action",
+        "consistency": "Driver and car must match references exactly",
+        "color_grade": "Warm, saturated, cinematic"
+      },
+      "audio": {
+        "sfx": "SFX: powerful engine roar, wind rushing, tires on road",
+        "ambience": "Ambience: coastal wind, distant waves",
+        "music": "Music: classic rock, driving beat, guitar riff"
+      },
+      "negative": {
+        "exclude": ["wrong car color", "different driver", "morphing", "blur", "modern car"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    }
+  },
+
+  "_best_practices": {
+    "reference_preparation": [
+      "One character per reference image for clarity",
+      "Similar visual style across all references (all anime or all photorealistic)",
+      "Clear, uncluttered reference images",
+      "Distinct visual differences between characters"
+    ],
+    "prompt_writing": [
+      "Clearly label each character (A, B, C) in prompt",
+      "Specify position for each character",
+      "Re-state key identifying features for each",
+      "Describe interactions clearly"
+    ],
+    "avoiding_confusion": [
+      "Make characters visually distinct (hair color, clothing)",
+      "Don't swap positions mid-clip",
+      "Add 'no character confusion' to negatives",
+      "Keep interactions simple and clear"
+    ],
+    "limitations": [
+      "Maximum 3 reference images",
+      "Complex interactions may cause artifacts",
+      "Similar-looking characters may get confused",
+      "Static or slow scenes work better than fast action"
+    ]
+  }
+}

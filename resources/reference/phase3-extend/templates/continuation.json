@@ -1,0 +1,276 @@
+{
+  "_template": "video-continuation",
+  "_description": "Template for extending Veo-generated videos",
+  "_mode": "Video Extension",
+  "_usage": "Extend existing Veo videos with seamless continuations",
+
+  "_api_structure": {
+    "instances": [{
+      "prompt": "CONTINUATION_PROMPT_HERE",
+      "video": {
+        "gcsUri": "gs://bucket/path/source-video.mp4",
+        "mimeType": "video/mp4"
+      }
+    }],
+    "parameters": {
+      "aspectRatio": "16:9",
+      "durationSeconds": 8,
+      "resolution": "720p"
+    }
+  },
+
+  "_constraints": {
+    "resolution": "720p only (extension limitation)",
+    "max_input_duration": "141 seconds",
+    "source_requirement": "Must be Veo-generated video",
+    "aspect_ratio": "Must match source video"
+  },
+
+  "source_video": {
+    "uri": "[gs://bucket/path/source.mp4 OR base64]",
+    "description": "[WHAT_HAPPENS_IN_SOURCE_VIDEO]",
+    "end_state": {
+      "subject": "[SUBJECT_POSITION_AND_STATE_AT_END]",
+      "camera": "[CAMERA_POSITION_AND_MOVEMENT_AT_END]",
+      "action": "[ACTION_IN_PROGRESS_AT_END]"
+    }
+  },
+  "continuation": {
+    "type": "[direct | completion | new_beat | camera_continuation]",
+    "action": "[WHAT_HAPPENS_IN_EXTENSION]",
+    "direction": "[MOVEMENT_CONTINUATION_OR_CHANGE]",
+    "timing": "[ACTION_TIMING: 0-2s, 2-5s, 5-8s]"
+  },
+  "consistency": {
+    "subject": "[RE-STATE_KEY_APPEARANCE_DETAILS]",
+    "scene": "[ENVIRONMENT_DETAILS_TO_MAINTAIN]",
+    "lighting": "[LIGHTING_CONDITIONS]",
+    "camera": "[CAMERA_STYLE_TO_MATCH]",
+    "color": "[COLOR_GRADE_TO_MAINTAIN]"
+  },
+  "audio": {
+    "dialogue": "[CONTINUED_OR_NEW_DIALOGUE]",
+    "sfx": "[SFX: continuation sounds]",
+    "ambience": "[Ambience: consistent with source]",
+    "music": "[Music: continue OR new direction]"
+  },
+  "negative": {
+    "exclude": [
+      "discontinuity",
+      "jump cut",
+      "character change",
+      "costume change",
+      "lighting shift",
+      "style change",
+      "position jump"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "720p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "walking_continuation": {
+      "source_video": {
+        "uri": "gs://bucket/walking-scene.mp4",
+        "description": "Man in trench coat walking down rainy city street at night",
+        "end_state": {
+          "subject": "Mid-stride, facing right, passing neon-lit shop",
+          "camera": "Tracking shot from left side, eye level",
+          "action": "Walking at steady pace"
+        }
+      },
+      "continuation": {
+        "type": "direct",
+        "action": "Continues walking, passes two more storefronts, then slows",
+        "direction": "Same direction (right), slight curve ahead",
+        "timing": "0-5s continued walk, 5-8s begins to slow and look around"
+      },
+      "consistency": {
+        "subject": "Same trench coat, same gait, same body language",
+        "scene": "Same rainy urban street, neon lighting, wet pavement",
+        "lighting": "Neon reflections on wet ground, blue and pink tones",
+        "camera": "Continue side tracking shot, same height and distance",
+        "color": "Same noir color grade, teal and orange accents"
+      },
+      "audio": {
+        "sfx": "SFX: footsteps on wet pavement continue, rain pattering",
+        "ambience": "Ambience: city night, distant traffic, neon hum",
+        "music": "Music: continue same jazz undertone, slightly building tension"
+      },
+      "negative": {
+        "exclude": ["different coat", "dry pavement", "daylight", "different person", "jump"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "720p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "dialogue_completion": {
+      "source_video": {
+        "uri": "gs://bucket/dialogue-scene.mp4",
+        "description": "Business woman presenting to camera, professional setting",
+        "end_state": {
+          "subject": "Mid-sentence, hands gesturing, engaged expression",
+          "camera": "Medium shot, static, eye level",
+          "action": "Speaking about quarterly results"
+        }
+      },
+      "continuation": {
+        "type": "completion",
+        "action": "Completes statement, transitions to new point, concludes",
+        "direction": "Toward camera (continuing address)",
+        "timing": "0-3s completes thought, 3-6s new point, 6-8s conclusion gesture"
+      },
+      "consistency": {
+        "subject": "Same navy suit, same hairstyle, same posture range",
+        "scene": "Same office background, same desk setup visible",
+        "lighting": "Same soft office lighting from right",
+        "camera": "Same static medium shot, same framing",
+        "color": "Same clean corporate color grade"
+      },
+      "audio": {
+        "dialogue": "She continues: '...and looking ahead, our Q1 projections show even stronger growth. Thank you for your attention.'",
+        "sfx": "SFX: papers settling as she finishes",
+        "ambience": "Ambience: quiet office, air conditioning",
+        "music": "NO music"
+      },
+      "negative": {
+        "exclude": ["different suit", "different background", "expression break", "audio mismatch"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "720p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "action_new_beat": {
+      "source_video": {
+        "uri": "gs://bucket/action-scene.mp4",
+        "description": "Runner sprinting through park, approaching bench",
+        "end_state": {
+          "subject": "Full sprint, arms pumping, approaching park bench",
+          "camera": "Tracking alongside, wide shot",
+          "action": "Running at high speed"
+        }
+      },
+      "continuation": {
+        "type": "new_beat",
+        "action": "Leaps over bench, lands, pivots, faces back direction",
+        "direction": "Jump forward, then turn back toward camera",
+        "timing": "0-2s leap preparation, 2-4s jump over bench, 4-6s landing, 6-8s pivot and face camera"
+      },
+      "consistency": {
+        "subject": "Same running gear, same build, same energy level",
+        "scene": "Same park setting, same bench style, same trees",
+        "lighting": "Same golden hour lighting, same shadow direction",
+        "camera": "Continue tracking, adjust for action choreography",
+        "color": "Same warm outdoor color grade"
+      },
+      "audio": {
+        "sfx": "SFX: footsteps intensify, whoosh of jump, landing impact, pivot squeak",
+        "ambience": "Ambience: park atmosphere, birds, distant activity",
+        "music": "Music: energetic beat continues, builds during jump"
+      },
+      "negative": {
+        "exclude": ["different clothes", "different park", "trip or fall", "speed inconsistency"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "720p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "product_camera_continuation": {
+      "source_video": {
+        "uri": "gs://bucket/product-orbit.mp4",
+        "description": "Camera orbiting premium headphones on display",
+        "end_state": {
+          "subject": "Headphones at 90-degree angle from start",
+          "camera": "Mid-orbit, moving clockwise",
+          "action": "Smooth orbit motion"
+        }
+      },
+      "continuation": {
+        "type": "camera_continuation",
+        "action": "Orbit continues, reveals back and opposite side, completes 360",
+        "direction": "Continue clockwise orbit",
+        "timing": "0-8s completes remaining 270 degrees of orbit"
+      },
+      "consistency": {
+        "subject": "Same headphones, exact same position, same reflections",
+        "scene": "Same gradient background, same display surface",
+        "lighting": "Same rim lighting, same highlights",
+        "camera": "Same orbit speed, same distance, same height",
+        "color": "Same premium tech color grade"
+      },
+      "audio": {
+        "sfx": "SFX: subtle turntable motor hum",
+        "music": "Music: continue same modern electronic pulse"
+      },
+      "negative": {
+        "exclude": ["speed change", "product shift", "lighting change", "orbit direction change"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "720p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "anime_scene_continuation": {
+      "source_video": {
+        "uri": "gs://bucket/anime-scene.mp4",
+        "description": "Anime character running toward camera on school rooftop",
+        "end_state": {
+          "subject": "Running, close to camera, determined expression",
+          "camera": "Low angle tracking back",
+          "action": "Running at full speed"
+        }
+      },
+      "continuation": {
+        "type": "new_beat",
+        "action": "Passes camera, leaps from rooftop edge, dramatic pose mid-air",
+        "direction": "Past camera then upward leap",
+        "timing": "0-2s runs past camera, 2-5s approaches edge, 5-8s dramatic leap"
+      },
+      "consistency": {
+        "subject": "Same character design: blue twin-tails, school uniform, red ribbon",
+        "scene": "Same rooftop, same sky colors, same sunset",
+        "lighting": "Same golden hour backlighting",
+        "camera": "Match anime camera style, dynamic angles",
+        "color": "Same vibrant anime color palette"
+      },
+      "audio": {
+        "sfx": "SFX: footsteps, wind rush, dramatic impact at leap",
+        "ambience": "Ambience: rooftop wind, distant city",
+        "music": "Music: anime score builds dramatically"
+      },
+      "negative": {
+        "exclude": ["off-model", "wrong hair color", "realistic style", "different uniform"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "720p",
+        "aspect_ratio": "16:9"
+      }
+    }
+  },
+
+  "_chaining_pattern": {
+    "description": "For videos longer than 16 seconds, chain multiple extensions",
+    "workflow": [
+      "1. Generate initial 8s video",
+      "2. Extend with first continuation prompt → 16s total",
+      "3. Extend with second continuation prompt → 24s total",
+      "4. Continue as needed (max input 141s)"
+    ],
+    "notes": [
+      "Each extension uses output of previous extension",
+      "Maintain detailed consistency notes across chain",
+      "Plan full sequence before starting"
+    ]
+  }
+}

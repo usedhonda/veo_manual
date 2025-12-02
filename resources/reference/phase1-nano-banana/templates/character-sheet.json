@@ -1,0 +1,103 @@
+{
+  "_template": "character-sheet",
+  "_description": "Generate character reference images for Veo 3.1 Ingredients feature",
+  "_usage": "Fill in the placeholders marked with [PLACEHOLDER] to customize",
+
+  "subject": {
+    "identity": "[CHARACTER_NAME] - [BRIEF_DESCRIPTION]",
+    "appearance": {
+      "clothing": "[DETAILED_OUTFIT_DESCRIPTION]",
+      "features": "[PHYSICAL_CHARACTERISTICS: hair, eyes, skin, distinguishing marks]",
+      "age": "[AGE_RANGE]",
+      "accessories": "[ITEMS_WORN_OR_CARRIED]"
+    },
+    "expression": "[NEUTRAL_OR_CHARACTERISTIC_EXPRESSION]",
+    "pose": "[REFERENCE_POSE: standing front view, three-quarter, profile]"
+  },
+  "composition": {
+    "framing": "full_body",
+    "angle": "eye_level",
+    "subject_position": "center",
+    "negative_space": "minimal - character reference focus"
+  },
+  "background": {
+    "type": "solid_color",
+    "description": "Pure white background for clean extraction",
+    "blur": "none"
+  },
+  "lighting": {
+    "type": "studio",
+    "direction": "front with soft fill",
+    "quality": "soft",
+    "color_temperature": "neutral",
+    "special": "Even lighting for accurate color reference"
+  },
+  "style": {
+    "medium": "[photorealistic | anime | 3d_render]",
+    "aesthetic": "Clean character reference sheet",
+    "color_palette": "[CHARACTER_COLOR_SCHEME]",
+    "mood": "Neutral presentation for reference"
+  },
+  "technical": {
+    "resolution": "1080p",
+    "aspect_ratio": "16:9",
+    "camera_reference": "Studio portrait, 85mm equivalent",
+    "post_processing": "Minimal processing, true colors"
+  },
+  "veo_optimization": {
+    "intended_use": "ingredient",
+    "planned_motion": "[EXPECTED_ACTIONS: walking, talking, running, etc.]",
+    "consistency_anchors": [
+      "[KEY_FEATURE_1: e.g., red scarf]",
+      "[KEY_FEATURE_2: e.g., blue eyes]",
+      "[KEY_FEATURE_3: e.g., specific hairstyle]"
+    ]
+  },
+
+  "_examples": {
+    "anime_girl": {
+      "subject": {
+        "identity": "Sakura - Magical girl warrior",
+        "appearance": {
+          "clothing": "White and pink sailor uniform with golden trim, pleated skirt, knee-high boots",
+          "features": "Long pink hair in twin tails, large amber eyes, fair skin, small star mark on left cheek",
+          "age": "16-18",
+          "accessories": "Star-shaped hair clips, magical wand with crystal"
+        },
+        "expression": "Cheerful, confident smile",
+        "pose": "Standing with wand, slight hip tilt"
+      },
+      "style": {
+        "medium": "anime",
+        "aesthetic": "Modern magical girl anime style",
+        "color_palette": "Pink, white, gold accents",
+        "mood": "Bright, heroic"
+      },
+      "veo_optimization": {
+        "consistency_anchors": ["twin tail hairstyle", "star cheek mark", "magical wand"]
+      }
+    },
+    "realistic_character": {
+      "subject": {
+        "identity": "Detective Marcus Cole - Noir investigator",
+        "appearance": {
+          "clothing": "Dark gray three-piece suit, loosened tie, worn leather shoes",
+          "features": "Salt-and-pepper short hair, stubble, deep-set brown eyes, scar above right eyebrow",
+          "age": "45-50",
+          "accessories": "Silver pocket watch, cigarette case, fedora in hand"
+        },
+        "expression": "World-weary, observant gaze",
+        "pose": "Standing, one hand in pocket"
+      },
+      "style": {
+        "medium": "photorealistic",
+        "aesthetic": "Classic film noir character",
+        "color_palette": "Desaturated grays, browns, muted tones",
+        "mood": "Mysterious, weathered"
+      },
+      "veo_optimization": {
+        "consistency_anchors": ["eyebrow scar", "pocket watch", "stubble pattern"]
+      }
+    }
+  }
+}

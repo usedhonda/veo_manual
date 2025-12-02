@@ -1,0 +1,238 @@
+{
+  "_template": "text-to-video-cinematic",
+  "_description": "Cinematic text-to-video template for film-quality output",
+  "_mode": "Text-to-Video",
+  "_usage": "Use for high-quality cinematic productions",
+
+  "shot": {
+    "type": "[wide | medium | close-up | extreme-close-up | establishing | over-the-shoulder]",
+    "movement": "[static | slow dolly_in | slow dolly_out | tracking | slow orbit | crane_up | crane_down | handheld]",
+    "lens": "[anamorphic | 24mm | 35mm | 50mm | 85mm | 135mm]",
+    "speed": "[very_slow | slow | normal]",
+    "focus": "[deep | shallow | rack_focus]"
+  },
+  "subject": {
+    "identity": "[DETAILED_CHARACTER_DESCRIPTION]",
+    "appearance": {
+      "clothing": "[OUTFIT_DETAILS]",
+      "features": "[PHYSICAL_CHARACTERISTICS]",
+      "distinguishing_marks": "[UNIQUE_IDENTIFIERS]"
+    },
+    "expression": "[EMOTIONAL_STATE_AND_FACIAL_EXPRESSION]",
+    "position": "[FRAME_POSITION_AND_BODY_LANGUAGE]"
+  },
+  "action": {
+    "primary": "[MAIN_ACTION_VERB]",
+    "secondary": "[SUPPORTING_ACTION]",
+    "speed": "[slow | normal | fast]",
+    "direction": "[toward_camera | away_from_camera | left_to_right | right_to_left | circular]",
+    "timing": "[SPECIFIC_TIMING_BREAKDOWN]"
+  },
+  "scene": {
+    "location": "[DETAILED_ENVIRONMENT]",
+    "time_of_day": "[SPECIFIC_LIGHTING_TIME]",
+    "weather": "[WEATHER_CONDITIONS]",
+    "atmosphere": "[MOOD_AND_TONE_KEYWORDS]",
+    "production_design": "[SET_DETAILS_AND_PROPS]"
+  },
+  "style": {
+    "medium": "live_action",
+    "film_reference": "[CAMERA_OR_FILM_STOCK]",
+    "color_grade": "[SPECIFIC_COLOR_PALETTE]",
+    "era": "[TIME_PERIOD_AESTHETIC]",
+    "genre": "[CINEMATIC_GENRE]",
+    "director_style": "[OPTIONAL_DIRECTOR_REFERENCE]"
+  },
+  "audio": {
+    "dialogue": "[Character says: \"EXACT_LINE\"]",
+    "sfx": "[SFX: DETAILED_SOUND_EFFECTS]",
+    "ambience": "[Ambience: LAYERED_BACKGROUND_SOUNDS]",
+    "music": "[Music: GENRE_MOOD_INSTRUMENTS]",
+    "voice_style": "[DELIVERY_TONE_ACCENT]"
+  },
+  "negative": {
+    "exclude": [
+      "blur",
+      "distortion",
+      "low quality",
+      "watermark",
+      "text overlay",
+      "subtitles",
+      "compression artifacts",
+      "flickering",
+      "morphing"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9",
+    "model": "veo-3.1-generate-001"
+  },
+
+  "_examples": {
+    "film_noir_detective": {
+      "shot": {
+        "type": "medium",
+        "movement": "slow dolly_in",
+        "lens": "50mm",
+        "speed": "slow",
+        "focus": "shallow"
+      },
+      "subject": {
+        "identity": "Hardened detective in his 40s",
+        "appearance": {
+          "clothing": "Rumpled trench coat, loosened tie, fedora casting shadow",
+          "features": "Stubbled jaw, tired eyes, cigarette smoke curling",
+          "distinguishing_marks": "Scar on left cheek"
+        },
+        "expression": "World-weary, suspicious, calculating",
+        "position": "Center frame, leaning against desk"
+      },
+      "action": {
+        "primary": "speaks",
+        "secondary": "takes drag from cigarette",
+        "speed": "slow",
+        "direction": "toward_camera",
+        "timing": "0-3s thinking, 3-7s speaks, 7-8s exhales smoke"
+      },
+      "scene": {
+        "location": "Dimly lit private detective office",
+        "time_of_day": "night",
+        "weather": "rain visible through window",
+        "atmosphere": "Noir, mysterious, dangerous",
+        "production_design": "Venetian blinds casting shadows, desk lamp, whiskey bottle"
+      },
+      "style": {
+        "medium": "live_action",
+        "film_reference": "35mm black and white film",
+        "color_grade": "High contrast noir, deep blacks, bright highlights",
+        "era": "1940s",
+        "genre": "film noir",
+        "director_style": "Billy Wilder"
+      },
+      "audio": {
+        "dialogue": "Detective says in a gravelly voice: \"She walked into my office like trouble looking for a place to happen.\"",
+        "sfx": "SFX: rain on window, distant thunder, cigarette sizzle",
+        "ambience": "Ambience: city at night, distant jazz from nearby club, clock ticking",
+        "music": "Music: jazz, melancholic, solo saxophone"
+      },
+      "negative": {
+        "exclude": ["blur", "distortion", "color", "modern elements", "bright lighting", "morphing"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "epic_fantasy_reveal": {
+      "shot": {
+        "type": "wide establishing",
+        "movement": "crane_up",
+        "lens": "24mm anamorphic",
+        "speed": "slow",
+        "focus": "deep"
+      },
+      "subject": {
+        "identity": "Ancient elven city in the mountains",
+        "appearance": {
+          "features": "White marble towers, golden spires, waterfalls, bridges between peaks",
+          "distinguishing_marks": "Glowing runes on architecture"
+        },
+        "expression": "N/A",
+        "position": "Filling frame as camera rises"
+      },
+      "action": {
+        "primary": "reveals",
+        "secondary": "eagles fly across frame",
+        "speed": "slow",
+        "direction": "upward reveal",
+        "timing": "0-3s fog parts, 3-6s city reveals, 6-8s full scope visible"
+      },
+      "scene": {
+        "location": "Hidden mountain elven city",
+        "time_of_day": "dawn",
+        "weather": "morning mist clearing",
+        "atmosphere": "Magical, ancient, awe-inspiring, sacred",
+        "production_design": "Tolkien-inspired architecture, nature integrated with buildings"
+      },
+      "style": {
+        "medium": "live_action",
+        "film_reference": "IMAX 70mm",
+        "color_grade": "Rich greens and golds, ethereal highlights",
+        "era": "High fantasy timeless",
+        "genre": "epic fantasy",
+        "director_style": "Peter Jackson"
+      },
+      "audio": {
+        "sfx": "SFX: eagle cries, distant waterfalls, wind chimes",
+        "ambience": "Ambience: mountain wind, birds, flowing water",
+        "music": "Music: orchestral, sweeping strings, choir, triumphant theme building"
+      },
+      "negative": {
+        "exclude": ["blur", "modern elements", "vehicles", "contemporary clothing", "text", "morphing"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "intimate_drama": {
+      "shot": {
+        "type": "close-up",
+        "movement": "static",
+        "lens": "85mm",
+        "speed": "normal",
+        "focus": "shallow"
+      },
+      "subject": {
+        "identity": "Woman in her 30s receiving difficult news",
+        "appearance": {
+          "clothing": "Simple sweater, understated jewelry",
+          "features": "Expressive eyes, natural makeup",
+          "distinguishing_marks": "Wedding ring visible"
+        },
+        "expression": "Shock transitioning to grief, eyes welling with tears",
+        "position": "Center frame, slightly off-axis"
+      },
+      "action": {
+        "primary": "reacts",
+        "secondary": "hand slowly covers mouth",
+        "speed": "slow",
+        "direction": "toward_camera",
+        "timing": "0-2s frozen, 2-5s realization dawns, 5-8s emotional break"
+      },
+      "scene": {
+        "location": "Hospital waiting room",
+        "time_of_day": "afternoon",
+        "weather": "N/A interior",
+        "atmosphere": "Sterile, cold, emotional weight",
+        "production_design": "Blurred background, soft overhead fluorescent"
+      },
+      "style": {
+        "medium": "live_action",
+        "film_reference": "ARRI Alexa, natural lighting",
+        "color_grade": "Desaturated, cool tones with warm skin",
+        "era": "contemporary",
+        "genre": "drama",
+        "director_style": "Denis Villeneuve"
+      },
+      "audio": {
+        "dialogue": "",
+        "sfx": "SFX: muffled hospital sounds, her sharp intake of breath",
+        "ambience": "Ambience: quiet hospital, distant PA system, soft footsteps",
+        "music": "Music: minimal piano, single notes, melancholic"
+      },
+      "negative": {
+        "exclude": ["blur", "morphing", "smiling", "happy", "bright colors", "text overlay"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    }
+  }
+}

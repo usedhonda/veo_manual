@@ -1,0 +1,239 @@
+{
+  "_template": "anime-action-scene",
+  "_description": "Dynamic anime action sequences and fight scenes",
+  "_use_case": "Battle scenes, chase sequences, dynamic action moments",
+  "_workflow": "Ingredients mode with character reference for consistency",
+
+  "reference_images": [
+    {
+      "source": "[CHARACTER_SHEET_IMAGE]",
+      "role": "asset",
+      "description": "[CHARACTER_IN_ACTION_READY_POSE]"
+    }
+  ],
+  "shot": {
+    "type": "[wide_action | medium_dynamic | close_impact]",
+    "movement": "[tracking | whip_pan | dramatic_zoom]",
+    "lens": "[24mm_wide | 35mm]",
+    "speed": "[fast | very_fast | speed_ramping]",
+    "angle": "[dynamic_dutch | low_power | high_overview]"
+  },
+  "subject": {
+    "reference": "Character from reference image",
+    "appearance": {
+      "reinforce": "[KEY_VISUAL_TRAITS]",
+      "action_state": "[battle_ready | mid_attack | defensive]"
+    },
+    "expression": "[ACTION_EMOTION: focused, fierce, determined]",
+    "position": "[FRAME_POSITION_DURING_ACTION]"
+  },
+  "action": {
+    "primary": "[MAIN_ACTION: attacks, dodges, runs, leaps]",
+    "secondary": "[SUPPORTING_ACTION: effects, environment reaction]",
+    "choreography": "[ACTION_BREAKDOWN_BEATS]",
+    "timing": "[PRECISE_TIMING_FOR_IMPACT]"
+  },
+  "effects": {
+    "motion_lines": "[speed_lines | impact_lines | none]",
+    "particles": "[energy | debris | sparks | blood]",
+    "impact_frames": "[flash | freeze_frame | smear]",
+    "aura": "[POWER_EFFECTS_IF_ANY]"
+  },
+  "scene": {
+    "location": "[ACTION_ENVIRONMENT]",
+    "destruction": "[ENVIRONMENTAL_DAMAGE_LEVEL]",
+    "atmosphere": "[BATTLE_MOOD]"
+  },
+  "style": {
+    "medium": "anime",
+    "sub_style": "[shonen_action | seinen_realistic | sakuga_style]",
+    "animation_style": "[fluid | impactful | detailed]",
+    "color_grade": "[HIGH_CONTRAST | DRAMATIC | VIBRANT]"
+  },
+  "audio": {
+    "dialogue": "[BATTLE_CRY_OR_NONE]",
+    "sfx": "SFX: [impact sounds, whooshes, effects]",
+    "ambience": "[Ambience: battle environment]",
+    "music": "Music: [intense action score]"
+  },
+  "negative": {
+    "exclude": [
+      "off-model",
+      "static",
+      "slow",
+      "peaceful",
+      "realistic",
+      "blur",
+      "morphing",
+      "wrong character"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "sword_clash": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Samurai anime character: black hair in ponytail, traditional armor, katana"
+        }
+      ],
+      "shot": {
+        "type": "medium dynamic",
+        "movement": "tracking with combatants",
+        "lens": "35mm",
+        "speed": "fast with impact slowdown",
+        "angle": "dynamic, shifting"
+      },
+      "subject": {
+        "reference": "Samurai from reference image",
+        "appearance": {
+          "reinforce": "Black hair in ponytail, traditional samurai armor, katana",
+          "action_state": "mid-sword swing, fierce"
+        },
+        "expression": "Intense focus, battle concentration",
+        "position": "Center-left, engaging opponent"
+      },
+      "action": {
+        "primary": "sword clash against opponent",
+        "secondary": "sparks fly, ground cracks from impact",
+        "choreography": "0-2s approach, 2-4s swing, 4-5s CLASH (slowdown), 5-8s push back",
+        "timing": "Key impact at 4-5 second mark with brief slowdown"
+      },
+      "effects": {
+        "motion_lines": "speed lines during swing",
+        "particles": "sparks at impact, debris",
+        "impact_frames": "flash frame at clash, slight freeze",
+        "aura": "sword energy trail"
+      },
+      "scene": {
+        "location": "Traditional Japanese courtyard",
+        "destruction": "Ground cracking, debris flying",
+        "atmosphere": "Intense duel, honor at stake"
+      },
+      "style": {
+        "medium": "anime",
+        "sub_style": "seinen action, detailed",
+        "animation_style": "impactful sakuga",
+        "color_grade": "high contrast, dramatic shadows"
+      },
+      "audio": {
+        "sfx": "SFX: sword whoosh, metal CLANG, ground crack, debris scatter",
+        "ambience": "Ambience: tense silence, wind",
+        "music": "Music: taiko drums, intense traditional Japanese"
+      }
+    },
+    "magic_attack": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Mage anime character: blue robes, silver hair, glowing staff"
+        }
+      ],
+      "shot": {
+        "type": "wide action",
+        "movement": "pull back to show scale",
+        "lens": "24mm wide",
+        "speed": "building to fast release",
+        "angle": "low angle, empowering"
+      },
+      "subject": {
+        "reference": "Mage from reference image",
+        "appearance": {
+          "reinforce": "Blue flowing robes, silver hair, ornate glowing staff",
+          "action_state": "channeling power, glowing"
+        },
+        "expression": "Concentration turning to determination at release",
+        "position": "Center, dominant in frame"
+      },
+      "action": {
+        "primary": "channels and releases massive spell",
+        "secondary": "robes billow from magical wind, staff glows intensely",
+        "choreography": "0-3s gather energy, 3-5s peak charge, 5-8s RELEASE explosion",
+        "timing": "Energy builds continuously, explosive release at 5s"
+      },
+      "effects": {
+        "motion_lines": "energy convergence lines during charge",
+        "particles": "magical particles gathering, then dispersing",
+        "impact_frames": "bright flash at release",
+        "aura": "intense magical aura, runic circles"
+      },
+      "scene": {
+        "location": "Battlefield, dark clouds above",
+        "destruction": "Ground glowing, cracks forming from power",
+        "atmosphere": "Overwhelming magical power"
+      },
+      "style": {
+        "medium": "anime",
+        "sub_style": "fantasy action, effects heavy",
+        "animation_style": "sakuga effects animation",
+        "color_grade": "blue magic glow, high contrast"
+      },
+      "audio": {
+        "dialogue": "Mage shouts: 'Ancient power, heed my call!'",
+        "sfx": "SFX: energy charging hum, magical crackle, massive explosion",
+        "ambience": "Ambience: wind howling, magical resonance",
+        "music": "Music: orchestral building to epic crescendo"
+      }
+    },
+    "pursuit_scene": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Ninja anime character: black outfit, mask, athletic build"
+        }
+      ],
+      "shot": {
+        "type": "tracking wide to medium",
+        "movement": "fast tracking alongside",
+        "lens": "35mm",
+        "speed": "very fast, no slowdown",
+        "angle": "eye level with slight dutch"
+      },
+      "subject": {
+        "reference": "Ninja from reference image",
+        "appearance": {
+          "reinforce": "Black ninja outfit, face mask, athletic build",
+          "action_state": "running at full speed, parkour"
+        },
+        "expression": "Focused, alert (eyes visible above mask)",
+        "position": "Center-right, moving through frame"
+      },
+      "action": {
+        "primary": "rooftop parkour chase",
+        "secondary": "leaps gaps, rolls, slides under obstacles",
+        "choreography": "0-2s running, 2-4s jump gap, 4-6s roll landing, 6-8s sprint continue",
+        "timing": "Continuous fast motion, no pauses"
+      },
+      "effects": {
+        "motion_lines": "constant speed lines",
+        "particles": "rooftop debris, dust trails",
+        "impact_frames": "none - fluid motion",
+        "aura": "subtle shadow trails"
+      },
+      "scene": {
+        "location": "Moonlit rooftops, traditional Japanese city",
+        "destruction": "Tiles scatter on landing",
+        "atmosphere": "Urgent escape, stealth speed"
+      },
+      "style": {
+        "medium": "anime",
+        "sub_style": "action thriller, Naruto-inspired",
+        "animation_style": "fluid parkour animation",
+        "color_grade": "night blues, moonlight highlights"
+      },
+      "audio": {
+        "sfx": "SFX: rapid footsteps, whooshes, tile clatter, fabric snap",
+        "ambience": "Ambience: night city, wind rushing",
+        "music": "Music: fast electronic beat, urgent percussion"
+      }
+    }
+  }
+}

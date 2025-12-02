@@ -1,0 +1,280 @@
+{
+  "_template": "ingredients-character-scene",
+  "_description": "Generate video with consistent character using reference images",
+  "_mode": "Ingredients (Reference Images)",
+  "_usage": "Use reference images to maintain character consistency across scenes",
+
+  "_api_structure": {
+    "instances": [{
+      "prompt": "GENERATED_PROMPT_HERE",
+      "referenceImages": [
+        {
+          "image": {
+            "gcsUri": "gs://bucket/path/character-ref.png",
+            "mimeType": "image/png"
+          },
+          "referenceType": "asset"
+        }
+      ]
+    }],
+    "parameters": {
+      "aspectRatio": "16:9",
+      "durationSeconds": 8
+    }
+  },
+
+  "_constraints": {
+    "max_reference_images": 3,
+    "reference_type": "asset",
+    "note": "Veo 3.1 does NOT support 'style' referenceType, only 'asset'"
+  },
+
+  "reference_images": [
+    {
+      "source": "[base64 | gcs_uri]",
+      "role": "asset",
+      "description": "[WHAT_THIS_IMAGE_PROVIDES - character, object, vehicle]"
+    }
+  ],
+  "shot": {
+    "type": "[wide | medium | close-up]",
+    "movement": "[static | tracking | orbit | dolly]",
+    "lens": "[24mm | 35mm | 50mm | 85mm]",
+    "speed": "[slow | normal | fast]"
+  },
+  "subject": {
+    "reference": "Using the [CHARACTER/OBJECT] from reference image",
+    "appearance": {
+      "reinforce": "[RE-STATE_KEY_VISUAL_TRAITS_FROM_REFERENCE]",
+      "consistent_elements": "[MUST_MAINTAIN: clothing, colors, features]"
+    },
+    "expression": "[EMOTIONAL_STATE_FOR_THIS_SCENE]",
+    "position": "[FRAME_POSITION]"
+  },
+  "action": {
+    "primary": "[MAIN_ACTION_VERB]",
+    "secondary": "[SUPPORTING_ACTION]",
+    "direction": "[MOVEMENT_DIRECTION]",
+    "timing": "[WHEN_ACTIONS_OCCUR]"
+  },
+  "scene": {
+    "location": "[NEW_ENVIRONMENT_FOR_THIS_SCENE]",
+    "time_of_day": "[LIGHTING_TIME]",
+    "weather": "[CONDITIONS]",
+    "atmosphere": "[MOOD]"
+  },
+  "style": {
+    "medium": "[live_action | anime | 3d_animation]",
+    "consistency": "Maintain visual style from reference images",
+    "color_grade": "[COLOR_PALETTE]"
+  },
+  "audio": {
+    "dialogue": "[Character says: \"Line\"]",
+    "sfx": "[SFX: sounds]",
+    "ambience": "[Ambience: environment]",
+    "music": "[Music: OR 'NO music']"
+  },
+  "negative": {
+    "exclude": [
+      "off-model",
+      "wrong clothing",
+      "different hair color",
+      "inconsistent features",
+      "morphing",
+      "blur",
+      "distortion"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "anime_character_action": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Anime girl character sheet: blue hair in twin-tails, red eyes, school uniform with blue ribbon"
+        }
+      ],
+      "shot": {
+        "type": "medium",
+        "movement": "tracking",
+        "lens": "35mm",
+        "speed": "fast"
+      },
+      "subject": {
+        "reference": "Using the anime girl from reference image",
+        "appearance": {
+          "reinforce": "Blue twin-tail hair, red eyes, school uniform with blue ribbon",
+          "consistent_elements": "Hair color and style, eye color, uniform design"
+        },
+        "expression": "Determined, focused, ready for action",
+        "position": "Center, running toward camera then past"
+      },
+      "action": {
+        "primary": "runs at full speed",
+        "secondary": "hair and ribbon flowing dramatically",
+        "direction": "toward_camera then right",
+        "timing": "0-3s approaching, 3-5s passing camera, 5-8s receding"
+      },
+      "scene": {
+        "location": "School rooftop at sunset",
+        "time_of_day": "golden_hour",
+        "weather": "clear, dramatic clouds",
+        "atmosphere": "Urgent, dramatic, heroic"
+      },
+      "style": {
+        "medium": "anime",
+        "consistency": "Match character design from reference exactly",
+        "color_grade": "Vibrant anime colors, warm sunset lighting"
+      },
+      "audio": {
+        "sfx": "SFX: running footsteps, wind rushing, fabric flutter",
+        "ambience": "Ambience: school rooftop, distant traffic, wind",
+        "music": "Music: intense anime score, strings and percussion"
+      },
+      "negative": {
+        "exclude": ["off-model", "wrong hair color", "different uniform", "realistic", "3D", "morphing", "blur"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "photorealistic_character_dialogue": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Business woman: short black hair, glasses, navy suit, pearl earrings"
+        }
+      ],
+      "shot": {
+        "type": "medium close-up",
+        "movement": "static",
+        "lens": "50mm",
+        "speed": "normal"
+      },
+      "subject": {
+        "reference": "Using the business woman from reference image",
+        "appearance": {
+          "reinforce": "Short black hair, rectangular glasses, navy suit, pearl earrings",
+          "consistent_elements": "Hair style and color, glasses shape, suit color, earrings"
+        },
+        "expression": "Professional, confident, slight smile",
+        "position": "Center frame, slight angle"
+      },
+      "action": {
+        "primary": "speaks to camera",
+        "secondary": "subtle hand gestures for emphasis",
+        "direction": "toward_camera",
+        "timing": "speaking throughout clip"
+      },
+      "scene": {
+        "location": "Modern office with city view through window",
+        "time_of_day": "afternoon",
+        "weather": "clear (visible through window)",
+        "atmosphere": "Professional, authoritative, trustworthy"
+      },
+      "style": {
+        "medium": "live_action",
+        "consistency": "Match character exactly from reference",
+        "color_grade": "Clean corporate look, neutral with blue accents"
+      },
+      "audio": {
+        "dialogue": "She says confidently: \"Our Q4 results exceeded all expectations. Here's how we did it.\"",
+        "sfx": "SFX: subtle paper shuffle, pen clicking",
+        "ambience": "Ambience: quiet office, air conditioning hum",
+        "music": "NO music"
+      },
+      "negative": {
+        "exclude": ["off-model", "different hair", "wrong glasses", "different suit color", "morphing", "blur"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "mascot_character_commercial": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "3D mascot: round orange blob character with big eyes, small arms, smiling"
+        }
+      ],
+      "shot": {
+        "type": "medium",
+        "movement": "slow dolly_out",
+        "lens": "35mm",
+        "speed": "normal"
+      },
+      "subject": {
+        "reference": "Using the mascot character from reference image",
+        "appearance": {
+          "reinforce": "Orange round blob, large expressive eyes, small stubby arms, permanent smile",
+          "consistent_elements": "Orange color, body shape, eye size, arm proportions"
+        },
+        "expression": "Excited, bouncing with joy",
+        "position": "Center, bouncing slightly"
+      },
+      "action": {
+        "primary": "waves enthusiastically",
+        "secondary": "bounces up and down, spins once",
+        "direction": "toward_camera",
+        "timing": "0-2s waves, 2-5s bounces, 5-7s spins, 7-8s final pose"
+      },
+      "scene": {
+        "location": "Bright colorful studio with confetti",
+        "time_of_day": "N/A (studio)",
+        "weather": "N/A",
+        "atmosphere": "Fun, celebratory, energetic"
+      },
+      "style": {
+        "medium": "3d_animation",
+        "consistency": "Match mascot design exactly",
+        "color_grade": "Bright, saturated, kid-friendly"
+      },
+      "audio": {
+        "sfx": "SFX: bouncy sounds, confetti pop, cheerful boing",
+        "music": "Music: upbeat jingle, playful, energetic"
+      },
+      "negative": {
+        "exclude": ["off-model", "wrong color", "different proportions", "scary", "realistic", "morphing"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    }
+  },
+
+  "_best_practices": {
+    "reference_image_preparation": [
+      "Use clear, well-lit reference images",
+      "Show character from multiple angles if possible",
+      "Include distinguishing features clearly visible",
+      "Avoid cluttered backgrounds in reference",
+      "Character sheets work best for anime style"
+    ],
+    "prompt_writing": [
+      "Always re-state key visual traits in the prompt",
+      "Be specific about what must remain consistent",
+      "Describe the character as 'from reference image'",
+      "Add inconsistencies to negative prompt"
+    ],
+    "common_issues": [
+      "Color drift: Specify exact colors in prompt",
+      "Clothing change: Add 'same clothing' or specific outfit",
+      "Face morphing: Add 'no morphing' and 'consistent face'",
+      "Style change: Specify medium (anime/live_action) clearly"
+    ]
+  }
+}

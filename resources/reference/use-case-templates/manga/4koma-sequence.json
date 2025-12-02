@@ -1,0 +1,251 @@
+{
+  "_template": "4koma-sequence",
+  "_description": "Animate 4-panel manga (4-koma) as a continuous sequence",
+  "_use_case": "Transform vertical 4-koma strips into animated shorts",
+  "_workflow": "Split panels → Animate each → Concatenate with transitions",
+  "_note": "Each panel becomes 2-3 second clip, total ~10-12 seconds",
+
+  "sequence_config": {
+    "total_panels": 4,
+    "panel_duration": "[2-3 seconds each]",
+    "transition_type": "[cut | fade | wipe | panel_slide]",
+    "reading_direction": "[top_to_bottom | right_to_left]"
+  },
+
+  "panel_template": {
+    "panel_number": "[1-4]",
+    "first_frame": {
+      "source": "[PANEL_IMAGE]",
+      "crop_from_strip": "[COORDINATES_IF_FROM_FULL_STRIP]"
+    },
+    "narrative_beat": "[SETUP | DEVELOPMENT | TWIST | PUNCHLINE]",
+    "shot": {
+      "type": "[static | subtle_push | reaction_zoom]",
+      "movement": "[minimal | comedic_timing | dramatic]"
+    },
+    "subject": {
+      "characters": "[CHARACTERS_IN_PANEL]",
+      "action": "[PANEL_SPECIFIC_ACTION]",
+      "timing": "[COMEDIC_BEAT | DRAMATIC_PAUSE | QUICK_REACTION]"
+    },
+    "audio": {
+      "dialogue": "[SPEECH_IN_QUOTES]",
+      "sfx": "[COMEDIC_OR_DRAMATIC_SFX]",
+      "music": "[CONTINUOUS_OR_PANEL_SPECIFIC]"
+    }
+  },
+
+  "style": {
+    "medium": "cinematic anime",
+    "consistency": "maintain same art style across all panels",
+    "preserve": "original linework, expressions, comedic timing",
+    "enhancement": "subtle animation only"
+  },
+
+  "audio_continuity": {
+    "music": "[SINGLE_BGM_TRACK | MOOD_SHIFTS_PER_PANEL]",
+    "voice_consistency": "same voice per character throughout",
+    "sfx_style": "comedic timing for 4-koma, match genre"
+  },
+
+  "negative": {
+    "exclude": [
+      "inconsistent art style",
+      "over-animation",
+      "lost comedic timing",
+      "3D render",
+      "morphing between panels"
+    ]
+  },
+
+  "_examples": {
+    "comedy_4koma": {
+      "sequence_config": {
+        "total_panels": 4,
+        "panel_duration": "2.5s each",
+        "transition_type": "quick cut",
+        "reading_direction": "top_to_bottom"
+      },
+      "panels": [
+        {
+          "panel_number": 1,
+          "narrative_beat": "SETUP",
+          "first_frame": {
+            "description": "Office scene: Boss at desk, employee entering nervously"
+          },
+          "shot": {
+            "type": "static",
+            "movement": "minimal"
+          },
+          "subject": {
+            "action": "Employee bows, boss looks stern",
+            "timing": "normal pace"
+          },
+          "audio": {
+            "dialogue": "Employee: \"You wanted to see me, sir?\"",
+            "sfx": "SFX: door creak, footsteps",
+            "music": "Music: light office BGM"
+          }
+        },
+        {
+          "panel_number": 2,
+          "narrative_beat": "DEVELOPMENT",
+          "first_frame": {
+            "description": "Close-up: Boss holding document with serious face"
+          },
+          "shot": {
+            "type": "subtle_push",
+            "movement": "slight zoom for tension"
+          },
+          "subject": {
+            "action": "Boss taps document, employee sweats",
+            "timing": "building tension"
+          },
+          "audio": {
+            "dialogue": "Boss: \"About your report...\"",
+            "sfx": "SFX: paper tap, nervous gulp",
+            "music": "Music: tension build"
+          }
+        },
+        {
+          "panel_number": 3,
+          "narrative_beat": "TWIST",
+          "first_frame": {
+            "description": "Boss suddenly smiling, holding up 'A+' paper"
+          },
+          "shot": {
+            "type": "reaction_zoom",
+            "movement": "quick push on revelation"
+          },
+          "subject": {
+            "action": "Boss beams, employee shocked",
+            "timing": "sudden mood shift"
+          },
+          "audio": {
+            "dialogue": "Boss: \"It's PERFECT!\"",
+            "sfx": "SFX: sparkle sound, dramatic reveal",
+            "music": "Music: sudden cheerful shift"
+          }
+        },
+        {
+          "panel_number": 4,
+          "narrative_beat": "PUNCHLINE",
+          "first_frame": {
+            "description": "Employee collapsed in relief, boss confused"
+          },
+          "shot": {
+            "type": "static",
+            "movement": "minimal for comedic stillness"
+          },
+          "subject": {
+            "action": "Employee face-down on floor, boss sweatdrop",
+            "timing": "comedic pause, hold for laugh"
+          },
+          "audio": {
+            "dialogue": "Boss: \"...Are you okay?\"",
+            "sfx": "SFX: thud, comedic deflation sound",
+            "music": "Music: comedic resolution jingle"
+          }
+        }
+      ],
+      "style": {
+        "medium": "cinematic anime",
+        "consistency": "office comedy manga style throughout",
+        "preserve": "chibi reactions, sweatdrops, expression lines"
+      }
+    },
+    "dramatic_4koma": {
+      "sequence_config": {
+        "total_panels": 4,
+        "panel_duration": "3s each",
+        "transition_type": "fade",
+        "reading_direction": "top_to_bottom"
+      },
+      "panels": [
+        {
+          "panel_number": 1,
+          "narrative_beat": "SETUP",
+          "first_frame": {
+            "description": "Rainy street: Two figures with umbrella, distant"
+          },
+          "shot": {
+            "type": "static_with_parallax",
+            "movement": "rain animation, slight parallax"
+          },
+          "subject": {
+            "action": "Standing in rain, looking away from each other",
+            "timing": "melancholic, slow"
+          },
+          "audio": {
+            "ambience": "Ambience: heavy rain, distant thunder",
+            "music": "Music: sad piano begins"
+          }
+        },
+        {
+          "panel_number": 2,
+          "narrative_beat": "DEVELOPMENT",
+          "first_frame": {
+            "description": "Close-up: Her face, rain on cheeks mixing with tears"
+          },
+          "shot": {
+            "type": "subtle_push",
+            "movement": "very slow push"
+          },
+          "subject": {
+            "action": "Tears fall, rain streams down face",
+            "timing": "emotional weight"
+          },
+          "audio": {
+            "dialogue": "She whispers: \"I waited for you...\"",
+            "sfx": "SFX: rain intensifies",
+            "music": "Music: strings join piano"
+          }
+        },
+        {
+          "panel_number": 3,
+          "narrative_beat": "TWIST",
+          "first_frame": {
+            "description": "His hand reaching out, umbrella offered"
+          },
+          "shot": {
+            "type": "static",
+            "movement": "minimal, focus on gesture"
+          },
+          "subject": {
+            "action": "Hand extends slowly, umbrella covers her",
+            "timing": "gentle, hopeful"
+          },
+          "audio": {
+            "dialogue": "He says: \"I'm here now.\"",
+            "sfx": "SFX: umbrella opens, rain softens above",
+            "music": "Music: hopeful shift in melody"
+          }
+        },
+        {
+          "panel_number": 4,
+          "narrative_beat": "RESOLUTION",
+          "first_frame": {
+            "description": "Both under umbrella, hands touching, small smile"
+          },
+          "shot": {
+            "type": "slow_pull",
+            "movement": "gentle pull back to show them together"
+          },
+          "subject": {
+            "action": "Hands intertwine, she looks up at him",
+            "timing": "tender moment, linger"
+          },
+          "audio": {
+            "sfx": "SFX: rain fading to soft patter",
+            "music": "Music: piano resolves warmly"
+          }
+        }
+      ],
+      "style": {
+        "medium": "cinematic anime",
+        "consistency": "shoujo manga style, soft linework",
+        "preserve": "emotional screentone effects, sparkle backgrounds"
+      }
+    }
+  }
+}

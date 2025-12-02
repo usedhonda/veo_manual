@@ -1,0 +1,270 @@
+{
+  "_template": "anime-dialogue-scene",
+  "_description": "Anime conversation and dialogue scenes",
+  "_use_case": "Character conversations, emotional moments, story exposition",
+  "_workflow": "Ingredients mode with character reference for consistency",
+
+  "reference_images": [
+    {
+      "source": "[CHARACTER_SHEET_IMAGE]",
+      "role": "asset",
+      "description": "[CHARACTER_REFERENCE_DESCRIPTION]"
+    }
+  ],
+  "shot": {
+    "type": "[close-up | medium | over_shoulder | two_shot]",
+    "movement": "[static | subtle_drift | slow_dolly]",
+    "lens": "[50mm | 85mm]",
+    "speed": "slow",
+    "angle": "[eye_level | slight_low | slight_high]"
+  },
+  "subject": {
+    "reference": "Character from reference image",
+    "appearance": {
+      "reinforce": "[KEY_VISUAL_TRAITS]",
+      "consistent": "[HAIR_EYES_OUTFIT]"
+    },
+    "expression": "[DIALOGUE_EMOTION: thoughtful, concerned, happy, conflicted]",
+    "position": "[FRAME_POSITION]"
+  },
+  "action": {
+    "primary": "[speaks | listens | reacts]",
+    "secondary": "[subtle_gestures | expression_shift | eye_movement]",
+    "lip_sync": "[speaking_or_listening]",
+    "timing": "[DIALOGUE_TIMING]"
+  },
+  "scene": {
+    "location": "[CONVERSATION_SETTING]",
+    "time_of_day": "[MOOD_APPROPRIATE_TIME]",
+    "atmosphere": "[EMOTIONAL_ATMOSPHERE]"
+  },
+  "style": {
+    "medium": "anime",
+    "sub_style": "[APPROPRIATE_ANIME_STYLE]",
+    "color_grade": "[MOOD_APPROPRIATE_COLORS]",
+    "mood": "[SCENE_EMOTIONAL_TONE]"
+  },
+  "audio": {
+    "dialogue": "[Character says: 'Exact dialogue line']",
+    "voice_style": "[DELIVERY_TONE_EMOTION]",
+    "sfx": "SFX: [subtle environmental sounds]",
+    "ambience": "Ambience: [location sounds]",
+    "music": "Music: [emotional underscore OR 'NO music']"
+  },
+  "negative": {
+    "exclude": [
+      "off-model",
+      "wrong expression",
+      "action scene energy",
+      "realistic",
+      "blur",
+      "morphing",
+      "text overlay",
+      "subtitles"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "emotional_confession": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Anime girl: brown hair with ribbon, brown eyes, school uniform"
+        }
+      ],
+      "shot": {
+        "type": "close-up",
+        "movement": "very slow dolly in",
+        "lens": "85mm",
+        "speed": "slow, intimate",
+        "angle": "eye level, slightly below"
+      },
+      "subject": {
+        "reference": "Girl from reference image",
+        "appearance": {
+          "reinforce": "Brown hair with pink ribbon, warm brown eyes, school uniform with red bow",
+          "consistent": "Hair style, ribbon placement, uniform details"
+        },
+        "expression": "Nervous shifting to determined, eyes welling slightly",
+        "position": "Center, filling frame"
+      },
+      "action": {
+        "primary": "confessing feelings",
+        "secondary": "hands clasped, slight trembling, then looks up",
+        "lip_sync": "speaking throughout",
+        "timing": "0-3s nervous hesitation, 3-6s speaks confession, 6-8s awaits response"
+      },
+      "scene": {
+        "location": "School rooftop at sunset",
+        "time_of_day": "golden hour, warm light",
+        "atmosphere": "Romantic, vulnerable, hopeful"
+      },
+      "style": {
+        "medium": "anime",
+        "sub_style": "shoujo romance, soft",
+        "color_grade": "warm, soft, golden highlights, dreamy",
+        "mood": "Romantic, emotional, tender"
+      },
+      "audio": {
+        "dialogue": "She says nervously: 'I... I've wanted to tell you this for so long. I really like you.'",
+        "voice_style": "soft, trembling, sincere",
+        "sfx": "SFX: wind, heartbeat subtle",
+        "ambience": "Ambience: rooftop wind, distant school sounds",
+        "music": "Music: gentle piano, romantic, emotional strings"
+      }
+    },
+    "serious_conversation": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Anime man: black hair, sharp eyes, business suit"
+        }
+      ],
+      "shot": {
+        "type": "medium",
+        "movement": "static with subtle drift",
+        "lens": "50mm",
+        "speed": "normal",
+        "angle": "eye level, professional"
+      },
+      "subject": {
+        "reference": "Man from reference image",
+        "appearance": {
+          "reinforce": "Black hair, sharp blue eyes, dark business suit with tie",
+          "consistent": "Hair style, eye color, suit details"
+        },
+        "expression": "Serious, intense, commanding",
+        "position": "Center-left, addressing someone off-camera"
+      },
+      "action": {
+        "primary": "delivering important information",
+        "secondary": "minimal gestures, direct eye contact",
+        "lip_sync": "speaking firmly",
+        "timing": "speaking throughout with strategic pauses"
+      },
+      "scene": {
+        "location": "Modern office, city view behind",
+        "time_of_day": "evening, city lights visible",
+        "atmosphere": "Tense, professional, high stakes"
+      },
+      "style": {
+        "medium": "anime",
+        "sub_style": "seinen, business drama",
+        "color_grade": "cool, professional, high contrast",
+        "mood": "Serious, tense, authoritative"
+      },
+      "audio": {
+        "dialogue": "He says firmly: 'The situation has changed. We need to act now, or everything we've built will be lost.'",
+        "voice_style": "deep, authoritative, controlled",
+        "sfx": "SFX: office ambient, paper shuffle",
+        "ambience": "Ambience: quiet office, city hum through windows",
+        "music": "Music: tense ambient, low strings"
+      }
+    },
+    "comedic_reaction": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Anime girl: orange hair, expressive green eyes, casual clothes"
+        }
+      ],
+      "shot": {
+        "type": "medium",
+        "movement": "static (for comedic timing)",
+        "lens": "35mm",
+        "speed": "normal",
+        "angle": "eye level"
+      },
+      "subject": {
+        "reference": "Girl from reference image",
+        "appearance": {
+          "reinforce": "Orange spiky hair, big green eyes, casual t-shirt and shorts",
+          "consistent": "Hair style and color, eye color and size, outfit"
+        },
+        "expression": "Shock transitioning to comedic anger",
+        "position": "Center, expressive"
+      },
+      "action": {
+        "primary": "comedic reaction to off-screen event",
+        "secondary": "chibi-style anger marks, exaggerated gestures",
+        "lip_sync": "yelling response",
+        "timing": "0-2s shocked freeze, 2-4s processing, 4-8s angry outburst"
+      },
+      "scene": {
+        "location": "Living room, messy background",
+        "time_of_day": "afternoon",
+        "atmosphere": "Comedic, energetic"
+      },
+      "style": {
+        "medium": "anime",
+        "sub_style": "comedy anime, expressive",
+        "color_grade": "bright, vibrant, comedic",
+        "mood": "Funny, energetic, exaggerated"
+      },
+      "audio": {
+        "dialogue": "She yells: 'YOU ATE MY PUDDING?! That was the LAST one!'",
+        "voice_style": "loud, outraged, comedic",
+        "sfx": "SFX: comedic impact sound, anger steam",
+        "ambience": "Ambience: home environment",
+        "music": "Music: comedic sting, silly"
+      }
+    },
+    "quiet_reflection": {
+      "reference_images": [
+        {
+          "source": "gcs_uri",
+          "role": "asset",
+          "description": "Anime character: silver hair, pale eyes, simple white clothes"
+        }
+      ],
+      "shot": {
+        "type": "close-up profile",
+        "movement": "very slow drift",
+        "lens": "85mm",
+        "speed": "very slow",
+        "angle": "profile, contemplative"
+      },
+      "subject": {
+        "reference": "Character from reference image",
+        "appearance": {
+          "reinforce": "Silver flowing hair, pale lavender eyes, simple white garments",
+          "consistent": "Hair color and flow, eye color, clothing simplicity"
+        },
+        "expression": "Melancholic, distant, thoughtful",
+        "position": "Profile view, looking into distance"
+      },
+      "action": {
+        "primary": "quiet internal monologue",
+        "secondary": "subtle breathing, hair moves gently",
+        "lip_sync": "minimal - internal thought",
+        "timing": "minimal movement, contemplative throughout"
+      },
+      "scene": {
+        "location": "Window seat, rain outside",
+        "time_of_day": "overcast afternoon",
+        "atmosphere": "Melancholic, introspective, quiet"
+      },
+      "style": {
+        "medium": "anime",
+        "sub_style": "atmospheric, Makoto Shinkai inspired",
+        "color_grade": "muted, soft blues and grays, desaturated",
+        "mood": "Melancholic, beautiful sadness"
+      },
+      "audio": {
+        "dialogue": "Internal monologue (voiceover): 'I wonder... if things had been different, would you still be here?'",
+        "voice_style": "soft, distant, wistful",
+        "sfx": "SFX: rain on window",
+        "ambience": "Ambience: rain, quiet room, clock ticking",
+        "music": "Music: solo piano, melancholic, gentle"
+      }
+    }
+  }
+}

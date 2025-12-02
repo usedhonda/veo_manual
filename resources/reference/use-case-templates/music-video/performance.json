@@ -1,0 +1,213 @@
+{
+  "_template": "music-video-performance",
+  "_description": "Performance-focused music video shots",
+  "_use_case": "Artist/band performance, concert footage, lip-sync videos",
+  "_workflow": "Text-to-Video or Image-to-Video with performance context",
+
+  "shot": {
+    "type": "[close-up_face | medium_performance | wide_stage | extreme_close_detail]",
+    "movement": "[slow_orbit | tracking | crane | handheld_energy]",
+    "lens": "[35mm | 50mm | 85mm | anamorphic]",
+    "speed": "[sync_to_tempo | slow_motion | normal]",
+    "focus": "[shallow_on_face | deep_stage | rack_between_members]"
+  },
+  "subject": {
+    "artist_type": "[solo | duo | band | dance_group]",
+    "appearance": "[ARTIST_STYLING_DESCRIPTION]",
+    "expression": "[PERFORMANCE_EMOTION: passionate, intense, joyful]",
+    "instrument": "[INSTRUMENT_IF_ANY]"
+  },
+  "action": {
+    "primary": "[singing | playing_instrument | dancing | performing]",
+    "secondary": "[crowd_interaction | band_member_looks | movement]",
+    "energy": "[ENERGY_LEVEL: high | medium | intimate]",
+    "sync": "[VISUAL_RHYTHM_MATCHING]"
+  },
+  "scene": {
+    "location": "[stage | studio | abstract_set | real_location]",
+    "lighting_style": "[concert_lights | cinematic | natural | abstract]",
+    "atmosphere": "[PERFORMANCE_VIBE]"
+  },
+  "style": {
+    "medium": "[live_action | stylized | anime_performance]",
+    "aesthetic": "[MTV_era | modern_clean | artistic | raw]",
+    "color_grade": "[MUSIC_GENRE_APPROPRIATE_GRADE]",
+    "mood": "[SONG_MOOD_VISUAL_TRANSLATION]"
+  },
+  "audio": {
+    "dialogue": "[LYRICS_BEING_PERFORMED - lip sync]",
+    "sfx": "SFX: [performance sounds - amp hum, drums, crowd]",
+    "ambience": "[Ambience: venue atmosphere]",
+    "music": "Music: [GENRE_MOOD - reference track feel]"
+  },
+  "negative": {
+    "exclude": [
+      "blur",
+      "distortion",
+      "out of sync",
+      "static",
+      "boring",
+      "wrong instrument",
+      "morphing"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "rock_band_stage": {
+      "shot": {
+        "type": "wide to medium",
+        "movement": "crane down into stage",
+        "lens": "24mm wide",
+        "speed": "normal, energetic",
+        "focus": "deep, full band visible"
+      },
+      "subject": {
+        "artist_type": "band (4 piece)",
+        "appearance": "Rock aesthetic: leather, denim, band tees, edgy",
+        "expression": "Intense, passionate, lost in music",
+        "instrument": "Lead guitar, bass, drums, vocalist"
+      },
+      "action": {
+        "primary": "performing climax of song",
+        "secondary": "drummer intensity, guitarist solo pose, vocalist belt",
+        "energy": "high, peak moment",
+        "sync": "movements match intense beat"
+      },
+      "scene": {
+        "location": "Concert stage, packed venue",
+        "lighting_style": "dramatic concert lights, strobes, colored washes",
+        "atmosphere": "Electric, euphoric, raw energy"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "classic rock video, 80s MTV energy",
+        "color_grade": "high contrast, saturated stage lights",
+        "mood": "Powerful, anthemic, stadium rock"
+      },
+      "audio": {
+        "dialogue": "Vocalist sings: 'We are the ones who never give up!'",
+        "sfx": "SFX: crowd roar, amp feedback, drum hits",
+        "ambience": "Ambience: massive crowd, venue acoustics",
+        "music": "Music: hard rock, driving drums, power chords, anthemic"
+      }
+    },
+    "intimate_singer": {
+      "shot": {
+        "type": "close-up",
+        "movement": "slow dolly in",
+        "lens": "85mm",
+        "speed": "slow, intimate",
+        "focus": "shallow, eyes sharp"
+      },
+      "subject": {
+        "artist_type": "solo",
+        "appearance": "Minimal styling, natural, vulnerable look",
+        "expression": "Raw emotion, tears forming, passionate",
+        "instrument": "None or acoustic guitar visible"
+      },
+      "action": {
+        "primary": "singing emotional ballad",
+        "secondary": "subtle head movements, eyes closing on high notes",
+        "energy": "intimate, controlled intensity",
+        "sync": "subtle sway with ballad tempo"
+      },
+      "scene": {
+        "location": "Dark studio, single spotlight",
+        "lighting_style": "single key light, dramatic shadows",
+        "atmosphere": "Intimate, raw, emotional"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "artistic, cinematic, Adele-style",
+        "color_grade": "desaturated, high contrast, moody",
+        "mood": "Emotional, vulnerable, powerful"
+      },
+      "audio": {
+        "dialogue": "Singer sings: 'I gave you everything, and you walked away...'",
+        "sfx": "SFX: breath between phrases, subtle room tone",
+        "ambience": "Ambience: quiet studio, slight reverb",
+        "music": "Music: piano ballad, emotional, minimal instrumentation"
+      }
+    },
+    "dance_performance": {
+      "shot": {
+        "type": "medium full body",
+        "movement": "tracking with dancer",
+        "lens": "35mm",
+        "speed": "normal, following choreography",
+        "focus": "deep, full movement visible"
+      },
+      "subject": {
+        "artist_type": "solo dancer / small group",
+        "appearance": "Contemporary dance wear, expressive costume",
+        "expression": "Focused, embodying music",
+        "instrument": "Body as instrument"
+      },
+      "action": {
+        "primary": "executing choreography",
+        "secondary": "floor work, jumps, extensions",
+        "energy": "building through phrase",
+        "sync": "movement perfectly matched to beat"
+      },
+      "scene": {
+        "location": "Abstract dark space with colored lighting",
+        "lighting_style": "moving lights, color washes, dramatic shadows",
+        "atmosphere": "Artistic, immersive"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "contemporary dance video, artistic",
+        "color_grade": "high contrast, rich colors in shadows",
+        "mood": "Expressive, artistic, powerful"
+      },
+      "audio": {
+        "sfx": "SFX: body impact on floor, breath, fabric swish",
+        "ambience": "Ambience: studio space, movement echoes",
+        "music": "Music: electronic, rhythmic, contemporary dance track"
+      }
+    },
+    "hiphop_performance": {
+      "shot": {
+        "type": "medium tracking",
+        "movement": "handheld energy, following artist",
+        "lens": "35mm",
+        "speed": "fast, matching rap flow",
+        "focus": "keeping artist sharp"
+      },
+      "subject": {
+        "artist_type": "solo rapper",
+        "appearance": "Urban streetwear, chains, confident styling",
+        "expression": "Confident, intense, commanding",
+        "instrument": "Microphone"
+      },
+      "action": {
+        "primary": "rapping with intensity",
+        "secondary": "hand gestures emphasizing bars, head movements",
+        "energy": "high, commanding",
+        "sync": "gestures match flow and beat"
+      },
+      "scene": {
+        "location": "Urban rooftop, city skyline behind",
+        "lighting_style": "golden hour mixed with practical city lights",
+        "atmosphere": "Urban authenticity, power"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "modern hip-hop video, urban",
+        "color_grade": "warm highlights, cool shadows, cinematic",
+        "mood": "Confident, powerful, authentic"
+      },
+      "audio": {
+        "dialogue": "Artist raps: 'Started from the bottom, now we at the top / Never gonna stop, watch the paper stack up'",
+        "sfx": "SFX: city ambience, wind, subtle ad-libs",
+        "ambience": "Ambience: rooftop city sounds",
+        "music": "Music: trap beat, 808s, hi-hats, bass-heavy"
+      }
+    }
+  }
+}

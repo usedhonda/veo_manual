@@ -1,0 +1,29 @@
+docs/
+CLAUDE.md
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Claude Code (local settings)
+.claude/
+
+# Editor & IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Environment & secrets
+.env
+.env.*
+*.pem
+*.key

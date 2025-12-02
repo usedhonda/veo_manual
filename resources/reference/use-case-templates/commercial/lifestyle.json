@@ -1,0 +1,195 @@
+{
+  "_template": "commercial-lifestyle",
+  "_description": "Lifestyle scenes showing products in use",
+  "_use_case": "Brand storytelling, product-in-context advertising",
+  "_workflow": "Text-to-Video or Image-to-Video with lifestyle context",
+
+  "shot": {
+    "type": "[medium | wide]",
+    "movement": "[tracking | dolly | static]",
+    "lens": "[35mm | 50mm]",
+    "speed": "[normal | slow]",
+    "focus": "[deep | shallow_on_action]"
+  },
+  "subject": {
+    "person": {
+      "demographic": "[TARGET_AUDIENCE_REPRESENTATION]",
+      "appearance": "[RELATABLE_STYLING]",
+      "expression": "[POSITIVE_EMOTION]"
+    },
+    "product": {
+      "identity": "[PRODUCT_NAME]",
+      "placement": "[IN_USE | VISIBLE | SUBTLE]",
+      "interaction": "[HOW_PERSON_USES_PRODUCT]"
+    }
+  },
+  "action": {
+    "primary": "[LIFESTYLE_ACTION: using, enjoying, discovering]",
+    "secondary": "[SUPPORTING_ACTION]",
+    "energy": "[CALM | ENERGETIC | FOCUSED]",
+    "timing": "[ACTION_BREAKDOWN]"
+  },
+  "scene": {
+    "location": "[ASPIRATIONAL_SETTING]",
+    "time_of_day": "[FLATTERING_LIGHT_TIME]",
+    "atmosphere": "[BRAND_MOOD]"
+  },
+  "style": {
+    "medium": "live_action",
+    "aesthetic": "[LIFESTYLE_BRAND_LOOK]",
+    "color_grade": "[WARM_INVITING | CLEAN_MODERN | ENERGETIC]",
+    "mood": "[ASPIRATIONAL | RELATABLE | INSPIRING]"
+  },
+  "audio": {
+    "dialogue": "[OPTIONAL_VOICEOVER_OR_DIALOGUE]",
+    "sfx": "[SFX: natural environmental sounds]",
+    "ambience": "[Ambience: location sounds]",
+    "music": "Music: [BRAND_APPROPRIATE_TRACK]"
+  },
+  "negative": {
+    "exclude": [
+      "blur",
+      "distortion",
+      "unflattering angles",
+      "cluttered background",
+      "competing products"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "morning_coffee_routine": {
+      "shot": {
+        "type": "medium",
+        "movement": "slow dolly in",
+        "lens": "50mm",
+        "speed": "slow",
+        "focus": "shallow on subject"
+      },
+      "subject": {
+        "person": {
+          "demographic": "Woman in her 30s, professional",
+          "appearance": "Casual elegant loungewear, minimal makeup, natural",
+          "expression": "Peaceful, content, mindful"
+        },
+        "product": {
+          "identity": "Premium Coffee Maker",
+          "placement": "In use on counter",
+          "interaction": "Pressing button, waiting, receiving cup"
+        }
+      },
+      "action": {
+        "primary": "prepares morning coffee",
+        "secondary": "takes first sip, closes eyes in appreciation",
+        "energy": "calm, meditative",
+        "timing": "0-3s preparation, 3-5s coffee pours, 5-8s first sip"
+      },
+      "scene": {
+        "location": "Modern kitchen with natural light",
+        "time_of_day": "morning, soft light through windows",
+        "atmosphere": "Peaceful morning ritual"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "Aspirational lifestyle, attainable luxury",
+        "color_grade": "Warm, soft, inviting",
+        "mood": "Peaceful, satisfying, quality-of-life"
+      },
+      "audio": {
+        "sfx": "SFX: coffee machine brewing, liquid pouring, satisfied sigh",
+        "ambience": "Ambience: quiet morning, birds outside",
+        "music": "Music: soft acoustic, peaceful, morning vibe"
+      }
+    },
+    "fitness_tech_workout": {
+      "shot": {
+        "type": "medium tracking",
+        "movement": "tracking alongside",
+        "lens": "35mm",
+        "speed": "normal",
+        "focus": "deep, action sharp"
+      },
+      "subject": {
+        "person": {
+          "demographic": "Athletic man, late 20s",
+          "appearance": "Performance wear, focused athlete look",
+          "expression": "Determined, focused, energized"
+        },
+        "product": {
+          "identity": "Smart Fitness Watch",
+          "placement": "On wrist, display visible",
+          "interaction": "Glancing at metrics during workout"
+        }
+      },
+      "action": {
+        "primary": "running with purpose",
+        "secondary": "checks watch, adjusts pace based on data",
+        "energy": "energetic, driven",
+        "timing": "0-3s running, 3-5s glances at watch, 5-8s accelerates"
+      },
+      "scene": {
+        "location": "Urban park path, early morning",
+        "time_of_day": "dawn, dramatic sky",
+        "atmosphere": "Achievement, personal best pursuit"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "Active lifestyle, technology-enhanced fitness",
+        "color_grade": "Vibrant, high energy, crisp",
+        "mood": "Motivational, empowering, athletic"
+      },
+      "audio": {
+        "sfx": "SFX: running footsteps, breath, watch beep",
+        "ambience": "Ambience: park morning, birds, distant traffic",
+        "music": "Music: driving beat, motivational, builds energy"
+      }
+    },
+    "family_outdoor_adventure": {
+      "shot": {
+        "type": "wide to medium",
+        "movement": "crane or drone pullback",
+        "lens": "24mm wide",
+        "speed": "normal",
+        "focus": "deep"
+      },
+      "subject": {
+        "person": {
+          "demographic": "Young family with children",
+          "appearance": "Outdoor casual, practical adventure wear",
+          "expression": "Joy, wonder, togetherness"
+        },
+        "product": {
+          "identity": "SUV/Vehicle or Outdoor Gear",
+          "placement": "Part of adventure scene",
+          "interaction": "Using as part of family experience"
+        }
+      },
+      "action": {
+        "primary": "exploring nature together",
+        "secondary": "children pointing at discovery, parents sharing moment",
+        "energy": "joyful, connected",
+        "timing": "0-3s walking together, 3-6s discovery moment, 6-8s shared joy"
+      },
+      "scene": {
+        "location": "Beautiful natural landscape",
+        "time_of_day": "golden hour",
+        "atmosphere": "Family adventure, quality time"
+      },
+      "style": {
+        "medium": "live_action",
+        "aesthetic": "Authentic family moments, adventure lifestyle",
+        "color_grade": "Warm, vibrant, natural",
+        "mood": "Heartwarming, aspirational family life"
+      },
+      "audio": {
+        "sfx": "SFX: nature sounds, children's laughter, footsteps on trail",
+        "ambience": "Ambience: forest atmosphere, wind, birds",
+        "music": "Music: uplifting orchestral, emotional, family feel"
+      }
+    }
+  }
+}

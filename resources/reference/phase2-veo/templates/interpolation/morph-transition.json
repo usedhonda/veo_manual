@@ -1,0 +1,333 @@
+{
+  "_template": "interpolation-morph-transition",
+  "_description": "Create smooth transitions between two different frames",
+  "_mode": "Frame Interpolation (First Frame + Last Frame)",
+  "_usage": "Generate video that transitions from start image to end image",
+
+  "_api_structure": {
+    "instances": [{
+      "prompt": "GENERATED_PROMPT_HERE",
+      "image": {
+        "gcsUri": "gs://bucket/path/start-frame.png",
+        "mimeType": "image/png"
+      },
+      "lastFrame": {
+        "gcsUri": "gs://bucket/path/end-frame.png",
+        "mimeType": "image/png"
+      }
+    }],
+    "parameters": {
+      "aspectRatio": "16:9",
+      "durationSeconds": 8
+    }
+  },
+
+  "_constraints": {
+    "supported_models": ["veo-3.1-generate-preview", "veo-3.1-generate-001"],
+    "duration": "Usually locked to 8 seconds",
+    "note": "Cannot combine with Ingredients (reference images)"
+  },
+
+  "input_images": {
+    "first_frame": {
+      "source": "[base64 | gcs_uri]",
+      "role": "first_frame",
+      "description": "[STARTING_STATE_DESCRIPTION]"
+    },
+    "last_frame": {
+      "source": "[base64 | gcs_uri]",
+      "role": "last_frame",
+      "description": "[ENDING_STATE_DESCRIPTION]"
+    }
+  },
+  "transition": {
+    "type": "[morph | transform | age | move | reveal]",
+    "style": "[smooth | dramatic | gradual | sudden]",
+    "description": "[HOW_TRANSITION_OCCURS]"
+  },
+  "action": {
+    "primary": "[MAIN_TRANSITION_VERB: morphs, transforms, ages, moves, changes]",
+    "secondary": "[SUPPORTING_CHANGES]",
+    "timing": "[TRANSITION_TIMING]"
+  },
+  "scene": {
+    "maintain": "[WHAT_STAYS_CONSTANT]",
+    "change": "[WHAT_TRANSFORMS]"
+  },
+  "style": {
+    "medium": "[CONSISTENT_BETWEEN_FRAMES]",
+    "color_grade": "[COLOR_APPROACH]"
+  },
+  "audio": {
+    "sfx": "[SFX: transition sounds]",
+    "music": "[Music: OR 'NO music']"
+  },
+  "negative": {
+    "exclude": [
+      "abrupt cut",
+      "jump",
+      "glitch",
+      "distortion",
+      "blur",
+      "inconsistent"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "day_to_night": {
+      "input_images": {
+        "first_frame": {
+          "source": "gcs_uri",
+          "role": "first_frame",
+          "description": "City skyline at golden hour, warm sunset colors"
+        },
+        "last_frame": {
+          "source": "gcs_uri",
+          "role": "last_frame",
+          "description": "Same city skyline at night, lights on, stars visible"
+        }
+      },
+      "transition": {
+        "type": "time passage",
+        "style": "gradual",
+        "description": "Sun sets, colors shift from warm to cool, city lights turn on"
+      },
+      "action": {
+        "primary": "time passes from sunset to night",
+        "secondary": "building lights activate progressively, stars emerge",
+        "timing": "gradual throughout 8 seconds"
+      },
+      "scene": {
+        "maintain": "City layout, building positions, camera angle",
+        "change": "Sky colors, lighting, window illumination"
+      },
+      "style": {
+        "medium": "live_action",
+        "color_grade": "Warm sunset transitioning to cool night with warm city lights"
+      },
+      "audio": {
+        "sfx": "SFX: distant traffic, windows opening",
+        "ambience": "Ambience: city transitioning from day to night sounds",
+        "music": "Music: ambient, peaceful, time-lapse feel"
+      },
+      "negative": {
+        "exclude": ["jump cut", "buildings changing", "camera movement", "glitch"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "season_change": {
+      "input_images": {
+        "first_frame": {
+          "source": "gcs_uri",
+          "role": "first_frame",
+          "description": "Tree in full summer green leaves, bright sunny day"
+        },
+        "last_frame": {
+          "source": "gcs_uri",
+          "role": "last_frame",
+          "description": "Same tree with autumn red/orange leaves, overcast sky"
+        }
+      },
+      "transition": {
+        "type": "seasonal transformation",
+        "style": "gradual",
+        "description": "Leaves transition from green to autumn colors"
+      },
+      "action": {
+        "primary": "leaves change color gradually",
+        "secondary": "sky shifts from bright to overcast, some leaves fall",
+        "timing": "continuous transition throughout"
+      },
+      "scene": {
+        "maintain": "Tree position, trunk, branch structure",
+        "change": "Leaf colors, sky, ambient lighting"
+      },
+      "style": {
+        "medium": "live_action",
+        "color_grade": "Vibrant greens transitioning to warm autumn palette"
+      },
+      "audio": {
+        "sfx": "SFX: leaves rustling, occasional leaf falling",
+        "ambience": "Ambience: outdoor atmosphere, birds, wind",
+        "music": "Music: gentle orchestral, passage of time feel"
+      },
+      "negative": {
+        "exclude": ["tree changing shape", "camera movement", "jump cut", "snow"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "aging_portrait": {
+      "input_images": {
+        "first_frame": {
+          "source": "gcs_uri",
+          "role": "first_frame",
+          "description": "Young woman in 20s, bright eyes, smooth skin, casual clothes"
+        },
+        "last_frame": {
+          "source": "gcs_uri",
+          "role": "last_frame",
+          "description": "Same woman aged to 60s, gray hair, wrinkles, wisdom in eyes, same pose"
+        }
+      },
+      "transition": {
+        "type": "aging",
+        "style": "gradual",
+        "description": "Face ages naturally over decades, hair grays, wrinkles form"
+      },
+      "action": {
+        "primary": "ages gracefully from youth to elderly",
+        "secondary": "hair color changes, subtle expression shifts",
+        "timing": "smooth continuous aging"
+      },
+      "scene": {
+        "maintain": "Pose, background, clothing style, camera angle",
+        "change": "Age, skin texture, hair color, subtle expression"
+      },
+      "style": {
+        "medium": "live_action",
+        "color_grade": "Neutral, consistent lighting throughout"
+      },
+      "audio": {
+        "sfx": "SFX: subtle wind, clock ticking",
+        "music": "Music: emotional piano, passage of time, bittersweet"
+      },
+      "negative": {
+        "exclude": ["jump cut", "pose change", "background change", "distortion", "unnatural aging"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "product_color_morph": {
+      "input_images": {
+        "first_frame": {
+          "source": "gcs_uri",
+          "role": "first_frame",
+          "description": "Red sports car on showroom floor, studio lighting"
+        },
+        "last_frame": {
+          "source": "gcs_uri",
+          "role": "last_frame",
+          "description": "Same car but in blue color, identical position and lighting"
+        }
+      },
+      "transition": {
+        "type": "color morph",
+        "style": "smooth",
+        "description": "Car color smoothly transitions from red through purple to blue"
+      },
+      "action": {
+        "primary": "color morphs from red to blue",
+        "secondary": "light plays across surface during transition",
+        "timing": "smooth continuous color shift"
+      },
+      "scene": {
+        "maintain": "Car shape, position, studio setup, lighting",
+        "change": "Car color only"
+      },
+      "style": {
+        "medium": "live_action",
+        "color_grade": "High contrast, showroom quality"
+      },
+      "audio": {
+        "sfx": "SFX: subtle whoosh, shimmering sound",
+        "music": "Music: modern electronic, sleek, premium"
+      },
+      "negative": {
+        "exclude": ["car shape changing", "camera movement", "background change", "jump cut"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "sketch_to_render": {
+      "input_images": {
+        "first_frame": {
+          "source": "gcs_uri",
+          "role": "first_frame",
+          "description": "Pencil sketch of architectural building, line drawing"
+        },
+        "last_frame": {
+          "source": "gcs_uri",
+          "role": "last_frame",
+          "description": "Photorealistic render of same building, full detail"
+        }
+      },
+      "transition": {
+        "type": "style transformation",
+        "style": "gradual",
+        "description": "Sketch fills in with color, detail, and realism progressively"
+      },
+      "action": {
+        "primary": "transforms from sketch to photorealistic render",
+        "secondary": "colors fill in, textures appear, lighting develops",
+        "timing": "progressive detail addition throughout"
+      },
+      "scene": {
+        "maintain": "Building structure, perspective, composition",
+        "change": "Visual style from line art to photorealism"
+      },
+      "style": {
+        "medium": "transition from illustration to live_action",
+        "color_grade": "Black and white to full color"
+      },
+      "audio": {
+        "sfx": "SFX: pencil drawing sounds transitioning to ambient environment",
+        "music": "Music: building orchestral, reveal feel"
+      },
+      "negative": {
+        "exclude": ["building changing shape", "perspective shift", "jump cut"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    }
+  },
+
+  "_best_practices": {
+    "image_preparation": [
+      "Both images should have identical composition/framing",
+      "Same aspect ratio for both images",
+      "Similar lighting setup for smooth transitions",
+      "Subject should be in same position in both frames"
+    ],
+    "transition_types": [
+      "Time passage (day/night, seasons)",
+      "Aging (person, object, building)",
+      "Color/material change",
+      "Style transformation (sketch to render)",
+      "State change (empty to full, clean to messy)"
+    ],
+    "prompt_writing": [
+      "Describe the transition clearly",
+      "Specify what changes and what stays the same",
+      "Use smooth/gradual/continuous language",
+      "Avoid requesting additional elements not in frames"
+    ],
+    "limitations": [
+      "Duration usually locked to 8 seconds",
+      "Cannot use with reference images (Ingredients mode)",
+      "Complex scene changes may cause artifacts",
+      "Position changes should be minimal"
+    ]
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "_template": "image-to-video-first-frame",
+  "_description": "Animate a starting image into video",
+  "_mode": "Image-to-Video",
+  "_usage": "Provide a first frame image and describe the animation",
+
+  "_api_structure": {
+    "instances": [{
+      "prompt": "GENERATED_PROMPT_HERE",
+      "image": {
+        "gcsUri": "gs://bucket/path/first-frame.png",
+        "mimeType": "image/png"
+      }
+    }],
+    "parameters": {
+      "aspectRatio": "16:9",
+      "durationSeconds": 8
+    }
+  },
+
+  "input_image": {
+    "source": "[base64 | gcs_uri]",
+    "role": "first_frame",
+    "description": "[WHAT_THE_IMAGE_SHOWS]"
+  },
+  "shot": {
+    "type": "[MATCH_TO_IMAGE_COMPOSITION]",
+    "movement": "[HOW_CAMERA_MOVES_FROM_THIS_FRAME]",
+    "speed": "[slow | normal | fast]"
+  },
+  "subject": {
+    "reference": "The [SUBJECT_TYPE] shown in the input image",
+    "action_description": "[WHAT_SUBJECT_DOES_STARTING_FROM_IMAGE]"
+  },
+  "action": {
+    "primary": "[MAIN_ANIMATION_VERB]",
+    "secondary": "[SUPPORTING_MOVEMENT]",
+    "direction": "[MOVEMENT_DIRECTION]",
+    "timing": "[WHEN_ACTIONS_OCCUR]"
+  },
+  "scene": {
+    "maintain": "[ELEMENTS_TO_PRESERVE_FROM_IMAGE]",
+    "evolve": "[ELEMENTS_THAT_CHANGE_DURING_VIDEO]"
+  },
+  "audio": {
+    "dialogue": "[IF_CHARACTER_SPEAKS]",
+    "sfx": "[SFX: matching the action]",
+    "ambience": "[Ambience: environment sounds]",
+    "music": "[Music: OR 'NO music']"
+  },
+  "negative": {
+    "exclude": ["blur", "distortion", "morphing", "style change", "inconsistent lighting"]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "portrait_comes_alive": {
+      "input_image": {
+        "source": "gcs_uri",
+        "role": "first_frame",
+        "description": "Portrait of elegant woman in evening dress, looking slightly off-camera"
+      },
+      "shot": {
+        "type": "close-up (matching image)",
+        "movement": "static to subtle dolly_in",
+        "speed": "very slow"
+      },
+      "subject": {
+        "reference": "The woman in the portrait",
+        "action_description": "She slowly turns her head toward camera and begins to speak"
+      },
+      "action": {
+        "primary": "turns head slowly",
+        "secondary": "eyes focus on camera, lips begin to move",
+        "direction": "toward_camera",
+        "timing": "0-3s subtle movement, 3-5s full turn, 5-8s speaking"
+      },
+      "scene": {
+        "maintain": "Lighting, background, color palette, clothing, makeup",
+        "evolve": "Head position, eye direction, expression becomes more engaging"
+      },
+      "audio": {
+        "dialogue": "She says softly: \"I've been waiting for you.\"",
+        "sfx": "SFX: soft fabric rustle",
+        "ambience": "Ambience: quiet room, distant clock",
+        "music": "Music: soft piano, mysterious"
+      },
+      "negative": {
+        "exclude": ["blur", "morphing", "clothing change", "lighting change", "background shift"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "landscape_time_lapse": {
+      "input_image": {
+        "source": "gcs_uri",
+        "role": "first_frame",
+        "description": "Mountain landscape at golden hour, snow peaks, valley below"
+      },
+      "shot": {
+        "type": "wide establishing",
+        "movement": "static with subtle drift",
+        "speed": "slow"
+      },
+      "subject": {
+        "reference": "The mountain landscape in the image",
+        "action_description": "Clouds move across sky, light shifts as sun sets"
+      },
+      "action": {
+        "primary": "clouds drift",
+        "secondary": "light transitions from golden to purple",
+        "direction": "left_to_right (clouds)",
+        "timing": "continuous gentle movement throughout"
+      },
+      "scene": {
+        "maintain": "Mountains, valley, composition, camera position",
+        "evolve": "Sky colors, cloud positions, lighting warmth decreases"
+      },
+      "audio": {
+        "sfx": "SFX: distant birds, wind gusts",
+        "ambience": "Ambience: mountain atmosphere, peaceful isolation",
+        "music": "Music: ambient, peaceful, strings swelling"
+      },
+      "negative": {
+        "exclude": ["blur", "people appearing", "vehicles", "modern elements", "composition change"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "still_life_animation": {
+      "input_image": {
+        "source": "gcs_uri",
+        "role": "first_frame",
+        "description": "Coffee cup on wooden table, steam visible, morning light"
+      },
+      "shot": {
+        "type": "close-up",
+        "movement": "static",
+        "speed": "slow"
+      },
+      "subject": {
+        "reference": "The coffee cup from the image",
+        "action_description": "Steam rises continuously, subtle light flicker"
+      },
+      "action": {
+        "primary": "steam rises and swirls",
+        "secondary": "light subtly shifts as if cloud passing",
+        "direction": "upward (steam)",
+        "timing": "continuous throughout"
+      },
+      "scene": {
+        "maintain": "Table, cup position, overall lighting mood, composition",
+        "evolve": "Steam patterns, subtle light variation"
+      },
+      "audio": {
+        "sfx": "SFX: coffee being poured (beginning)",
+        "ambience": "Ambience: quiet morning, birds outside, clock ticking",
+        "music": "NO music"
+      },
+      "negative": {
+        "exclude": ["blur", "cup moving", "composition change", "hand appearing"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    }
+  },
+
+  "_best_practices": {
+    "image_preparation": [
+      "Use high-resolution source image (match output resolution)",
+      "Ensure image aspect ratio matches target video aspect ratio",
+      "Avoid images with text or logos",
+      "Check that image composition allows for intended movement"
+    ],
+    "prompt_writing": [
+      "Reference 'the subject in the image' rather than re-describing",
+      "Describe changes FROM the starting state",
+      "Specify what should remain constant",
+      "Keep movements subtle for best consistency"
+    ],
+    "common_issues": [
+      "Subject morphing: Add 'no morphing' to negatives",
+      "Style drift: Specify 'maintain style from image'",
+      "Background change: Add 'consistent background' to prompt"
+    ]
+  }
+}

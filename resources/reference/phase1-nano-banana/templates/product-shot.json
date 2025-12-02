@@ -1,0 +1,151 @@
+{
+  "_template": "product-shot",
+  "_description": "Generate product photography for commercial videos",
+  "_usage": "Fill in placeholders marked with [PLACEHOLDER] for your product",
+
+  "subject": {
+    "identity": "[PRODUCT_NAME] - [PRODUCT_TYPE]",
+    "appearance": {
+      "clothing": "N/A",
+      "features": "[PRODUCT_DETAILS: material, finish, colors, textures]",
+      "age": "N/A",
+      "accessories": "[ACCOMPANYING_ITEMS_IF_ANY]"
+    },
+    "expression": "N/A",
+    "pose": "[PRODUCT_ANGLE: front view, 45-degree, flat lay, hero angle]"
+  },
+  "composition": {
+    "framing": "[close_up | medium | wide - based on product size]",
+    "angle": "[eye_level | slightly_elevated | top_down | dramatic_low]",
+    "subject_position": "[center | rule_of_thirds_left | rule_of_thirds_right]",
+    "negative_space": "[WHERE_TO_LEAVE_SPACE_FOR_TEXT_OR_MOTION]"
+  },
+  "background": {
+    "type": "[studio | gradient | contextual | transparent]",
+    "description": "[BACKGROUND_DETAILS]",
+    "blur": "[none | slight | heavy_bokeh]"
+  },
+  "lighting": {
+    "type": "studio",
+    "direction": "[rim | side | front | multi-point]",
+    "quality": "[soft | hard - hard for tech, soft for beauty]",
+    "color_temperature": "[warm | neutral | cool]",
+    "special": "[LIGHTING_EFFECTS: reflections, highlights, gradients]"
+  },
+  "style": {
+    "medium": "photorealistic",
+    "aesthetic": "[BRAND_AESTHETIC: premium, playful, minimal, luxury]",
+    "color_palette": "[BRAND_COLORS_OR_MOOD_COLORS]",
+    "mood": "[DESIRED_FEELING: sophisticated, exciting, trustworthy]"
+  },
+  "technical": {
+    "resolution": "1080p",
+    "aspect_ratio": "16:9",
+    "camera_reference": "[CAMERA_STYLE: macro for details, wide for context]",
+    "post_processing": "[COLOR_GRADE_AND_EFFECTS]"
+  },
+  "veo_optimization": {
+    "intended_use": "first_frame",
+    "planned_motion": "[VIDEO_ACTION: rotation, zoom, light sweep, reveal]",
+    "consistency_anchors": ["product shape", "brand colors", "lighting style"]
+  },
+
+  "_examples": {
+    "tech_product": {
+      "subject": {
+        "identity": "ProSound X1 - Premium wireless earbuds",
+        "features": "Glossy white finish, rose gold charging case, touch-sensitive surface, LED indicator"
+      },
+      "composition": {
+        "framing": "close_up",
+        "angle": "slightly_elevated",
+        "subject_position": "rule_of_thirds_left",
+        "negative_space": "Right side for brand text animation"
+      },
+      "background": {
+        "type": "gradient",
+        "description": "Smooth gradient from charcoal gray to soft white",
+        "blur": "none"
+      },
+      "lighting": {
+        "type": "studio",
+        "direction": "rim with accent",
+        "quality": "hard",
+        "color_temperature": "cool",
+        "special": "Strong rim light on edges, subtle reflection on surface below"
+      },
+      "style": {
+        "aesthetic": "Premium tech minimalism",
+        "color_palette": "White, rose gold, charcoal",
+        "mood": "Sophisticated, cutting-edge"
+      },
+      "veo_optimization": {
+        "planned_motion": "Slow 360-degree rotation with light sweep revealing details"
+      }
+    },
+    "beauty_product": {
+      "subject": {
+        "identity": "Luxe Serum - Premium skincare",
+        "features": "Frosted glass bottle, gold dropper cap, amber liquid visible through glass"
+      },
+      "composition": {
+        "framing": "medium",
+        "angle": "eye_level",
+        "subject_position": "center",
+        "negative_space": "Soft blur surrounding product"
+      },
+      "background": {
+        "type": "contextual",
+        "description": "Soft marble surface with dried flowers and gold accents",
+        "blur": "moderate"
+      },
+      "lighting": {
+        "type": "natural",
+        "direction": "side",
+        "quality": "soft",
+        "color_temperature": "warm",
+        "special": "Golden hour glow, light passing through amber liquid"
+      },
+      "style": {
+        "aesthetic": "Luxury beauty editorial",
+        "color_palette": "Gold, cream, soft pink, amber",
+        "mood": "Luxurious, natural, indulgent"
+      },
+      "veo_optimization": {
+        "planned_motion": "Slow zoom in, dropper lifts revealing serum drop"
+      }
+    },
+    "food_product": {
+      "subject": {
+        "identity": "Artisan Coffee Beans - Premium roast",
+        "features": "Dark roasted beans with oily sheen, scattered arrangement"
+      },
+      "composition": {
+        "framing": "medium",
+        "angle": "top_down",
+        "subject_position": "center",
+        "negative_space": "Corners for steam animation"
+      },
+      "background": {
+        "type": "contextual",
+        "description": "Rustic dark wood surface with burlap texture hints",
+        "blur": "none"
+      },
+      "lighting": {
+        "type": "dramatic",
+        "direction": "side",
+        "quality": "hard",
+        "color_temperature": "warm",
+        "special": "Strong shadows, highlights on bean oils"
+      },
+      "style": {
+        "aesthetic": "Artisan craft, premium quality",
+        "color_palette": "Deep browns, warm amber, cream accents",
+        "mood": "Rich, aromatic, crafted"
+      },
+      "veo_optimization": {
+        "planned_motion": "Steam rises, camera slowly pulls back to reveal full spread"
+      }
+    }
+  }
+}

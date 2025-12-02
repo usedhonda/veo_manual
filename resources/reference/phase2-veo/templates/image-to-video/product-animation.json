@@ -1,0 +1,281 @@
+{
+  "_template": "image-to-video-product-animation",
+  "_description": "Animate product photography for commercial videos",
+  "_mode": "Image-to-Video",
+  "_usage": "Transform product shots into dynamic commercial footage",
+
+  "_api_structure": {
+    "instances": [{
+      "prompt": "GENERATED_PROMPT_HERE",
+      "image": {
+        "gcsUri": "gs://bucket/path/product-shot.png",
+        "mimeType": "image/png"
+      }
+    }],
+    "parameters": {
+      "aspectRatio": "16:9",
+      "durationSeconds": 8,
+      "negativePrompt": "blur, distortion, logo, text, fingerprints, dust"
+    }
+  },
+
+  "input_image": {
+    "source": "[base64 | gcs_uri]",
+    "role": "first_frame",
+    "product_type": "[PRODUCT_CATEGORY]",
+    "description": "[PRODUCT_AND_SETUP_DESCRIPTION]"
+  },
+  "shot": {
+    "type": "[close-up | medium - match source image]",
+    "movement": "[slow orbit | slow dolly_in | static with light sweep]",
+    "speed": "slow"
+  },
+  "subject": {
+    "reference": "The product shown in the input image",
+    "maintain": "[PRODUCT_DETAILS_TO_PRESERVE]",
+    "highlight": "[FEATURES_TO_EMPHASIZE_IN_MOTION]"
+  },
+  "action": {
+    "primary": "[rotates | reveals | light_sweep]",
+    "secondary": "[SUPPORTING_MOTION]",
+    "direction": "[ROTATION_OR_MOVEMENT_DIRECTION]",
+    "timing": "[MOTION_TIMING]"
+  },
+  "lighting": {
+    "preserve": "Match lighting from source image",
+    "animate": "[LIGHT_MOVEMENTS_IF_ANY]"
+  },
+  "style": {
+    "aesthetic": "[premium | luxury | tech | lifestyle]",
+    "color_grade": "[BRAND_APPROPRIATE_COLORS]",
+    "mood": "[DESIRED_COMMERCIAL_FEEL]"
+  },
+  "audio": {
+    "sfx": "[SFX: product-appropriate sounds]",
+    "music": "[Music: brand-appropriate soundtrack]"
+  },
+  "negative": {
+    "exclude": [
+      "blur",
+      "distortion",
+      "low quality",
+      "logo",
+      "text",
+      "fingerprints",
+      "dust",
+      "scratches",
+      "cheap looking",
+      "plastic looking"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "tech_product_orbit": {
+      "input_image": {
+        "source": "gcs_uri",
+        "role": "first_frame",
+        "product_type": "Premium wireless earbuds",
+        "description": "Earbuds and charging case on dark reflective surface, rim lighting"
+      },
+      "shot": {
+        "type": "close-up",
+        "movement": "slow 180-degree orbit",
+        "speed": "slow"
+      },
+      "subject": {
+        "reference": "The earbuds and case from the image",
+        "maintain": "Product details, finish quality, reflections",
+        "highlight": "LED indicators, seamless design, premium materials"
+      },
+      "action": {
+        "primary": "slow rotation revealing all angles",
+        "secondary": "light sweeps across surface highlighting contours",
+        "direction": "clockwise orbit",
+        "timing": "0-8s continuous 180-degree rotation"
+      },
+      "lighting": {
+        "preserve": "Rim lighting, dark background, reflective surface",
+        "animate": "Subtle light sweep following product rotation"
+      },
+      "style": {
+        "aesthetic": "premium tech minimalism",
+        "color_grade": "High contrast, deep blacks, crisp whites",
+        "mood": "Sophisticated, cutting-edge, desirable"
+      },
+      "audio": {
+        "sfx": "SFX: subtle whoosh, satisfying click at end",
+        "music": "Music: modern electronic, minimal, premium feel, soft pulse"
+      },
+      "negative": {
+        "exclude": ["blur", "fingerprints", "dust", "cheap", "plastic", "logo", "text"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "beauty_product_reveal": {
+      "input_image": {
+        "source": "gcs_uri",
+        "role": "first_frame",
+        "product_type": "Luxury skincare serum",
+        "description": "Frosted glass bottle with gold cap on marble surface, soft lighting"
+      },
+      "shot": {
+        "type": "medium",
+        "movement": "slow dolly_in to close-up",
+        "speed": "slow"
+      },
+      "subject": {
+        "reference": "The serum bottle from the image",
+        "maintain": "Glass texture, gold accents, ambient reflections",
+        "highlight": "Dropper mechanism, amber liquid visible through glass"
+      },
+      "action": {
+        "primary": "camera slowly approaches bottle",
+        "secondary": "cap lifts revealing dropper with single serum drop",
+        "direction": "toward_camera (dolly)",
+        "timing": "0-4s approach, 4-6s cap lifts, 6-8s serum drop glistens"
+      },
+      "lighting": {
+        "preserve": "Soft natural side lighting, warm tones",
+        "animate": "Light catching the serum drop as it forms"
+      },
+      "style": {
+        "aesthetic": "luxury beauty editorial",
+        "color_grade": "Warm, soft, golden highlights",
+        "mood": "Luxurious, indulgent, aspirational"
+      },
+      "audio": {
+        "sfx": "SFX: glass cap lifting, liquid drop forming",
+        "music": "Music: soft piano, ethereal, spa-like ambience"
+      },
+      "negative": {
+        "exclude": ["blur", "fingerprints", "dust", "harsh shadows", "cheap looking"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "watch_hero_shot": {
+      "input_image": {
+        "source": "gcs_uri",
+        "role": "first_frame",
+        "product_type": "Luxury watch",
+        "description": "Watch on black velvet, dramatic lighting on dial"
+      },
+      "shot": {
+        "type": "extreme close-up",
+        "movement": "static with subtle drift",
+        "speed": "very slow"
+      },
+      "subject": {
+        "reference": "The watch from the image",
+        "maintain": "Metal finish, crystal reflections, dial details",
+        "highlight": "Second hand movement, light on metal surfaces"
+      },
+      "action": {
+        "primary": "second hand moves smoothly",
+        "secondary": "light subtly shifts across dial",
+        "direction": "clockwise (second hand)",
+        "timing": "continuous subtle movement throughout"
+      },
+      "lighting": {
+        "preserve": "Dramatic side lighting, deep shadows",
+        "animate": "Very subtle light crawl across dial face"
+      },
+      "style": {
+        "aesthetic": "luxury timepiece advertising",
+        "color_grade": "High contrast, silver and black, warm gold accents",
+        "mood": "Prestigious, timeless, craftsmanship"
+      },
+      "audio": {
+        "sfx": "SFX: precise ticking, mechanical movement sounds",
+        "music": "Music: minimal orchestral, single cello note held"
+      },
+      "negative": {
+        "exclude": ["blur", "fingerprints", "scratches", "dust", "cheap", "plastic"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "food_product_steam": {
+      "input_image": {
+        "source": "gcs_uri",
+        "role": "first_frame",
+        "product_type": "Coffee beans and cup",
+        "description": "Fresh coffee in ceramic cup, beans scattered, rustic setting"
+      },
+      "shot": {
+        "type": "close-up",
+        "movement": "static",
+        "speed": "slow"
+      },
+      "subject": {
+        "reference": "The coffee cup and beans from the image",
+        "maintain": "Cup position, bean arrangement, rustic background",
+        "highlight": "Rising steam, liquid surface, bean sheen"
+      },
+      "action": {
+        "primary": "steam rises continuously",
+        "secondary": "very subtle liquid surface ripple",
+        "direction": "upward (steam)",
+        "timing": "continuous throughout clip"
+      },
+      "lighting": {
+        "preserve": "Dramatic side light creating depth",
+        "animate": "Steam catches light as it rises"
+      },
+      "style": {
+        "aesthetic": "artisan food photography",
+        "color_grade": "Rich browns, warm highlights, deep shadows",
+        "mood": "Aromatic, crafted, inviting"
+      },
+      "audio": {
+        "sfx": "SFX: liquid being poured at start, gentle steam hiss",
+        "ambience": "Ambience: quiet morning, distant birds",
+        "music": "NO music"
+      },
+      "negative": {
+        "exclude": ["blur", "hand appearing", "cup moving", "composition change"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    }
+  },
+
+  "_best_practices": {
+    "image_requirements": [
+      "Professional product photography as source",
+      "Clean background (studio or contextual)",
+      "Proper lighting setup (rim, side, or key light)",
+      "No existing text, logos, or watermarks",
+      "Resolution matches target output"
+    ],
+    "motion_guidelines": [
+      "Slow movements work best for products",
+      "One movement type per clip (orbit OR dolly, not both)",
+      "Keep product in frame throughout",
+      "Match camera movement to product shape"
+    ],
+    "audio_tips": [
+      "Use premium-sounding music for luxury products",
+      "Add subtle satisfying SFX (clicks, whooshes)",
+      "Match audio energy to brand positioning"
+    ]
+  }
+}

@@ -1,0 +1,369 @@
+{
+  "_template": "interpolation-seamless-loop",
+  "_description": "Create perfectly looping video by using same image as first and last frame",
+  "_mode": "Frame Interpolation (First Frame + Last Frame)",
+  "_usage": "Generate seamlessly looping video for backgrounds, ambient content, social media",
+
+  "_api_structure": {
+    "instances": [{
+      "prompt": "GENERATED_PROMPT_HERE",
+      "image": {
+        "gcsUri": "gs://bucket/path/loop-frame.png",
+        "mimeType": "image/png"
+      },
+      "lastFrame": {
+        "gcsUri": "gs://bucket/path/loop-frame.png",
+        "mimeType": "image/png"
+      }
+    }],
+    "parameters": {
+      "aspectRatio": "16:9",
+      "durationSeconds": 8
+    }
+  },
+
+  "_key_concept": {
+    "technique": "Use the SAME image for both first_frame and last_frame",
+    "result": "Video returns to starting state, creating perfect loop",
+    "use_cases": [
+      "Background animations",
+      "Social media content",
+      "Loading screens",
+      "Ambient displays",
+      "Digital signage"
+    ]
+  },
+
+  "input_images": {
+    "first_frame": {
+      "source": "[base64 | gcs_uri]",
+      "role": "first_frame",
+      "description": "[FRAME_DESCRIPTION]"
+    },
+    "last_frame": {
+      "source": "SAME AS FIRST FRAME",
+      "role": "last_frame",
+      "description": "Identical to first frame for seamless loop"
+    }
+  },
+  "loop_motion": {
+    "type": "[cyclical | oscillating | rotating | breathing | flowing]",
+    "description": "[MOTION_THAT_RETURNS_TO_START]",
+    "axis": "[horizontal | vertical | circular | in-out]"
+  },
+  "shot": {
+    "type": "[MATCH_TO_IMAGE]",
+    "movement": "[static | subtle_drift - returns to start]",
+    "speed": "[slow | normal]"
+  },
+  "subject": {
+    "reference": "The subject shown in the frame image",
+    "motion": "[HOW_SUBJECT_MOVES_AND_RETURNS]"
+  },
+  "action": {
+    "primary": "[CYCLICAL_ACTION_VERB]",
+    "description": "[MOTION_DESCRIPTION]",
+    "timing": "smooth cycle that returns to starting position"
+  },
+  "scene": {
+    "maintain": "Overall composition, colors, lighting",
+    "animate": "[ELEMENTS_THAT_MOVE_IN_CYCLE]"
+  },
+  "audio": {
+    "note": "For true loop, use seamless ambient audio externally",
+    "sfx": "[SFX: loopable sounds]",
+    "ambience": "[Ambience: continuous background]",
+    "music": "NO music (add loopable music externally)"
+  },
+  "negative": {
+    "exclude": [
+      "jump",
+      "pop",
+      "discontinuity",
+      "sudden change",
+      "position shift",
+      "blur",
+      "distortion"
+    ]
+  },
+  "meta": {
+    "duration": 8,
+    "resolution": "1080p",
+    "aspect_ratio": "16:9"
+  },
+
+  "_examples": {
+    "campfire_loop": {
+      "input_images": {
+        "first_frame": {
+          "source": "gcs_uri",
+          "role": "first_frame",
+          "description": "Campfire at night, flames, embers, logs, dark background"
+        },
+        "last_frame": {
+          "source": "SAME AS FIRST FRAME",
+          "role": "last_frame",
+          "description": "Identical campfire image"
+        }
+      },
+      "loop_motion": {
+        "type": "flowing",
+        "description": "Flames dance and flicker naturally, returning to similar state",
+        "axis": "vertical (flames up)"
+      },
+      "shot": {
+        "type": "medium",
+        "movement": "static",
+        "speed": "normal"
+      },
+      "subject": {
+        "reference": "The campfire from the frame",
+        "motion": "Flames dance, embers float up, logs glow and pulse"
+      },
+      "action": {
+        "primary": "flames dance continuously",
+        "description": "Fire flickers naturally, embers rise and fade, warm glow pulses",
+        "timing": "continuous organic motion throughout"
+      },
+      "scene": {
+        "maintain": "Fire position, log arrangement, dark background",
+        "animate": "Flame shapes, ember particles, light on surroundings"
+      },
+      "audio": {
+        "sfx": "SFX: fire crackling, wood popping",
+        "ambience": "Ambience: night sounds, crickets, wind",
+        "music": "NO music"
+      },
+      "negative": {
+        "exclude": ["fire going out", "logs falling", "position change", "daylight", "jump"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "ocean_waves_loop": {
+      "input_images": {
+        "first_frame": {
+          "source": "gcs_uri",
+          "role": "first_frame",
+          "description": "Ocean view, waves approaching shore, beach visible"
+        },
+        "last_frame": {
+          "source": "SAME AS FIRST FRAME",
+          "role": "last_frame",
+          "description": "Identical ocean view"
+        }
+      },
+      "loop_motion": {
+        "type": "cyclical",
+        "description": "Waves roll in and recede in natural cycle",
+        "axis": "horizontal (toward/away from shore)"
+      },
+      "shot": {
+        "type": "wide",
+        "movement": "static",
+        "speed": "slow"
+      },
+      "subject": {
+        "reference": "The ocean view from the frame",
+        "motion": "Waves approach, crest, break, recede, repeat"
+      },
+      "action": {
+        "primary": "waves roll continuously",
+        "description": "Ocean swells approach shore, break gently, water recedes",
+        "timing": "2-3 wave cycles over 8 seconds"
+      },
+      "scene": {
+        "maintain": "Beach, horizon, sky, overall composition",
+        "animate": "Wave motion, foam, water surface"
+      },
+      "audio": {
+        "sfx": "SFX: waves crashing, water rushing",
+        "ambience": "Ambience: ocean atmosphere, seagulls, wind",
+        "music": "NO music"
+      },
+      "negative": {
+        "exclude": ["people appearing", "boats", "weather change", "time change", "jump"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "breathing_character_loop": {
+      "input_images": {
+        "first_frame": {
+          "source": "gcs_uri",
+          "role": "first_frame",
+          "description": "Anime character portrait, neutral pose, looking at camera"
+        },
+        "last_frame": {
+          "source": "SAME AS FIRST FRAME",
+          "role": "last_frame",
+          "description": "Identical anime character portrait"
+        }
+      },
+      "loop_motion": {
+        "type": "breathing",
+        "description": "Subtle breathing motion, slight body movement, blinking",
+        "axis": "in-out (breathing)"
+      },
+      "shot": {
+        "type": "close-up portrait",
+        "movement": "static",
+        "speed": "slow"
+      },
+      "subject": {
+        "reference": "The anime character from the frame",
+        "motion": "Subtle breathing, occasional blink, hair sway"
+      },
+      "action": {
+        "primary": "breathes naturally",
+        "description": "Chest rises and falls subtly, eyes blink occasionally, hair moves slightly",
+        "timing": "continuous subtle animation, natural breathing pace"
+      },
+      "scene": {
+        "maintain": "Character appearance, pose, background, lighting",
+        "animate": "Breathing motion, blinking, hair movement"
+      },
+      "audio": {
+        "sfx": "SFX: soft breathing",
+        "ambience": "Ambience: quiet room atmosphere",
+        "music": "NO music"
+      },
+      "negative": {
+        "exclude": ["expression change", "pose change", "looking away", "morphing", "jump"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "product_turntable_loop": {
+      "input_images": {
+        "first_frame": {
+          "source": "gcs_uri",
+          "role": "first_frame",
+          "description": "Product on turntable, front view, studio lighting"
+        },
+        "last_frame": {
+          "source": "SAME AS FIRST FRAME",
+          "role": "last_frame",
+          "description": "Identical product view (same angle after 360 rotation)"
+        }
+      },
+      "loop_motion": {
+        "type": "rotating",
+        "description": "Product completes full 360-degree rotation",
+        "axis": "circular (y-axis rotation)"
+      },
+      "shot": {
+        "type": "medium",
+        "movement": "static camera, rotating subject",
+        "speed": "slow"
+      },
+      "subject": {
+        "reference": "The product from the frame",
+        "motion": "Smooth 360-degree rotation on turntable"
+      },
+      "action": {
+        "primary": "rotates smoothly 360 degrees",
+        "description": "Product turns slowly revealing all sides, returns to front",
+        "timing": "even rotation speed, completes exactly 360 degrees"
+      },
+      "scene": {
+        "maintain": "Background, lighting setup, camera position",
+        "animate": "Product rotation only"
+      },
+      "audio": {
+        "sfx": "SFX: subtle motor hum of turntable",
+        "music": "NO music"
+      },
+      "negative": {
+        "exclude": ["camera movement", "lighting change", "product change", "jump", "incomplete rotation"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    },
+    "neon_sign_loop": {
+      "input_images": {
+        "first_frame": {
+          "source": "gcs_uri",
+          "role": "first_frame",
+          "description": "Neon sign at night, 'OPEN' text glowing, urban background"
+        },
+        "last_frame": {
+          "source": "SAME AS FIRST FRAME",
+          "role": "last_frame",
+          "description": "Identical neon sign view"
+        }
+      },
+      "loop_motion": {
+        "type": "oscillating",
+        "description": "Neon flickers and pulses, returning to initial brightness",
+        "axis": "intensity (brightness cycling)"
+      },
+      "shot": {
+        "type": "medium",
+        "movement": "static",
+        "speed": "normal"
+      },
+      "subject": {
+        "reference": "The neon sign from the frame",
+        "motion": "Neon tubes flicker and pulse with characteristic buzz"
+      },
+      "action": {
+        "primary": "neon pulses and flickers",
+        "description": "Sign glows, flickers slightly, pulses brighter then returns to normal",
+        "timing": "natural neon flicker pattern, multiple cycles"
+      },
+      "scene": {
+        "maintain": "Sign position, background, overall darkness",
+        "animate": "Neon brightness, reflections on nearby surfaces"
+      },
+      "audio": {
+        "sfx": "SFX: neon buzz, electrical hum",
+        "ambience": "Ambience: urban night, distant traffic",
+        "music": "NO music"
+      },
+      "negative": {
+        "exclude": ["sign going off", "text changing", "daylight", "people", "jump"]
+      },
+      "meta": {
+        "duration": 8,
+        "resolution": "1080p",
+        "aspect_ratio": "16:9"
+      }
+    }
+  },
+
+  "_best_practices": {
+    "loop_types": {
+      "cyclical": "Wave motion, breathing, pendulum - natural back-and-forth",
+      "rotating": "Full 360 rotation returning to start - turntables, orbits",
+      "flowing": "Continuous motion like fire, water, clouds - organic loops",
+      "oscillating": "Brightness, size, position cycles - pulsing, flickering",
+      "breathing": "Subtle life animation - characters, creatures"
+    },
+    "image_preparation": [
+      "Choose images with elements that can move organically",
+      "Avoid images with text that shouldn't move",
+      "Static backgrounds work best",
+      "Consider what motion makes sense for the subject"
+    ],
+    "prompt_writing": [
+      "Emphasize return to starting position",
+      "Use cyclical language: 'continuous', 'returns', 'cycles'",
+      "Specify the type of loop motion clearly",
+      "Add 'seamless loop' or 'returns to start' to prompt"
+    ],
+    "audio_note": "Generated audio may not loop perfectly. For true seamless loops, add loopable audio in post-production."
+  }
+}

@@ -120,7 +120,10 @@ Since Grok has limited style stacking:
 ## Reference Documents
 
 Refer to the following files for detailed specifications:
-- `../common/phase1-nano-banana/json-schema.md` - Image generation schema (shared)
-- `phase2-grok/json-schema.md` - Grok video generation schema
-- `phase2-grok/api-parameters.md` - API technical constraints
-- `phase2-grok/keywords/` - Verified keyword dictionaries
+- `../../image/nano-banana-pro/json-schema.md` - Image generation schema (shared)
+- `json-schema.md` - Grok video generation schema & 6-Component Formula
+- `api-parameters.md` - API technical constraints
+- `keywords/` - Verified keyword dictionaries
+- `workflows.md` - Last Frame Method, Magic Portal, Character DNA
+- `troubleshooting.md` - Common issues & solutions
+- `spicy-mode.md` - Relaxed moderation guide

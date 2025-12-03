@@ -51,10 +51,10 @@ Minimal setup for fast iteration.
 ```
 LOAD:
 - 00-system-prompt.md
-- phase2-veo/veo3-vs-3.1-differences.md  ← REQUIRED
-- phase2-veo/json-schema.md
-- phase2-veo/keywords/camera-movements.md
-- phase2-veo/keywords/negative-prompts.md
+- veo3-vs-3.1-differences.md  ← REQUIRED
+- json-schema.md
+- keywords/camera-movements.md
+- keywords/negative-prompts.md
 ```
 
 ### B. Product Commercial (Image → Video)
@@ -62,14 +62,14 @@ Product hero shots, orbit animations, commercials.
 ```
 LOAD:
 - 00-system-prompt.md
-- phase2-veo/veo3-vs-3.1-differences.md  ← REQUIRED
-- phase1-nano-banana/json-schema.md
-- phase1-nano-banana/templates/product-shot.json
-- phase2-veo/json-schema.md
-- phase2-veo/api-parameters.md
-- phase2-veo/keywords/camera-movements.md
-- phase2-veo/keywords/lighting-color.md
-- phase2-veo/templates/image-to-video/product-animation.json
+- veo3-vs-3.1-differences.md  ← REQUIRED
+- ../../image/nano-banana-pro/json-schema.md
+- ../../image/nano-banana-pro/templates/product-shot.json
+- json-schema.md
+- api-parameters.md
+- keywords/camera-movements.md
+- keywords/lighting-color.md
+- templates/image-to-video/product-animation.json
 - use-case-templates/commercial/product-hero.json
 ```
 
@@ -78,14 +78,14 @@ Character consistency across multiple scenes.
 ```
 LOAD:
 - 00-system-prompt.md
-- phase2-veo/veo3-vs-3.1-differences.md  ← REQUIRED
-- phase1-nano-banana/json-schema.md
-- phase1-nano-banana/templates/character-sheet.json
-- phase2-veo/json-schema.md
-- phase2-veo/api-parameters.md
-- phase2-veo/keywords/styles-aesthetics.md
-- phase2-veo/keywords/negative-prompts.md
-- phase2-veo/templates/ingredients/character-scene.json
+- veo3-vs-3.1-differences.md  ← REQUIRED
+- ../../image/nano-banana-pro/json-schema.md
+- ../../image/nano-banana-pro/templates/character-sheet.json
+- json-schema.md
+- api-parameters.md
+- keywords/styles-aesthetics.md
+- keywords/negative-prompts.md
+- templates/ingredients/character-scene.json
 - use-case-templates/anime/character-intro.json
 - use-case-templates/anime/action-scene.json
 - use-case-templates/anime/dialogue-scene.json
@@ -96,12 +96,12 @@ Performance, narrative, abstract visuals with audio.
 ```
 LOAD:
 - 00-system-prompt.md
-- phase2-veo/veo3-vs-3.1-differences.md  ← REQUIRED
-- phase2-veo/json-schema.md
-- phase2-veo/api-parameters.md
-- phase2-veo/keywords/camera-movements.md
-- phase2-veo/keywords/audio-instructions.md
-- phase2-veo/keywords/styles-aesthetics.md
+- veo3-vs-3.1-differences.md  ← REQUIRED
+- json-schema.md
+- api-parameters.md
+- keywords/camera-movements.md
+- keywords/audio-instructions.md
+- keywords/styles-aesthetics.md
 - use-case-templates/music-video/performance.json
 - use-case-templates/music-video/narrative.json
 - use-case-templates/music-video/abstract-visual.json
@@ -114,14 +114,14 @@ Note: Veo 3.1 works better with "cinematic anime" style than pure cel-shading.
 ```
 LOAD:
 - 00-system-prompt.md
-- phase2-veo/veo3-vs-3.1-differences.md  ← REQUIRED
-- phase1-nano-banana/json-schema.md
-- phase1-nano-banana/templates/manga-panel.json
-- phase2-veo/json-schema.md
-- phase2-veo/api-parameters.md
-- phase2-veo/keywords/styles-aesthetics.md
-- phase2-veo/keywords/camera-movements.md
-- phase2-veo/keywords/negative-prompts.md
+- veo3-vs-3.1-differences.md  ← REQUIRED
+- ../../image/nano-banana-pro/json-schema.md
+- ../../image/nano-banana-pro/templates/manga-panel.json
+- json-schema.md
+- api-parameters.md
+- keywords/styles-aesthetics.md
+- keywords/camera-movements.md
+- keywords/negative-prompts.md
 - use-case-templates/manga/panel-animation.json
 - use-case-templates/manga/4koma-sequence.json
 ```
@@ -150,31 +150,37 @@ LOAD: all files in this directory
 ## Directory Structure
 
 ```
-reference/
+video/veo/reference/
 ├── INDEX.md                    ← You are here
 ├── 00-system-prompt.md         ← Output format rules
+├── veo3-vs-3.1-differences.md  ← ⚠️ READ FIRST
+├── json-schema.md
+├── json-schema-patterns.md     ← Community patterns
+├── api-parameters.md
 │
-├── phase1-nano-banana/         ← Static image generation
-│   ├── json-schema.md
-│   ├── keywords.md
-│   └── templates/
+├── keywords/
+│   ├── camera-movements.md
+│   ├── lighting-color.md
+│   ├── styles-aesthetics.md
+│   ├── negative-prompts.md
+│   └── audio-instructions.md
 │
-├── phase2-veo/                 ← Video generation
-│   ├── veo3-vs-3.1-differences.md  ← ⚠️ READ FIRST
-│   ├── json-schema.md
-│   ├── json-schema-patterns.md     ← Community patterns
-│   ├── api-parameters.md
-│   ├── keywords/
-│   └── templates/
+├── templates/
+│   ├── text-to-video/
+│   ├── image-to-video/
+│   ├── ingredients/
+│   └── interpolation/
 │
-├── phase3-extend/              ← Video extension
+├── extend/                     ← Video extension
 │   ├── extension-schema.md
 │   ├── transitions.md
 │   └── templates/
 │
-└── use-case-templates/         ← Ready-to-use examples
+└── use-case-templates/
     ├── commercial/
     ├── anime/
     ├── manga/
     └── music-video/
+
+../../image/nano-banana-pro/    ← Shared static image generation (Gemini 3 Pro)
 ```

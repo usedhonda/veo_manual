@@ -51,8 +51,8 @@ Minimal setup for fast iteration and experimentation.
 ```
 LOAD:
 - 00-system-prompt.md
-- phase2-grok/json-schema.md
-- phase2-grok/keywords/camera-movements.md
+- json-schema.md
+- keywords/camera-movements.md
 ```
 
 ### B. Social Media Content (9:16 Vertical)
@@ -60,10 +60,10 @@ Short-form content for TikTok, Reels, Shorts.
 ```
 LOAD:
 - 00-system-prompt.md
-- phase2-grok/json-schema.md
-- phase2-grok/api-parameters.md
-- phase2-grok/keywords/camera-movements.md
-- phase2-grok/keywords/styles-aesthetics.md
+- json-schema.md
+- api-parameters.md
+- keywords/camera-movements.md
+- keywords/styles-aesthetics.md
 - templates/text-to-video/social-vertical.json
 ```
 
@@ -72,20 +72,21 @@ High-quality cinematic content with reference image.
 ```
 LOAD:
 - 00-system-prompt.md
-- ../common/phase1-nano-banana/json-schema.md      ← Shared with Veo
-- ../common/phase1-nano-banana/templates/          ← Shared with Veo
-- phase2-grok/json-schema.md
-- phase2-grok/api-parameters.md
-- phase2-grok/keywords/camera-movements.md
-- phase2-grok/keywords/lighting-color.md
-- phase2-grok/keywords/styles-aesthetics.md
+- ../../image/nano-banana-pro/json-schema.md      ← Shared with Veo
+- ../../image/nano-banana-pro/templates/          ← Shared with Veo
+- json-schema.md
+- api-parameters.md
+- keywords/camera-movements.md
+- keywords/lighting-color.md
+- keywords/styles-aesthetics.md
+- workflows.md
 - templates/image-to-video/first-frame.json
 ```
 
 ### D. Full Specification
 Load everything for complex/custom projects.
 ```
-LOAD: all files in this directory + ../common/phase1-nano-banana/
+LOAD: all files in this directory + ../../image/nano-banana-pro/
 ```
 
 ---
@@ -104,32 +105,28 @@ LOAD: all files in this directory + ../common/phase1-nano-banana/
 ## Directory Structure
 
 ```
-grok/reference/
+video/grok/reference/
 ├── INDEX.md                    ← You are here
 ├── 00-system-prompt.md         ← Output format rules
+├── json-schema.md              ← 6-Component Formula & JSON samples
+├── api-parameters.md           ← API technical specs
+├── workflows.md                ← Last Frame, Magic Portal, Character DNA
+├── troubleshooting.md          ← Common issues & solutions
+├── spicy-mode.md               ← Relaxed moderation guide
 │
-├── phase2-grok/                ← Grok Imagine video generation
-│   ├── json-schema.md
-│   ├── api-parameters.md
-│   └── keywords/
-│       ├── camera-movements.md
-│       ├── lighting-color.md
-│       ├── styles-aesthetics.md
-│       └── audio-instructions.md
+├── keywords/
+│   ├── camera-movements.md
+│   ├── lighting-color.md
+│   ├── styles-aesthetics.md
+│   └── audio-instructions.md
 │
 ├── templates/
 │   ├── text-to-video/
-│   │   ├── basic.json
-│   │   └── cinematic.json
 │   └── image-to-video/
-│       └── first-frame.json
 │
-└── use-case-templates/         ← Ready-to-use examples
-    ├── social-media/
-    ├── product/
-    └── storytelling/
+└── use-case-templates/
 
-../common/phase1-nano-banana/   ← Shared static image generation (Gemini 3 Pro)
+../../image/nano-banana-pro/    ← Shared static image generation (Gemini 3 Pro)
 ```
 
 ---

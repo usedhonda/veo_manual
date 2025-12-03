@@ -14,14 +14,14 @@
 
 ```
 resources/
-├── common/               # 共通リソース（Phase 1静止画生成）
-│   └── phase1-nano-banana/
-├── veo/                  # Veo 3.1 用（高品質・プロ向け）
-│   ├── human-manual/
-│   └── reference/
-└── grok/                 # Grok Imagine 用（高速・コスト重視）
-    ├── human-manual/
-    └── reference/
+├── image/                    # 静止画生成
+│   └── nano-banana-pro/      # Gemini 3 Pro
+└── video/                    # 動画生成
+    ├── veo/                  # Veo 3.1（高品質・プロ向け）
+    │   ├── human-manual/
+    │   └── reference/
+    └── grok/                 # Grok Imagine（高速・コスト重視）
+        └── reference/
 ```
 
 ---
@@ -42,11 +42,25 @@ resources/
 **推奨:**
 - **プロダクション品質** → Veo 3.1
 - **実験・プロトタイプ・大量生成** → Grok Imagine
-- **Phase 1 (静止画)** → 両者共通で Gemini 3 Pro (Nano Banana Pro)
+- **静止画生成** → 両者共通で Gemini 3 Pro (Nano Banana Pro)
 
 ---
 
-## Veo 3.1 (`resources/veo/`)
+## Image Generation (`resources/image/`)
+
+### nano-banana-pro/
+
+静止画生成（Gemini 3 Pro）のリファレンス。VeoとGrok両方で共通使用。
+
+| File | Description |
+|------|-------------|
+| `json-schema.md` | JSON構造定義 |
+| `keywords.md` | キーワード辞書 |
+| `templates/` | ユースケース別テンプレート |
+
+---
+
+## Video: Veo 3.1 (`resources/video/veo/`)
 
 ### human-manual/
 
@@ -57,8 +71,9 @@ resources/
 | `00-quick-start.md` | 5分で始めるクイックスタート |
 | `01-workflow-selector.md` | ユースケース別ワークフロー選択 |
 | `troubleshooting.md` | よくある問題と解決策 |
-| `phase1-image/` | 静止画生成手順 |
-| `phase2-video/` | 動画生成手順 |
+| `image-generation/` | 静止画生成手順 |
+| `video-generation/` | 動画生成手順 |
+| `extend/` | 動画延長手順 |
 | `use-cases/` | ユースケース別詳細ガイド |
 
 ### reference/
@@ -69,12 +84,13 @@ GeminiがVeo 3.1プロンプトを生成する際のリファレンス（英語�
 |------|-------------|
 | `INDEX.md` | **エントリーポイント** |
 | `00-system-prompt.md` | Geminiへのロール定義 |
-| `phase2-veo/` | 動画生成スキーマ・キーワード |
+| `json-schema.md` | 動画生成スキーマ |
+| `keywords/` | カメラ・ライティング・スタイル |
 | `use-case-templates/` | ユースケース別JSONテンプレート |
 
 ---
 
-## Grok Imagine (`resources/grok/`)
+## Video: Grok Imagine (`resources/video/grok/`)
 
 ### reference/
 
@@ -84,17 +100,12 @@ GeminiがGrok Imagineプロンプトを生成する際のリファレンス（�
 |------|-------------|
 | `INDEX.md` | **エントリーポイント** |
 | `00-system-prompt.md` | Geminiへのロール定義 |
-| `phase2-grok/json-schema.md` | **6要素フォーマット・JSONサンプル** |
-| `phase2-grok/api-parameters.md` | APIパラメータ仕様 |
-| `phase2-grok/keywords/` | カメラ・ライティング・スタイル・オーディオ |
-
----
-
-## Common Resources (`resources/common/`)
-
-### phase1-nano-banana/
-
-静止画生成（Gemini 3 Pro）のリファレンス。VeoとGrok両方で共通使用。
+| `json-schema.md` | **6要素フォーマット・JSONサンプル** |
+| `api-parameters.md` | APIパラメータ仕様 |
+| `workflows.md` | ワークフローテクニック（Last Frame等） |
+| `troubleshooting.md` | トラブルシューティング |
+| `spicy-mode.md` | Spicy Mode詳細 |
+| `keywords/` | カメラ・ライティング・スタイル・オーディオ |
 
 ---
 
@@ -109,14 +120,14 @@ GeminiがGrok Imagineプロンプトを生成する際のリファレンス（�
 ### For Gemini (Veo)
 
 ```
-resources/veo/reference/INDEX.md を読んで、
+resources/video/veo/reference/INDEX.md を読んで、
 [ユースケース] のVeo 3.1プロンプトを生成して
 ```
 
 ### For Gemini (Grok)
 
 ```
-resources/grok/reference/INDEX.md を読んで、
+resources/video/grok/reference/INDEX.md を読んで、
 [ユースケース] のGrok Imagineプロンプトを生成して
 ```
 
@@ -130,8 +141,9 @@ resources/grok/reference/INDEX.md を読んで、
 your-app/
 ├── src/
 └── prompts/
-    ├── veo-reference/     ← resources/veo/reference/ をコピー
-    └── grok-reference/    ← resources/grok/reference/ をコピー
+    ├── image-reference/   ← resources/image/nano-banana-pro/ をコピー
+    ├── veo-reference/     ← resources/video/veo/reference/ をコピー
+    └── grok-reference/    ← resources/video/grok/reference/ をコピー
 ```
 
 LLM APIに `INDEX.md` をエントリーポイントとして渡す。`INDEX.md` がユースケースに応じて必要なファイルを指示する。
@@ -142,7 +154,7 @@ LLM APIに `INDEX.md` をエントリーポイントとして渡す。`INDEX.md`
 
 ### Veo 3.1 Workflow
 ```
-[Phase 1: Image]        [Phase 2: Video]        [Phase 3: Extend]
+[Image]                 [Video]                 [Extend]
 Nano Banana Pro    →    Veo 3.1            →    Video Extension
 (Gemini 3 Pro)          Text-to-Video           8s → longer
                         Image-to-Video
@@ -151,7 +163,7 @@ Nano Banana Pro    →    Veo 3.1            →    Video Extension
 
 ### Grok Imagine Workflow
 ```
-[Phase 1: Image]        [Phase 2: Video]
+[Image]                 [Video]
 Nano Banana Pro    →    Grok Imagine
 (Gemini 3 Pro)          Text-to-Video
                         Image-to-Video
@@ -168,6 +180,8 @@ Nano Banana Pro    →    Grok Imagine
 - **6-Component Formula**: Grok用プロンプト構造（Subject + Action + Camera + Lighting + Environment + Audio）
 - **Ingredients**: Veo用参照画像によるキャラクター一貫性機能
 - **JSON Prompt**: 構造化されたプロンプトフォーマット
+- **Last Frame Method**: Grokで長尺動画を作成するテクニック
+- **Spicy Mode**: Grokの緩和されたコンテンツモデレーション
 
 ---
 

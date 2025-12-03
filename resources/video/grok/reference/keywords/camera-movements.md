@@ -34,6 +34,40 @@ Camera movements significantly impact the cinematic quality of generated videos.
 
 ---
 
+## Professional Cinema Techniques
+
+| Keyword | Technical Definition | Visual Effect | Best Use Case |
+|---------|---------------------|---------------|---------------|
+| **Dolly Zoom** | Zoom in while moving camera back (or vice versa) | Background expands/compresses while subject stays static (Vertigo effect) | Realization, shock, psychological tension |
+| **Truck Left/Right** | Lateral camera movement perpendicular to subject | Background moves in parallax | Walking scenes, side-scrollers, vehicle tracking |
+| **Pedestal Up/Down** | Vertical camera movement (elevator motion) | Reveals height, moves from feet to face | Establishing scale of buildings or monsters |
+| **Dutch Angle** | Tilted horizon line (camera rolled) | Creates unease, disorientation | Chaos, villains, psychological distress |
+| **Arc Shot** | Camera moves in arc around subject | Shows subject from multiple angles | Hero moments, dramatic reveals |
+| **Crash Zoom** | Extremely fast zoom in | Sudden impact, surprise | Action comedy, kung-fu impact, sudden realization |
+| **Whip Pan** | Very fast horizontal pan | Motion blur, scene transition | Action sequences, comedic timing |
+| **Rack Focus** | Focus shifts from foreground to background | Directs viewer attention | Dialogue scenes, reveal techniques |
+
+### Dolly Zoom Example
+```
+Camera executes dolly zoom: zooming in while physically moving backward,
+creating the classic Vertigo effect as the background warps around the
+stationary subject's terrified face.
+```
+
+### Dutch Angle Example
+```
+Dutch angle shot, horizon tilted 15 degrees, creating sense of unease
+as the villain emerges from shadows.
+```
+
+### Crash Zoom Example
+```
+Sudden crash zoom into character's eyes at the moment of realization,
+accompanied by dramatic sound sting.
+```
+
+---
+
 ## Shot Types
 
 | Keyword | Description |
@@ -133,3 +167,41 @@ POV looking up at mountain peak.
 3. **Front-load camera direction** - mention movement early in prompt
 4. **Use lens terminology** for specific looks
 5. **Specify speed** when precision matters
+
+---
+
+## Camera + Mood Combinations
+
+| Mood | Recommended Camera | Recommended Movement |
+|------|-------------------|---------------------|
+| Romantic | Medium close-up, shallow DOF | Slow dolly, gentle orbit |
+| Thriller | Close-up, Dutch angle | Handheld, rack focus |
+| Epic | Wide shot, low angle | Crane up, slow push-in |
+| Intimate | Close-up, static | Minimal movement |
+| Futuristic | Tracking, FPV drone | Fast movement, sweeping |
+| Horror | Handheld, POV | Shaky, sudden movements |
+| Documentary | Medium shot, natural | Steadicam, follow |
+| Commercial | Macro, orbital | Smooth, precise |
+
+---
+
+## FPV Drone Shots
+
+First-Person View drone footage creates immersive, dynamic sequences:
+
+```
+FPV drone shot racing through narrow alleyway, banking sharply around
+corners, weaving between obstacles at high speed, motion blur on edges.
+```
+
+### FPV Best Uses
+- Racing/chase sequences
+- Architectural fly-throughs
+- Extreme sports footage
+- Music video energy shots
+
+### FPV Keywords
+- `FPV drone`, `racing drone perspective`
+- `banking turn`, `barrel roll`
+- `through gap`, `under bridge`
+- `high speed flyby`

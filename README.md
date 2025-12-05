@@ -54,9 +54,22 @@ resources/
 
 | File | Description |
 |------|-------------|
-| `json-schema.md` | JSON構造定義 |
-| `keywords.md` | キーワード辞書 |
-| `templates/` | ユースケース別テンプレート |
+| `INDEX.md` | **エントリーポイント** |
+| `00-system-prompt.md` | Geminiへのロール定義・モデル哲学 |
+| `json-schema.md` | マスターJSONスキーマ・高度なハック |
+| `keywords.md` | カメラ物理・ライティング・スタイル辞書 |
+| `templates/` | ユースケース別JSONテンプレート |
+
+**テンプレート一覧:**
+- `character-sheet.json` - キャラクター一貫性用
+- `cyberpunk-character.json` - 詳細キャラクター例（Veo連携対応）
+- `product-shot.json` - 商品撮影
+- `scene-background.json` - 環境・背景
+- `manga-panel.json` - 漫画パネル
+- `ui-mockup.json` - UI/UXモックアップ
+- `architecture-floorplan.json` - 建築・間取り図
+- `fashion-lookbook.json` - ファッション撮影
+- `social-media-influencer.json` - SNSコンテンツ
 
 ---
 
@@ -117,6 +130,13 @@ GeminiがGrok Imagineプロンプトを生成する際のリファレンス（�
 2. 該当する `human-manual/00-quick-start.md` を読む
 3. Geminiに依頼する際の参考にする
 
+### For Gemini (Image - Nano Banana Pro)
+
+```
+resources/image/nano-banana-pro/INDEX.md を読んで、
+[ユースケース] のNano Banana Proプロンプトを生成して
+```
+
 ### For Gemini (Veo)
 
 ```
@@ -174,7 +194,7 @@ Nano Banana Pro    →    Grok Imagine
 
 ## Key Concepts
 
-- **Nano Banana Pro**: Gemini 3 Pro による静止画生成
+- **Nano Banana Pro**: Gemini 3 Pro による静止画生成（推論エンジン搭載、JSON構造化プロンプト対応）
 - **Veo 3.1**: Google の動画生成AI（高品質、4/6/8秒）
 - **Grok Imagine**: xAI の動画生成AI（高速、5-15秒、Aurora Engine）
 - **6-Component Formula**: Grok用プロンプト構造（Subject + Action + Camera + Lighting + Environment + Audio）

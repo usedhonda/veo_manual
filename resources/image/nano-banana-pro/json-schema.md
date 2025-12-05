@@ -1,255 +1,242 @@
-# Nano Banana Pro (Gemini 2.5 Flash Image) JSON Schema
+# Nano Banana Pro (Gemini 3 Pro Image) JSON Schema
 
 ## Purpose
-Generate high-quality static images optimized for Veo 3.1 video production pipeline.
+Generate high-quality static images with deterministic control using JSON structured prompts.
 
-## Output Requirements for Veo 3.1 Compatibility
+---
+
+## Master JSON Schema
+
+The complete schema for full control over Nano Banana Pro outputs:
+
+```json
+{
+  "_meta": {
+    "schema_version": "v3.0",
+    "target_model": "Gemini 3 Pro Image (Nano Banana Pro)",
+    "intent": "photorealistic_high_fidelity",
+    "strict_mode": true
+  },
+  "subject": {
+    "type": "person | object | scene | abstract",
+    "count": 1,
+    "identity": {
+      "name": "string - optional identifier for consistency",
+      "demographics": "string - age, ethnicity, gender if applicable",
+      "persistent_features": [
+        "feature that must remain consistent across images"
+      ]
+    },
+    "current_state": {
+      "pose": "string - body position, gesture",
+      "expression": "string - emotional state",
+      "gaze": "string - eye direction"
+    },
+    "attire": {
+      "outfit": "string - clothing description",
+      "colors": ["array of colors"],
+      "details": "string - fabric, patterns, condition",
+      "accessories": ["array of items"]
+    }
+  },
+  "environment": {
+    "location": "string - place description",
+    "time": "string - time of day, weather",
+    "spatial_structure": {
+      "foreground": "string - elements closest to camera",
+      "midground": "string - middle distance elements",
+      "background": "string - distant elements",
+      "depth": "string - perspective description"
+    },
+    "atmosphere": {
+      "mood": "string - emotional tone keywords",
+      "weather_effects": "string - rain, fog, steam, etc."
+    }
+  },
+  "photography": {
+    "camera_body": "string - camera model reference",
+    "lens": {
+      "focal_length": "string - mm value",
+      "aperture": "string - f-stop",
+      "type": "string - lens description"
+    },
+    "settings": {
+      "shutter_speed": "string - exposure time",
+      "iso": "string - sensitivity",
+      "white_balance": "string - Kelvin or preset"
+    },
+    "composition": {
+      "framing": "extreme_close_up | close_up | medium | full_body | wide",
+      "angle": "eye_level | low_angle | high_angle | dutch_angle | bird_eye | worm_eye",
+      "rule": "rule_of_thirds | center | golden_ratio | diagonal"
+    },
+    "visual_quality": {
+      "resolution": "4K | 1080p | 720p",
+      "texture": "string - detail level description",
+      "artifacts": ["intentional imperfections for realism"]
+    }
+  },
+  "lighting": {
+    "setup": "string - lighting scheme name",
+    "sources": [
+      {
+        "type": "key_light | fill_light | rim_light | practical | ambient",
+        "position": "string - direction/angle",
+        "color": "string - light color",
+        "intensity": "high | medium | low",
+        "effect": "string - optional specific effect"
+      }
+    ],
+    "shadows": "string - shadow quality description"
+  },
+  "style": {
+    "medium": "photorealistic | anime | 3d_render | illustration | oil_painting | watercolor | concept_art",
+    "aesthetic": "string - art direction keywords",
+    "color_palette": "string - dominant colors or scheme",
+    "mood": "string - emotional atmosphere",
+    "render_engine": "string - optional 3D engine reference (Octane, Unreal, etc.)"
+  },
+  "constraints": {
+    "negative": [
+      "elements to avoid"
+    ],
+    "must_include": [
+      "required elements"
+    ],
+    "text_content": {
+      "text": "string - exact text to render",
+      "font": "string - font style",
+      "position": "string - placement"
+    }
+  },
+  "veo_optimization": {
+    "intended_use": "first_frame | ingredient | last_frame | standalone",
+    "planned_motion": "string - what movement will happen in video",
+    "consistency_anchors": ["features to maintain across shots"],
+    "negative_space": "string - where to leave room for motion"
+  }
+}
+```
+
+---
+
+## Veo 3.1 Input Compatibility
 
 | Parameter | Veo 3.1 Requirement | Recommendation |
 |-----------|---------------------|----------------|
 | Resolution | 720p or 1080p | Match target video resolution |
 | Aspect Ratio | 16:9 or 9:16 | Match target video aspect ratio |
-| Format | PNG or JPEG | PNG for transparency, JPEG for photos |
-| Composition | Leave motion space | Don't center subject if movement planned |
+| Format | PNG or JPEG | PNG for transparency |
+| Composition | Leave motion space | Don't center if movement planned |
 
 ---
 
-## Standard Schema
+## Minimal Schema (Quick Use)
+
+For simpler requests:
 
 ```json
 {
   "subject": {
     "identity": "string - main subject description",
-    "appearance": {
-      "clothing": "string - outfit details",
-      "features": "string - physical characteristics",
-      "age": "string - age range",
-      "accessories": "string - items worn/carried"
-    },
-    "expression": "string - emotional state, gaze direction",
-    "pose": "string - body position, gesture"
+    "pose": "string - position/gesture",
+    "expression": "string - emotional state"
   },
-  "composition": {
-    "framing": "full_body | three_quarter | waist_up | bust | close_up | extreme_close_up",
-    "angle": "eye_level | low_angle | high_angle | bird_eye | worm_eye | dutch_angle",
-    "subject_position": "center | rule_of_thirds_left | rule_of_thirds_right | off_center",
-    "negative_space": "string - where to leave empty space for motion"
-  },
-  "background": {
-    "type": "environment | studio | transparent | solid_color",
-    "description": "string - detailed background description",
-    "blur": "none | slight | moderate | heavy_bokeh"
-  },
-  "lighting": {
-    "type": "natural | studio | dramatic | neon | ambient",
-    "direction": "front | side | back | rim | rembrandt | butterfly",
-    "quality": "soft | hard | diffused",
-    "color_temperature": "warm | neutral | cool",
-    "special": "string - volumetric, lens flare, etc."
+  "environment": {
+    "location": "string - setting",
+    "lighting": "string - light description"
   },
   "style": {
-    "medium": "photorealistic | anime | 3d_render | illustration | oil_painting | watercolor",
-    "aesthetic": "string - art direction keywords",
-    "color_palette": "string - dominant colors",
-    "mood": "string - emotional tone"
+    "medium": "photorealistic | anime | illustration",
+    "mood": "string - atmosphere"
   },
   "technical": {
-    "resolution": "1080p | 720p | 4K",
-    "aspect_ratio": "16:9 | 9:16 | 1:1 | 4:3",
-    "camera_reference": "string - camera/lens simulation",
-    "post_processing": "string - color grade, filters"
-  },
-  "veo_optimization": {
-    "intended_use": "first_frame | ingredient | last_frame | standalone",
-    "planned_motion": "string - what movement will happen in video",
-    "consistency_anchors": "array - features to maintain across shots"
+    "aspect_ratio": "16:9 | 9:16 | 1:1",
+    "framing": "close_up | medium | full_body | wide"
   }
 }
 ```
 
 ---
 
-## Use Case Schemas
+## Advanced Hacks
 
-### Character Sheet (for Consistency)
+### Logic Gate (Counting/Positioning)
+
+Force the reasoning engine to solve logical constraints:
 
 ```json
 {
-  "subject": {
-    "identity": "Cyberpunk detective, female, late 20s",
-    "appearance": {
-      "clothing": "Black leather trench coat, neon-trimmed collar",
-      "features": "Sharp jawline, cybernetic left eye glowing blue, short black hair with purple highlights",
-      "age": "25-30",
-      "accessories": "Holographic badge on belt, wireless earpiece"
-    },
-    "expression": "Determined, focused gaze",
-    "pose": "Standing confidently, arms crossed"
+  "logic_gate": {
+    "task": "Object Generation Challenge",
+    "condition": "Generate exactly 5 objects that start with the letter 'S'",
+    "constraints": ["Each object must be distinct", "All must be clearly visible"],
+    "verification": "Ensure exactly 5 items are visible, verify spelling of labels"
   },
-  "composition": {
-    "framing": "full_body",
-    "angle": "eye_level",
-    "subject_position": "center",
-    "negative_space": "minimal - character sheet focus"
-  },
-  "background": {
-    "type": "solid_color",
-    "description": "Pure white or neutral gray",
-    "blur": "none"
-  },
-  "lighting": {
-    "type": "studio",
-    "direction": "front",
-    "quality": "soft",
-    "color_temperature": "neutral",
-    "special": "even lighting for reference clarity"
-  },
-  "style": {
-    "medium": "photorealistic",
-    "aesthetic": "Clean character reference",
-    "color_palette": "Accurate to character design",
-    "mood": "Neutral presentation"
-  },
-  "technical": {
-    "resolution": "1080p",
-    "aspect_ratio": "16:9",
-    "camera_reference": "Studio portrait lens 85mm",
-    "post_processing": "Minimal, true colors"
-  },
-  "veo_optimization": {
-    "intended_use": "ingredient",
-    "planned_motion": "Various scenes - walking, talking, action",
-    "consistency_anchors": ["cybernetic eye", "trench coat", "hair color", "badge"]
-  }
+  "scene": "messy office desk top-down view"
 }
 ```
 
-### Product Shot (for Commercial)
+### Split View Hack
+
+Create side-by-side comparisons in one image:
 
 ```json
 {
-  "subject": {
-    "identity": "Premium wireless headphones",
-    "appearance": {
-      "clothing": "N/A",
-      "features": "Matte black finish, rose gold accents, memory foam ear cups",
-      "age": "N/A",
-      "accessories": "N/A"
-    },
-    "expression": "N/A",
-    "pose": "45-degree angle, slight tilt showing both cups"
+  "composition_hack": "Hard Split Screen",
+  "layout": {
+    "type": "horizontal_split | vertical_split",
+    "ratio": "50:50",
+    "divider": {
+      "style": "solid white line | gradient | none",
+      "thickness": "5px"
+    }
   },
-  "composition": {
-    "framing": "close_up",
-    "angle": "slightly_elevated",
-    "subject_position": "center",
-    "negative_space": "generous on right side for text/motion"
+  "left_panel": {
+    "content": "string - left side description",
+    "style": "string - left side style",
+    "background": "string"
   },
-  "background": {
-    "type": "studio",
-    "description": "Gradient from dark charcoal to deep purple",
-    "blur": "none"
+  "right_panel": {
+    "content": "string - right side description",
+    "style": "string - right side style",
+    "background": "string"
   },
-  "lighting": {
-    "type": "studio",
-    "direction": "rim",
-    "quality": "hard",
-    "color_temperature": "cool",
-    "special": "Accent light highlighting rose gold, subtle reflection on surface"
-  },
-  "style": {
-    "medium": "photorealistic",
-    "aesthetic": "Premium tech advertising",
-    "color_palette": "Black, rose gold, purple accent",
-    "mood": "Luxurious, sophisticated"
-  },
-  "technical": {
-    "resolution": "1080p",
-    "aspect_ratio": "16:9",
-    "camera_reference": "Macro lens, shallow depth of field",
-    "post_processing": "High contrast, enhanced highlights"
-  },
-  "veo_optimization": {
-    "intended_use": "first_frame",
-    "planned_motion": "Slow rotation, light sweep across surface",
-    "consistency_anchors": ["product shape", "color scheme", "lighting style"]
-  }
+  "instruction": "Do not blend the two sides. Treat them as separate viewports."
 }
 ```
 
-### Scene Background (for Environment)
+### Search Grounding Injection
+
+Trigger real-world knowledge retrieval:
 
 ```json
 {
-  "subject": {
-    "identity": "Empty cyberpunk street scene",
-    "appearance": {
-      "clothing": "N/A",
-      "features": "Neon signs, wet pavement, steam vents, holographic advertisements",
-      "age": "N/A",
-      "accessories": "N/A"
-    },
-    "expression": "N/A",
-    "pose": "N/A"
+  "grounding_trigger": {
+    "tool": "google_search",
+    "query": "Tesla Cybertruck interior dashboard layout 2025",
+    "intent": "visualize the exact UI based on latest data"
   },
-  "composition": {
-    "framing": "wide_shot",
-    "angle": "eye_level",
-    "subject_position": "N/A",
-    "negative_space": "Center-left area clear for character insertion"
-  },
-  "background": {
-    "type": "environment",
-    "description": "Narrow alleyway between towering buildings, neon signs in Japanese and English, rain-slicked streets reflecting colorful lights, steam rising from grates",
-    "blur": "slight at distant buildings"
-  },
-  "lighting": {
-    "type": "neon",
-    "direction": "multiple sources",
-    "quality": "mixed",
-    "color_temperature": "cool with warm neon accents",
-    "special": "Volumetric fog, neon reflections on wet surfaces"
-  },
-  "style": {
-    "medium": "photorealistic",
-    "aesthetic": "Blade Runner inspired cyberpunk",
-    "color_palette": "Teal, magenta, orange neon against dark blues",
-    "mood": "Mysterious, atmospheric, noir"
-  },
-  "technical": {
-    "resolution": "1080p",
-    "aspect_ratio": "16:9",
-    "camera_reference": "Wide angle 24mm",
-    "post_processing": "Cinematic color grade, enhanced neon glow"
-  },
-  "veo_optimization": {
-    "intended_use": "first_frame",
-    "planned_motion": "Character walks into frame from right, camera follows",
-    "consistency_anchors": ["neon color scheme", "wet surface reflections", "atmospheric haze"]
+  "prompt": "First-person view from the driver's seat of a Cybertruck",
+  "details": {
+    "screen_content": "Navigation map of downtown San Francisco based on real geography",
+    "accuracy": "Match the exact design found in search results"
   }
 }
 ```
 
 ---
 
-## Key Differences from Video Schema
+## Schema Selection Guide
 
-| Aspect | Image (Nano Banana) | Video (Veo 3.1) |
-|--------|---------------------|-----------------|
-| Motion | Static composition | Camera movement, subject action |
-| Audio | N/A | Dialogue, SFX, music |
-| Duration | N/A | 4, 6, or 8 seconds |
-| Focus | Maximum detail | Motion-optimized |
-| Negative Space | For future animation | For current action |
-
----
-
-## Veo 3.1 Input Optimization Checklist
-
-- [ ] Resolution matches target video (720p or 1080p)
-- [ ] Aspect ratio matches target video (16:9 or 9:16)
-- [ ] Subject has clear, identifiable features for consistency
-- [ ] Composition leaves space for planned movement
-- [ ] Lighting direction is consistent for multi-shot sequences
-- [ ] Background doesn't conflict with planned overlays
-- [ ] Key visual anchors are prominent and memorable
+| Use Case | Recommended Schema |
+|----------|-------------------|
+| Character portrait | Full schema with identity + attire |
+| Product photography | Full schema with photography + lighting |
+| Scene/environment | Full schema with environment + spatial_structure |
+| UI mockup | Minimal schema + layout constraints |
+| Quick concept | Minimal schema |
+| Multi-shot consistency | Full schema with veo_optimization |
+| Before/after comparison | Split View hack |
+| Exact counting/positioning | Logic Gate hack |
+| Real-world accuracy | Grounding Injection hack |

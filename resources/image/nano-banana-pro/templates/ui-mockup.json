@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "schema_version": "v3.0",
+    "target_model": "Gemini 3 Pro Image (Nano Banana Pro)",
+    "intent": "ui_mockup_generation",
+    "strict_mode": true
+  },
+  "task": "UI Mockup Generation",
+  "app_type": "Fitness Tracking App",
+  "screen": "Dashboard",
+  "layout_constraints": {
+    "header": {
+      "content": "Morning Run",
+      "position": "top",
+      "font_size": "large"
+    },
+    "main_visual": {
+      "content": "Data visualization graph of heart rate",
+      "style": "smooth gradient curve",
+      "position": "center"
+    },
+    "footer_menu": {
+      "items": ["Home", "Activity", "Profile"],
+      "style": "icon bar with labels",
+      "position": "bottom"
+    }
+  },
+  "style_system": {
+    "theme": "Dark Mode",
+    "primary_color": "#00FF88 (Neon Green)",
+    "typography": "Clean Sans-Serif (Inter-like)",
+    "ui_elements": "Glassmorphism, soft shadows"
+  },
+  "technical": {
+    "aspect_ratio": "9:16",
+    "resolution": "1080p",
+    "device_frame": "iPhone 15 Pro mockup"
+  },
+  "constraints": {
+    "negative": ["blurry text", "misaligned elements", "broken layout"],
+    "must_include": ["status bar", "navigation elements"]
+  }
+}

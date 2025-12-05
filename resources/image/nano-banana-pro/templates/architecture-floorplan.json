@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "schema_version": "v3.0",
+    "target_model": "Gemini 3 Pro Image (Nano Banana Pro)",
+    "intent": "architectural_visualization",
+    "strict_mode": true
+  },
+  "project": "Modern Minimalist Apartment",
+  "view_type": "Isometric Floor Plan",
+  "spatial_logic": {
+    "rooms": [
+      {
+        "name": "Living Room",
+        "location": "Main area",
+        "features": ["L-shaped sofa", "Coffee table", "TV wall unit"],
+        "size": "30 sqm"
+      },
+      {
+        "name": "Kitchen",
+        "connection": "Open plan to Living Room",
+        "features": ["Kitchen island", "Built-in appliances"],
+        "size": "15 sqm"
+      },
+      {
+        "name": "Bedroom",
+        "location": "Separate via hallway",
+        "furniture": ["Queen bed", "Walk-in closet"],
+        "size": "20 sqm"
+      },
+      {
+        "name": "Bathroom",
+        "location": "Adjacent to bedroom",
+        "features": ["Walk-in shower", "Double vanity"],
+        "size": "8 sqm"
+      }
+    ],
+    "flooring": "White oak chevron pattern",
+    "walls": "Matte white",
+    "ceiling_height": "2.8m"
+  },
+  "lighting": {
+    "source": "Natural sunlight from large floor-to-ceiling windows",
+    "shadows": "Soft, long shadows indicating late afternoon",
+    "artificial": "Recessed ceiling lights, pendant over island"
+  },
+  "style": {
+    "render_style": "Architectural digest photography, hyper-realistic",
+    "aesthetic": "Scandinavian minimalist",
+    "color_palette": "White, light wood, subtle gray accents"
+  },
+  "technical": {
+    "aspect_ratio": "1:1",
+    "resolution": "4K",
+    "view_angle": "45-degree isometric"
+  }
+}

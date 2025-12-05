@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "schema_version": "v3.0",
+    "target_model": "Gemini 3 Pro Image (Nano Banana Pro)",
+    "intent": "social_media_content",
+    "strict_mode": true
+  },
+  "persona": "Travel & Lifestyle Influencer",
+  "shot_context": {
+    "type": "Instagram Story",
+    "vibe": "Spontaneous, candid, unpolished",
+    "caption_intent": "Showing off morning coffee view"
+  },
+  "visuals": {
+    "subject": "Hand holding a ceramic coffee cup (first person point of view)",
+    "subject_details": {
+      "hand": "Female, well-manicured natural nails",
+      "cup": "Artisan ceramic, warm earth tones",
+      "steam": "Subtle steam rising"
+    },
+    "background": "Santorini white buildings and blue sea, out of focus",
+    "lighting": "Bright mediterranean morning sun"
+  },
+  "imperfections": {
+    "camera_shake": "slight",
+    "focus": "missed focus on background, sharp on cup rim",
+    "filters": "VSCO preset A6 style",
+    "lens_flare": "subtle sun flare in corner"
+  },
+  "photography": {
+    "camera_reference": "iPhone 16 Pro",
+    "composition": {
+      "framing": "close_up",
+      "angle": "first_person_pov"
+    }
+  },
+  "style": {
+    "aesthetic": "Instagram travel blogger",
+    "color_palette": "Warm whites, terracotta, aegean blue",
+    "mood": "Aspirational, relaxed luxury"
+  },
+  "technical": {
+    "aspect_ratio": "9:16",
+    "resolution": "1080p"
+  },
+  "constraints": {
+    "negative": ["too perfect", "stock photo feel", "visible watermarks"],
+    "must_include": ["authentic imperfections", "lifestyle context"]
+  }
+}

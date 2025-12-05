@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "schema_version": "v3.0",
+    "target_model": "Gemini 3 Pro Image (Nano Banana Pro)",
+    "intent": "fashion_ecommerce",
+    "strict_mode": true
+  },
+  "use_case": "Fashion Lookbook",
+  "product": {
+    "item": "Oversized knitted sweater",
+    "color": "Beige",
+    "texture": "Chunky wool knit",
+    "fit": "Loose, relaxed",
+    "brand_style": "Premium casual"
+  },
+  "model": {
+    "demographics": "Scandinavian female model",
+    "age": "25-30",
+    "build": "Slim, tall",
+    "pose": "Standing, hands in pockets, looking away",
+    "expression": "Relaxed, contemplative",
+    "makeup": "No-makeup look",
+    "hair": "Natural, slightly windswept"
+  },
+  "variations": [
+    {
+      "setting": "Minimalist white studio",
+      "lighting": "Soft diffused",
+      "mood": "Clean, commercial"
+    },
+    {
+      "setting": "Autumn forest path",
+      "lighting": "Golden hour",
+      "mood": "Lifestyle, editorial"
+    },
+    {
+      "setting": "Urban coffee shop window",
+      "lighting": "Natural window light",
+      "mood": "Candid, authentic"
+    }
+  ],
+  "photography": {
+    "camera_body": "Hasselblad X2D",
+    "lens": {
+      "focal_length": "85mm",
+      "aperture": "f/2.8"
+    },
+    "composition": {
+      "framing": "full_body",
+      "angle": "eye_level"
+    }
+  },
+  "instruction": "Generate 3 variations based on the settings above, keeping the product identical across all images.",
+  "constraints": {
+    "negative": ["logo visible", "other brand items", "distorted proportions"],
+    "must_include": ["full product visibility", "natural fabric drape"]
+  }
+}

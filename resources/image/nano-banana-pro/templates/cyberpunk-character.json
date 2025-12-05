@@ -1,0 +1,121 @@
+{
+  "_meta": {
+    "schema_version": "v3.0",
+    "target_model": "Gemini 3 Pro Image (Nano Banana Pro)",
+    "intent": "photorealistic_high_fidelity",
+    "strict_mode": true
+  },
+  "subject": {
+    "type": "person",
+    "count": 1,
+    "identity": {
+      "name": "Yuki",
+      "demographics": "Japanese female, early 20s",
+      "persistent_features": [
+        "round face shape",
+        "almond-shaped dark brown eyes",
+        "small mole under left eye",
+        "straight black hair with hime-cut"
+      ]
+    },
+    "current_state": {
+      "pose": "dynamic running pose, leaning forward",
+      "expression": "determined, intense focus, mouth slightly open",
+      "gaze": "looking straight ahead at the horizon"
+    },
+    "attire": {
+      "outfit": "futuristic cyberpunk streetwear",
+      "colors": ["neon blue", "matte black"],
+      "details": "translucent plastic jacket, cargo pants with straps",
+      "accessories": ["wireless headphones", "tactical choker"]
+    }
+  },
+  "environment": {
+    "location": "Shibuya crossing, Tokyo",
+    "time": "midnight, heavy rain",
+    "spatial_structure": {
+      "foreground": "wet asphalt reflecting neon lights, puddles",
+      "midground": "crowd of people with transparent umbrellas",
+      "background": "towering skyscrapers with giant LED screens",
+      "depth": "deep perspective with atmospheric haze"
+    },
+    "atmosphere": {
+      "mood": "melancholic, cyberpunk, dystopian",
+      "weather_effects": "rain streaks, steam rising from vents"
+    }
+  },
+  "photography": {
+    "camera_body": "Sony Alpha a7R V",
+    "lens": {
+      "focal_length": "85mm",
+      "aperture": "f/1.4",
+      "type": "G Master Prime Lens"
+    },
+    "settings": {
+      "shutter_speed": "1/250s",
+      "iso": "100",
+      "white_balance": "5600K (Daylight)"
+    },
+    "composition": {
+      "framing": "medium-closeup",
+      "angle": "eye-level",
+      "rule": "rule of thirds"
+    },
+    "visual_quality": {
+      "resolution": "8K",
+      "texture": "skin pores visible, fabric texture detailed",
+      "artifacts": ["subtle film grain", "chromatic aberration on edges"]
+    }
+  },
+  "lighting": {
+    "setup": "cinematic 3-point lighting",
+    "sources": [
+      {
+        "type": "key_light",
+        "position": "45 degrees left",
+        "color": "soft cool white",
+        "intensity": "high"
+      },
+      {
+        "type": "rim_light",
+        "position": "behind subject",
+        "color": "neon pink",
+        "intensity": "medium",
+        "effect": "creates silhouette separation"
+      },
+      {
+        "type": "fill_light",
+        "position": "front right",
+        "color": "warm ambient street light",
+        "intensity": "low"
+      }
+    ],
+    "shadows": "sharp, dramatic contact shadows"
+  },
+  "style": {
+    "medium": "photorealistic",
+    "aesthetic": "Blade Runner meets Ghost in the Shell",
+    "color_palette": "Teal, magenta, orange neon against dark blues",
+    "mood": "Mysterious, atmospheric, noir",
+    "render_engine": "Unreal Engine 5.4"
+  },
+  "constraints": {
+    "negative": [
+      "extra fingers",
+      "deformed hands",
+      "blurry face",
+      "inconsistent lighting"
+    ],
+    "must_include": [
+      "rain reflections on ground",
+      "neon sign reflections",
+      "detailed fabric texture"
+    ]
+  },
+  "veo_optimization": {
+    "intended_use": "first_frame",
+    "planned_motion": "Character runs toward camera, then past it",
+    "consistency_anchors": ["hime-cut hair", "mole under eye", "neon blue jacket trim"],
+    "negative_space": "right side for running direction"
+  }
+}

@@ -22,10 +22,6 @@ All notable updates to the Veo 3.1 Prompt Manual.
 - Expanded Prompt Quality Checklist (10 items)
 - Updated Best Practices with dialogue naturalness tips
 
-### Sources
-- X (Twitter) community research (15+ keywords searched)
-- Key contributors: @jordandchesney, @FlowbyGoogle, @jerrod_lew, @GoogleCloudTech, @IqraSaifiii
-
 ---
 
 ## [1.0.0] - 2025-12-02
@@ -41,6 +37,3 @@ All notable updates to the Veo 3.1 Prompt Manual.
 - 5 example prompts (cinematic, action, dialogue, product, nature)
 - Quick reference card
 
-### Sources
-- ChatGPT DeepResearch comprehensive guide (December 2025)
-- Gemini initial consultation

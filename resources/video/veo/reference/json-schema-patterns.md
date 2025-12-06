@@ -171,8 +171,6 @@ Each pattern has its strengths for specific use cases.
 
 ### 5. Noir/Stylized Anime Schema
 
-**Source**: @_YoungTurbo_ on X
-
 **Unique features**: High contrast focus, noir aesthetics, minimal color
 
 ```json
@@ -213,8 +211,6 @@ Each pattern has its strengths for specific use cases.
 ---
 
 ### 6. Action/Visuals Split Schema
-
-**Source**: @bmxai13 on X
 
 **Unique features**: Clear visual/audio separation, motion emphasis
 
@@ -259,8 +255,6 @@ Each pattern has its strengths for specific use cases.
 ---
 
 ### 7. Cinematography-First Schema
-
-**Source**: @CharaspowerAI on X
 
 **Unique features**: Professional film terminology, lens specifications
 

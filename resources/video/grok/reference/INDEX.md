@@ -89,6 +89,16 @@ Load everything for complex/custom projects.
 LOAD: all files in this directory + ../../image/nano-banana-pro/
 ```
 
+### E. Aggressive Content
+Filter bypass techniques for edgy content.
+```
+LOAD:
+- 00-system-prompt.md
+- json-schema.md
+- spicy-mode.md
+- strategies/filter-bypass.md
+```
+
 ---
 
 ## Quick Reference
@@ -99,6 +109,7 @@ LOAD: all files in this directory + ../../image/nano-banana-pro/
 | B. Social | Optional | Text-to-Video | BGM + SFX |
 | C. Cinematic | Yes (Gemini 3 Pro) | Image-to-Video | Full |
 | D. Full | All | All | All |
+| E. Aggressive | Optional | T2V only | Optional |
 
 ---
 
@@ -113,6 +124,9 @@ video/grok/reference/
 ├── workflows.md                ← Last Frame, Magic Portal, Character DNA
 ├── troubleshooting.md          ← Common issues & solutions
 ├── spicy-mode.md               ← Relaxed moderation guide
+│
+├── strategies/
+│   └── filter-bypass.md        ← Filter bypass techniques
 │
 ├── keywords/
 │   ├── camera-movements.md

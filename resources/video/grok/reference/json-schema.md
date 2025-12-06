@@ -32,7 +32,7 @@ Prompt = [Subject] + [Action] + [Camera] + [Lighting] + [Environment] + [Audio]
 ```json
 {
   "model": "grok-imagine-v1",
-  "prompt": "Cinematic shot: A cybernetic samurai walking through neon rain. 4k, highly detailed.",
+  "prompt": "Subject: A battle-scarred cybernetic samurai in black tactical armor with glowing red circuit patterns walking through a rain-drenched neo-Tokyo alley. Action: Samurai moves with deliberate, measured steps. Rain cascades off his armored shoulders. His katana slowly slides from its sheath, blade reflecting neon signs. Steam rises from his breath in the cold air. Camera: Tracking shot from behind, slowly rising to reveal the sprawling cityscape ahead. Rack focus from raindrops to distant holographic billboards. Lighting: High contrast neon noir, cyan and magenta shop signs casting colored reflections on wet pavement, volumetric fog catching light rays. Style: Blade Runner meets Ghost in the Shell, cinematic 4K, film grain, anamorphic lens flare. Audio: Heavy rain ambience, distant traffic hum, electronic score with traditional shamisen undertones, footsteps echoing on wet concrete.",
   "aspect_ratio": "16:9",
   "mode": "normal",
   "duration": 10,
@@ -42,7 +42,7 @@ Prompt = [Subject] + [Action] + [Camera] + [Lighting] + [Environment] + [Audio]
 
 **Parameters:**
 - `model`: `grok-imagine-v1` or latest `grok-2-video`
-- `prompt`: Video description, max 1000 chars recommended
+- `prompt`: Video description, 800-1200 chars recommended for best results
 - `aspect_ratio`: `"16:9"` (cinematic), `"9:16"` (mobile), `"1:1"` (square)
 - `mode`: `"normal"` (balanced), `"fun"` (cartoon/extreme), `"spicy"` (relaxed moderation)
 - `duration`: 5-15 seconds
@@ -53,7 +53,7 @@ Prompt = [Subject] + [Action] + [Camera] + [Lighting] + [Environment] + [Audio]
 {
   "model": "grok-imagine-v1",
   "image_urls": ["https://s3.yourbucket.com/character_ref.jpg"],
-  "prompt": "Camera slowly zooms in. The character smiles gently and blinks. Wind blows hair.",
+  "prompt": "Action: The character turns their head slowly towards the camera with a subtle, knowing smile forming on their lips. Eyes blink naturally twice, gaze shifting slightly as if noticing something off-frame. Hair flows gently in a soft breeze, individual strands catching the light. Fabric of clothing ripples subtly with the wind. A single strand of hair falls across their face, which they brush aside with a delicate finger movement. Camera: Static shot with extremely shallow depth of field creating creamy bokeh background. Subtle breathing motion in frame. Lighting: Preserve original lighting from source image, add subtle rim light enhancement on hair edges. Style: Cinematic portrait, 4K, natural skin texture, film grain. Audio: Soft ambient wind, distant birdsong, gentle rustling of leaves, subtle emotional piano notes.",
   "mode": "normal",
   "aspect_ratio": "16:9"
 }
@@ -306,20 +306,20 @@ Grok does NOT support negative prompts. Writing "No music" or "Don't show hands"
 
 ## Prompt Length Optimization
 
-### Short-Form Prompt (Under 200 chars)
-For simple generations, prioritize key elements:
+### Short-Form Prompt (Under 300 chars)
+For quick tests. Less control over details:
 ```
-"Cinematic: samurai drawing sword, rain, neon city, slow motion, dramatic lighting"
-```
-
-### Medium-Form Prompt (200-500 chars)
-Add component structure:
-```
-"Subject: Samurai warrior in traditional armor. Action: Drawing katana with fluid motion, rain droplets frozen mid-air. Camera: Slow dolly in to close-up. Lighting: Neon shop signs reflecting off wet surfaces. Style: Blade Runner meets feudal Japan. Audio: Sword unsheathing sound, rain ambience."
+"Cinematic: samurai drawing sword in rain, neon Tokyo alley, slow motion, dramatic cyan-magenta lighting, Blade Runner style, film grain"
 ```
 
-### Long-Form Prompt (500-1000 chars)
-Full 6-component detail as shown in scenarios above.
+### Medium-Form Prompt (300-600 chars)
+Structured 6-component basics:
+```
+"Subject: Battle-scarred samurai warrior in black armor with glowing circuit patterns. Action: Drawing katana with fluid precision, rain droplets frozen mid-air around the blade. Camera: Slow dolly in to close-up, shallow depth of field. Lighting: Neon shop signs casting cyan and magenta reflections on wet pavement. Style: Blade Runner meets feudal Japan, cinematic 4K. Audio: Metallic sword unsheathing, heavy rain ambience, distant thunder."
+```
+
+### Long-Form Prompt (800-1200 chars) - RECOMMENDED
+Full 6-component detail with layered descriptions. Provides maximum control over physics, timing, and atmosphere. See Scenario templates above for examples.
 
 ---
 

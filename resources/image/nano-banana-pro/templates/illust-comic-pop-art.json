@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "width": 832,
+    "height": 1248,
+    "steps": 30,
+    "cfg_scale": 7.0,
+    "sampler_name": "DPM++ 2M Karras"
+  },
+  "prompt": "A stylized comic pop art illustration with a striking limited color palette dominated by black, bright yellow, and electric cyan outlines. A young woman in side profile view, looking left, blows a pink bubble gum bubble. Her blonde hair is tied up in a messy bun with loose strands, and she wears large black and yellow over-ear headphones with a cyan logo. She is dressed in an oversized black hoodie with bold yellow text \"BOMIE\" across the chest and yellow striped sleeves. The background is a dense, graphic cityscape at night filled with yellow skyscrapers on black, large stylized text elements like \"BO\", \"AX\", and stacks of detailed boomboxes at the bottom. High contrast, bold linework, flat colors, urban street style aesthetic.",
+  "negative_prompt": "3d render, realistic, photorealistic, painting, soft shading, gradient colors, blurred, low quality, bad anatomy, distorted face, messy lines, standard anime style, muted colors"
+}

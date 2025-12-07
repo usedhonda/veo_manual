@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "width": 1024,
+    "height": 960,
+    "steps": 30,
+    "cfg_scale": 7.0,
+    "sampler_name": "DPM++ 2M Karras"
+  },
+  "prompt": "A flat color anime illustration in a retro pop style with bold, confident outlines and minimal shading. A joyful young woman with short, black bob-cut hair blowing dynamically in the wind from the right, looks upwards with a wide, beaming smile. She has blush marks and small bandage-like markings on her cheeks. She wears a traditional dark navy blue sailor school uniform (seifuku) with white trim and a red scarf tied in front. A white backpack strap is visible on her shoulder. A plume of white breath or smoke exhales from the right side. The background is a solid, plain off-white color. Clean vector art aesthetic, zero shadows.",
+  "negative_prompt": "3d render, realistic, photorealistic, detailed shading, gradient colors, volumetric lighting, complex background, low quality, bad anatomy, distorted face, messy lines"
+}

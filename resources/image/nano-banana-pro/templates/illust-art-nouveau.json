@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "width": 832,
+    "height": 1216,
+    "steps": 30,
+    "cfg_scale": 7.0,
+    "sampler_name": "DPM++ 2M Karras"
+  },
+  "prompt": "A retro fantasy illustration in an Art Nouveau influenced style, rendered with flat muted colors and thick defined outlines reminiscent of Japanese woodblock prints. A lone woman in profile view, gazing upwards with a gentle expression, wearing a long flowing elegant white gown with gathered fabric, hair styled in a neat bun adorned with a white floral hairpiece. She holds a single white lily gracefully in her hands. She stands before a sprawling fantasy castle with numerous pointed turrets and blue conical roofs perched precariously on a rugged rocky cliff edge. Stylized clouds drift around the cliff. In the background are majestic layered mountain ranges and a colossal flat circular sun/moon disk dominating the beige sky behind the castle. Sepia tone atmosphere, highly detailed line work.",
+  "negative_prompt": "3d render, photorealistic, realistic, modern anime style, vibrant colors, glossy finish, volumetric lighting, heavy shading, blurry, low quality, sketchy, unfinished, bad anatomy, disfigured hands, extra fingers"
+}

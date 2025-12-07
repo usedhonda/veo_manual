@@ -36,6 +36,9 @@ Step 2: What type of request?
 ├─ Artistic style request?
 │   └─ Load: styles/artistic-styles.md
 │
+├─ Anime/illustration style (cel-shaded, vector, pop art)?
+│   └─ Load: styles/illustration-styles.md
+│
 ├─ Data visualization/infographic?
 │   └─ Load: styles/corporate-data-viz.md
 │
@@ -80,7 +83,8 @@ nano-banana-pro/
 │   └── quality-techniques.md # Advanced quality boosting
 │
 ├── styles/                  # Artistic Styles
-│   ├── artistic-styles.md   # 11 style recipes
+│   ├── artistic-styles.md   # 11 style recipes (abstract/painting)
+│   ├── illustration-styles.md # Anime/vector/pop art styles
 │   ├── corporate-data-viz.md # Infographics, charts
 │   └── ui-ux-design.md      # App/web UI styles
 │
@@ -123,7 +127,8 @@ nano-banana-pro/
 
 | File | Load When |
 |------|-----------|
-| `styles/artistic-styles.md` | Artistic/creative styles |
+| `styles/artistic-styles.md` | Abstract, painting, fine art styles |
+| `styles/illustration-styles.md` | Anime, cel-shaded, vector, pop art |
 | `styles/corporate-data-viz.md` | Charts, infographics, dashboards |
 | `styles/ui-ux-design.md` | App UI, web design mockups |
 
@@ -142,6 +147,11 @@ nano-banana-pro/
 | `templates/architecture-floorplan.json` | Architectural visualization |
 | `templates/fashion-lookbook.json` | Fashion/lifestyle photography |
 | `templates/social-media-influencer.json` | SNS content generation |
+| `templates/illust-cel-shaded.json` | Flat anime cel-shaded style |
+| `templates/illust-art-nouveau.json` | Art Nouveau fantasy style |
+| `templates/illust-retro-pop.json` | Retro pop anime style |
+| `templates/illust-comic-pop-art.json` | Comic pop art urban style |
+| `templates/illust-cafe-cozy.json` | Cozy warm cafe lifestyle |
 
 ---
 

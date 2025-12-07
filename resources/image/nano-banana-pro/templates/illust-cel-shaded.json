@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "width": 832,
+    "height": 1248,
+    "steps": 30,
+    "cfg_scale": 7.0,
+    "sampler_name": "DPM++ 2M Karras"
+  },
+  "prompt": "A flat color anime illustration in a clean, cel-shaded style with bold outlines. A graceful woman in full body profile view, walking towards the right. She has long, wavy bright pink hair flowing dynamically in the wind. She wears an elegant, flowing teal green floor-length gown with a high slit revealing her leg, a plunging neckline, and thin pearl straps over her shoulders. She wears matching teal high heels. The long train of her dress swirls on the ground around her feet, adorned with scattered pink roses and strings of white pearls. Pink rose petals drift through the air. The background is a solid, plain pastel pink color. Minimal shading, clean vector art aesthetic.",
+  "negative_prompt": "3d render, realistic, photorealistic, thick painting, textured brushstrokes, gradient shading, volumetric lighting, complex background, low quality, bad anatomy, distorted face, missing limbs"
+}

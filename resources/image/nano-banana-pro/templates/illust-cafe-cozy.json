@@ -1,0 +1,11 @@
+{
+  "parameters": {
+    "width": 832,
+    "height": 1248,
+    "steps": 30,
+    "cfg_scale": 7.0,
+    "sampler_name": "DPM++ 2M Karras"
+  },
+  "prompt": "A cozy, retro-style flat color anime illustration with bold outlines. A young woman with short, bob-cut blonde hair smiles gently, sitting on a wooden chair at a cafe terrace. She holds a steaming brown paper coffee cup with both hands. She wears an oversized yellow knit sweater with a faint cat graphic, black leggings, and yellow canvas sneakers. The background is a warm-lit cafe facade with a large glass window and door, reflecting indoor lights. A sign reads 'Cafe Caffe'. Potted green plants and a menu board are next to her. The color palette is dominated by warm yellows, oranges, and browns. Clean cel-shading style.",
+  "negative_prompt": "3d render, realistic, photorealistic, detailed shading, gradient colors, cold colors, blurry, low quality, bad anatomy, distorted face, messy lines"
+}
